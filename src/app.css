@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+:root {
+	font-family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--font-mono: 'Fira Mono', monospace;
+	--white: #ffffff;
+	--black: #000000;
+
+	/* Light theme */
+    --background-color: #171d23;
+    --card-color: #31363f;
+    --primary-color: #ff8bdc;
+    --heading-color: #ebebeb;
+    --text-color: #cacfda;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	background-color: var(--background-color);
+	color: var(--text-color);
+	overflow-y: overlay;
+}
+
+#svelte {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+h1,
+h2 {
+	color: var(--heading-color);
+}
+
+p {
+	line-height: 1.5;
+}
+
+a {
+	color: var(--primary-color);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+    font-family: 'Fredoka One';
+	margin-bottom: 0.5rem;
+}
+
+h2 {
+	font-weight: 500;
+	font-size: 1.5rem;
+    font-family: 'Fredoka One';
+}
+
+h3 {
+	font-size: 1rem;
+}
+
+pre {
+	font-size: 16px;
+	font-family: var(--font-mono);
+	background-color: rgba(255, 255, 255, 0.45);
+	border-radius: 3px;
+	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
+	padding: 0.5em;
+	overflow-x: auto;
+	color: var(--text-color);
+}
+
+input,
+button {
+	font-size: inherit;
+	font-family: inherit;
+}
+.card {
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    background-color: var(--card-color);
+    padding: 1.25rem;
+}
+
+.card h1 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
+}
+
+.card p {
+    margin-top: 0.5rem;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
