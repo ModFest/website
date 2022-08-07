@@ -22,7 +22,9 @@
 		<h1>Theme</h1>
 		<p>
 			For ModFest: Singularity, your mod <b>must</b> only have ONE feature. Focus all of your effort
-			throughout the week into polishing and perfecting one feature into the best you can do.
+			throughout the week into polishing and perfecting one feature into the best you can do. What
+			counts as one feature may be fuzzy; if you can convince the organizers it's one feature, then
+			it's a valid submission.
 		</p>
 	</div>
 	<div class="card">
