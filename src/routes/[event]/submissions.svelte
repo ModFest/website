@@ -125,8 +125,8 @@
 				<div class="title">
 					<h3>{submission.name}</h3>
 					by
-					{#each submission.authors as author, index}
-						{#if submission.authors.length > 1 && index === submission.authors.length - 1},&nbsp;and&nbsp;{:else if submission.authors.length > 2 && index < submission.authors.length - 1 && index !== 0},&nbsp{/if}{author.display_name}
+					{#each submission.authors as author, index (author.id)}
+						{#if submission.authors.length > 1}{#if index > 0}{#if index === submission.authors.length - 1}&nbsp;and&nbsp;{:else},&nbsp;{/if}{#if submission.authors.length > 2 && index === submission.authors.length - 2}&nbsp;{/if}{/if}{/if}{author.display_name}
 					{/each}
 				</div>
 				<p>{submission.summary}</p>
