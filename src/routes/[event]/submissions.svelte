@@ -21,7 +21,12 @@
 		await fetch('https://platform.modfest.net/submissions')
 			.then((response) => response.json())
 			.then((data) => {
-				submissions = data;
+				submissions = data.filter((submission: any) => {
+					// Check if there exists a participant in the event with the submission id
+					return Object.values(event.participants).some((participant: any) => {
+						return participant.submissions.includes(submission.id);
+					});
+				});
 			})
 			.catch((error) => {
 				console.log(error);

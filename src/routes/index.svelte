@@ -32,7 +32,7 @@
 				<a href="/{event.id}" class="card clickable" style="background-color: {event.background_color}">
 					<img
 						class="cover-image"
-						src="/event/{event.id}/cover.png"
+						src="/assets/event/{event.id}/cover.png"
 						alt="{event.name} cover image"
 						aria-hidden="true"
 					/>
