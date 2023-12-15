@@ -99,7 +99,7 @@
 		<h1>Theme</h1>
 		<p>
 			For ModFest 1.20, we encourage your mod to follow our central theme, <strong>Sky and Sea</strong>.
-			The theme is open to interpretation, try to come up with something interesting!
+			The theme is open to interpretation; try to come up with something interesting!
 		</p>
 	</div>
 	<div class="card">
