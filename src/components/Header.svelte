@@ -1,7 +1,8 @@
 <script lang="ts">
 	import logo from '$assets/logo/modfest.svg';
 	import discordLogo from '$assets/logo/discord.svg';
-	import twitterLogo from '$assets/logo/twitter.svg';
+	import xLogo from '$assets/logo/x.svg';
+	import cohostLogo from '$assets/logo/cohost.svg';
 	import githubLogo from '$assets/logo/github.svg';
 	import modrinthLogo from '$assets/logo/modrinth.svg';
 </script>
@@ -22,8 +23,11 @@
 				<a class="link icon clickable" href="https://modrinth.com/user/ModFest" target="_blank">
 					<img src={modrinthLogo} alt="Modrinth link" />
 				</a>
-				<a class="link icon clickable" href="https://twitter.com/ModFestEvent" target="_blank">
-					<img src={twitterLogo} alt="Twitter link" />
+				<a class="link icon clickable" href="https://x.com/ModFestEvent" target="_blank">
+					<img src={xLogo} alt="X link" />
+				</a>
+				<a class="link icon clickable" href="https://cohost.org/modfest" target="_blank">
+					<img src={cohostLogo} alt="Cohost link" />
 				</a>
 				<a class="link icon clickable" href="https://discord.gg/gn543Ee" target="_blank">
 					<img src={discordLogo} alt="Discord server invite" />
