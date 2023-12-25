@@ -99,8 +99,8 @@
 	<div class="content">
 		<h1>{event.name}</h1>
 		<p>
-			ModFest: Singularity had a total of {submissions.length} submissions created by {modders.length}
-			total modders.
+			{event.name} {event.submissions_open ? 'has' : 'had'} a total of {submissions.length} submissions created by {modders.length}
+			total modders{event.submissions_open ? ' so far' : ''}.
 		</p>
 	</div>
 </a>
