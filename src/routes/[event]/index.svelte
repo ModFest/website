@@ -86,13 +86,12 @@
 	<div class="card">
 		<h1>Introduction</h1>
 		<p>
-			ModFest 1.20 is a Minecraft modding event that will run from <b>Monday, December 18th, 2023</b
+			ModFest 1.20 is a Minecraft mod jam running from <b>Monday, December 18th, 2023</b
 		>
-			thru <b>Sunday, December 31st, 2023</b>.
+			through <b>Sunday, December 31st, 2023</b>.
 		</p>
 		<p>
 			As always, ModFest is a great excuse to try something new or flex your modding abilities.
-			ModFest 1.20 is hosted in partnership with <a href="https://modrinth.com/" target="_blank">Modrinth</a>.
 		</p>
 	</div>
 	<div class="card">
@@ -100,6 +99,15 @@
 		<p>
 			For ModFest 1.20, we encourage your mod to follow our central theme, <strong>Sky and Sea</strong>.
 			The theme is open to interpretation; try to come up with something interesting!
+		</p>
+	</div>
+	<div class="card">
+		<h1>Showcase</h1>
+		<p>
+			After the jam is complete, participants will be invited to create a demo for their mod on the <strong>showcase server</strong>. This is an optional part of modfest where you can show off your mod by building it a "booth" for it a custom demo world.
+		</p>
+		<p>
+			Once the showcase is fully built, the server will be open to the public so players can try out all submitted mods!
 		</p>
 	</div>
 	<div class="card">
@@ -117,7 +125,10 @@
 				Mods must be submitted via a public or unlisted project on <a
 					href="https://modrinth.com/"
 					target="_blank">Modrinth</a
-			>. Submissions are accepted through a bot in our <a href="https://discord.gg/gn543Ee" target="_blank">Discord server</a>.
+			>.
+			</li>
+			<li>
+				Submissions are made through a bot in our <a href="https://discord.gg/gn543Ee" target="_blank">Discord server</a>.
 			</li>
 		</ul>
 	</div>
