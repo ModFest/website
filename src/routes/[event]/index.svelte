@@ -104,7 +104,7 @@
 	<div class="card">
 		<h1>Showcase</h1>
 		<p>
-			After the jam is complete, participants will be invited to create a demo for their mod on the <strong>showcase server</strong>. This is an optional part of modfest where you can show off your mod by building it a "booth" for it a custom demo world.
+			After the jam is complete, participants will be invited to create a demo for their mod on the <strong>showcase server</strong>. This is an optional part of modfest where you can show off your mod by building it a "booth" for it in a custom demo world.
 		</p>
 		<p>
 			Once the showcase is fully built, the server will be open to the public so players can try out all submitted mods!
