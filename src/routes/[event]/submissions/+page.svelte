@@ -1,71 +1,14 @@
-<script context="module" lang="ts">
-	export const load: import('./__types/__layout').Load = async ({ params, fetch }) => {
-		let event: any;
-		await fetch('https://platform.modfest.net/event/' + params.event)
-			.then((response) => response.json())
-			.then((data) => {
-				event = data;
-			})
-			.catch((error) => {
-				console.log(error);
-				return null;
-			});
-
-		if (event === null) {
-			return {
-				status: 404
-			};
-		}
-
-		let submissions: any;
-		await fetch('https://platform.modfest.net/submissions')
-			.then((response) => response.json())
-			.then((data) => {
-				submissions = data.filter((submission: any) => {
-					// Check if there exists a participant in the event with the submission id
-					return Object.values(event.participants).some((participant: any) => {
-						return participant.submissions.includes(submission.id);
-					});
-				});
-			})
-			.catch((error) => {
-				console.log(error);
-				return [];
-			});
-
-		let users: any;
-		await fetch('https://platform.modfest.net/users?map')
-			.then((response) => response.json())
-			.then((data) => {
-				users = data;
-			})
-			.catch((error) => {
-				console.log(error);
-				return [];
-			});
-
-		if (submissions.length > 0) {
-			return {
-				props: {
-					event,
-					submissions,
-					users
-				},
-				stuff: {
-					event,
-					submissions,
-					users
-				}
-			};
-		}
-
-		return {
-			status: 404
-		};
-	};
-</script>
-
 <script lang="ts">
+	import '$styles/app.css';
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+	export let {
+		event,
+		submissions,
+		users
+	} = data
+
 	function compareSubmission(a: any, b: any) {
 		const aName = a.name.toLowerCase().replace(/[^a-z0-9]/gi, '');
 		const bName = b.name.toLowerCase().replace(/[^a-z0-9]/gi, '');
@@ -77,10 +20,6 @@
 		}
 		return 0;
 	}
-
-	export let event: any;
-	export let submissions: any[];
-	export let users: any;
 
 	submissions.sort(compareSubmission);
 	const modders = [...new Set(submissions.map((submission: any) => submission.members).flat())];
