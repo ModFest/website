@@ -99,7 +99,7 @@
         <p>
             The voting period will run for two weeks, and the showcase server will continue to be up through that time.
         </p>
-        {#if true}
+        {#if false}
             <p><strong>Check back here on February 10th for details on how you can join the server!</strong></p>
         {:else}
             <p>To check it out, install the <a href="https://modrinth.com/project/modfest-1.20" target="_blank">ModFest
@@ -107,7 +107,7 @@
                     href="https://modrinth.com/app" target="_blank">Modrinth App</a> or <a
                     href="https://prismlauncher.org/" target="_blank">Prism Launcher</a>) and join the server in the
                 Multiplayer list.</p>
-            <p>Check out the booths, and make sure to vote for the mods that best fit each category!</p>
+            <p>Check out the booths, and make sure to vote for the mods that best fit each category! (voting form coming soon! check back later!)</p>
         {/if}
     </div>
     <div class="card">
