@@ -15,6 +15,9 @@
 </div>
 {#if !event.submissions_open}
     <div class="center card-spacing">
+        {#if event.id==='1.20'}
+        <a href="https://modrinth.com/modpack/modfest-1.20" class="button clickable">Play!</a>
+        {/if}
         <a href="/{event.id}/submissions" class="button clickable">View Submissions</a>
     </div>
 {/if}
