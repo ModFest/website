@@ -3,6 +3,7 @@
 	import discordLogo from '$assets/logo/discord.svg';
 	import xLogo from '$assets/logo/x.svg';
 	import cohostLogo from '$assets/logo/cohost.svg';
+	import tumblrLogo from '$assets/logo/tumblr.svg';
 	import githubLogo from '$assets/logo/github.svg';
 	import modrinthLogo from '$assets/logo/modrinth.svg';
 </script>
@@ -28,6 +29,9 @@
 				</a>
 				<a class="link icon clickable" href="https://cohost.org/modfest" target="_blank">
 					<img src={cohostLogo} alt="Cohost link" />
+				</a>
+				<a class="link icon clickable" href="https://tumblr.com/modfest" target="_blank">
+					<img src={tumblrLogo} alt="Tumblr link" />
 				</a>
 				<a class="link icon clickable" href="https://discord.gg/gn543Ee" target="_blank">
 					<img src={discordLogo} alt="Discord server invite" />
