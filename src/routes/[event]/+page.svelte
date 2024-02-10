@@ -16,8 +16,8 @@
 {#if !event.submissions_open}
     <div class="center card-spacing">
         {#if event.id==='1.20'}
-        <a href="https://modrinth.com/modpack/modfest-1.20" class="button clickable">Play!</a>
-        <a href="" class="button clickable">Vote!</a>
+        <a href="https://modrinth.com/modpack/modfest-1.20" target="_blank" class="button clickable">Play!</a>
+        <a href="https://forms.gle/aoJt8H8drQWNGoS48" target="_blank" class="button clickable">Vote!</a>
         {/if}
         <a href="/{event.id}/submissions" class="button clickable">View Submissions</a>
     </div>
@@ -111,7 +111,7 @@
                     href="https://modrinth.com/app" target="_blank">Modrinth App</a> or <a
                     href="https://prismlauncher.org/" target="_blank">Prism Launcher</a>) and join the server in the
                 Multiplayer list.</p>
-            <p>Check out the booths, and make sure to <a href="" target="_blank">vote for the mods that best fit each category!</a></p>
+            <p>Check out the booths, and make sure to <a href="https://forms.gle/aoJt8H8drQWNGoS48" target="_blank">vote for the mods that best fit each category!</a></p>
         {/if}
     </div>
     <div class="card">
