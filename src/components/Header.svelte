@@ -4,6 +4,7 @@
 	import xLogo from '$assets/logo/x.svg';
 	import cohostLogo from '$assets/logo/cohost.svg';
 	import tumblrLogo from '$assets/logo/tumblr.svg';
+	import mastodonLogo from '$assets/logo/mastodon.svg';
 	import githubLogo from '$assets/logo/github.svg';
 	import modrinthLogo from '$assets/logo/modrinth.svg';
 </script>
@@ -32,6 +33,9 @@
 				</a>
 				<a class="link icon clickable" href="https://tumblr.com/modfest" target="_blank">
 					<img src={tumblrLogo} alt="Tumblr link" />
+				</a>
+				<a class="link icon clickable" href="https://floss.social/@modfest" rel="me" target="_blank">
+					<img src={mastodonLogo} alt="Mastodon link" />
 				</a>
 				<a class="link icon clickable" href="https://discord.gg/gn543Ee" target="_blank">
 					<img src={discordLogo} alt="Discord server invite" />
