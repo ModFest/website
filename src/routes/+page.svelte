@@ -1,43 +1,31 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+    import type {LayoutData} from './$types';
 
-	let events: any[] = [];
-
-	onMount(async () => {
-		const request = await fetch('https://platform.modfest.net/events');
-		events = await request.json();
-	});
+    export let data: LayoutData;
+    export let {events} = data
 </script>
 
 <div class="page">
-	{#if events.length === 0}
-		<h2>Loading ModFest events...</h2>
-	{:else}
-		<h2>Ongoing:</h2>
-		{#each events as event}
-			{#if event.published && !event.archived}
-				<a href="/{event.id}" class="card clickable" style="background-color: {event.background_color}">
-					<img
-						class="cover-image"
-						src="/assets/event/{event.id}/cover.png"
-						alt="{event.name} cover image"
-						aria-hidden="true"
-					/>
-				</a>
-			{/if}
-		{/each}
-		<h2>Past events:</h2>
-		{#each events as event}
-			{#if event.published && event.archived}
-				<a href="/{event.id}" class="card clickable" style="background-color: {event.background_color}">
-					<img
-						class="cover-image"
-						src="/assets/event/{event.id}/cover.png"
-						alt="{event.name} cover image"
-						aria-hidden="true"
-					/>
-				</a>
-			{/if}
-		{/each}
-	{/if}
+    {#if !events || events.length === 0}
+        <h2>Loading ModFest events...</h2>
+    {:else}
+        {#each events as event}
+            <a href="/{event.id}" class="card cover-card clickable" style="background-color: #{event.colors.secondary}">
+                <img
+                        class="cover-image"
+                        src="{event.images.background}"
+                        alt="{event.name} cover image"
+                        aria-hidden="true"
+                />
+                <div class="cover-content">
+                    <img
+                            class="logo-image"
+                            src="{event.images.wordmark}"
+                            alt="{event.name} wordmark"
+                            aria-hidden="true"
+                    />
+                </div>
+            </a>
+        {/each}
+    {/if}
 </div>

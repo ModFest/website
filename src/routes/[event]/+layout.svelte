@@ -1,12 +1,12 @@
 <script lang="ts">
-	import '$styles/app.css';
-	import type { LayoutData } from './$types';
+    import '$styles/app.css';
+    import type {LayoutData} from './$types';
 
-	export let data: LayoutData;
-	export let { event } = data
+    export let data: LayoutData;
+    export let {event} = data
 </script>
 
 
-<div class="page" style="--link-color: {event.primary_color}; --event-background-color: {event.background_color}">
-	<slot />
+<div class="page" style="--link-color: #{event.colors.primary}; --event-background-color: #{event.colors.secondary}">
+    <slot/>
 </div>

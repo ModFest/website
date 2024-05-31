@@ -1,21 +1,14 @@
-import type { LayoutServerLoad } from './$types';
+import type {LayoutServerLoad} from './$types';
+import {fetchEvent, fetchSubmissions} from "$lib/platform-api";
 
 export const load: LayoutServerLoad = async ({params, fetch}) => {
-    let events: any;
-    await fetch('https://platform.modfest.net/events')
-        .then((response: any) => response.json())
-        .then((data: any) => {
-            events = data;
-        })
-        .catch((error: any) => {
-            return [];
-        });
-
-    const event = events.find((e: any) => e.id === params.event);
+    const event = await fetchEvent(fetch, params.event);
+    const submissions = await fetchSubmissions(fetch, params.event)
 
     if (event) {
         return {
             event,
+            submissionsCount: submissions.length
         }
     } else {
         return {
