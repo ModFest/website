@@ -34,6 +34,9 @@
 				<a class="link icon clickable" href="https://tumblr.com/modfest" target="_blank">
 					<img src={tumblrLogo} alt="Tumblr link" />
 				</a>
+				<a class="link icon clickable" href="https://floss.social/@modfest" rel="me" target="_blank">
+					<img src={mastodonLogo} alt="Mastodon link" />
+				</a>
 				<a class="link icon clickable" href="https://floss.social/@modfest" target="_blank" rel="me">
 					<img src={mastodonLogo} alt="Mastodon link" />
 				</a>
