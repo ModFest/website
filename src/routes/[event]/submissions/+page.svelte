@@ -25,7 +25,7 @@
 </script>
 
 {#if event && submissions && users}
-    <a href="/{event.id}" class="card clickable" style="background-color: #{event.colors.secondary}">
+    <a href="/{event.id}" class="card clickable dark-theme" style="background-color: #{event.colors.secondary}">
         <div class="icon">
             <img class="event-icon" src="{event.images.transparent}">
         </div>
