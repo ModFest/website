@@ -9,7 +9,7 @@
     {#if !events || events.length === 0}
         <h2>Loading ModFest events...</h2>
     {:else}
-        {#each events as event}
+        {#each events.filter((x) => x.id !== 'carnival') as event}
             <a href="/{event.id}" class="card cover-card clickable" style="background-color: #{event.colors.secondary}">
                 <img
                         class="cover-image"
