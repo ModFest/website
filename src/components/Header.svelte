@@ -37,9 +37,6 @@
 				<a class="link icon clickable" href="https://floss.social/@modfest" rel="me" target="_blank">
 					<img src={mastodonLogo} alt="Mastodon link" />
 				</a>
-				<a class="link icon clickable" href="https://floss.social/@modfest" target="_blank" rel="me">
-					<img src={mastodonLogo} alt="Mastodon link" />
-				</a>
 				<a class="link icon clickable" href="https://discord.gg/gn543Ee" target="_blank">
 					<img src={discordLogo} alt="Discord server invite" />
 				</a>
