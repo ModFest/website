@@ -22,7 +22,7 @@
 				<a class="link icon clickable" href="https://github.com/ModFest" target="_blank">
 					<img src={githubLogo} alt="GitHub link" />
 				</a>
-				<a class="link icon clickable" href="https://modrinth.com/user/ModFest" target="_blank">
+				<a class="link icon clickable" href="https://modrinth.com/organization/modfest" target="_blank">
 					<img src={modrinthLogo} alt="Modrinth link" />
 				</a>
 				<a class="link icon clickable" href="https://x.com/ModFestEvent" target="_blank">
