@@ -4,9 +4,12 @@
 
     export let data: LayoutData;
     export let {event} = data
+
+    export let colorStyles = event ? `<style>* { --link-color: #${event.colors.primary}; --event-background-color: #${event.colors.secondary}; }</style>` : ''
 </script>
 
+{@html colorStyles}
 
-<div class="page" style="--link-color: #{event.colors.primary}; --event-background-color: #{event.colors.secondary}">
+<div class="page">
     <slot/>
 </div>

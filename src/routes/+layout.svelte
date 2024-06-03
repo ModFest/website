@@ -4,9 +4,8 @@
 </script>
 
 <div class="container">
+	<Header />
 	<div class="contents">
-		<Header />
-
 		<main>
 			<slot />
 		</main>
@@ -17,8 +16,9 @@
 	.container {
 	}
 
-	.contents {
+	:global(.contents) {
 		max-width: 800px;
+		width: 100%;
 		margin: 0 auto;
 	}
 

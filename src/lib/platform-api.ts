@@ -1,4 +1,4 @@
-const API_URL = `http://localhost:7069`
+const API_URL = `https://platform.modfest.net`
 
 async function baseFetch(fetch: any, route: string): Promise<any> {
     let result: any;

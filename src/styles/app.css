@@ -8,33 +8,35 @@
     Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     --font-mono: 'Fira Mono', monospace;
     --translucent-white: rgba(255, 255, 255, 1);
+
+    --link-color: var(--base-link-color);
 }
 
 :root, .dark-theme {
     --background-color: #171d23;
     --card-color: #31363f;
     --unknown-color: #4f545d;
-    --link-color: #75aaff;
+    --base-link-color: #75aaff;
     --heading-color: #ebebeb;
     --text-color: #cacfda;
     --event-background-color: #31363f;
 }
 
-/*@media (prefers-color-scheme: light) {*/
-/*    :root {*/
-/*        --background-color: #e3e3e7;*/
-/*        --card-color: #fff;*/
-/*        --unknown-color: #4f545d;*/
-/*        --link-color: #2654c5;*/
-/*        --heading-color: #1d1d1f;*/
-/*        --text-color: #282a2c;*/
-/*        --event-background-color: #ababb4;*/
-/*    }*/
+@media (prefers-color-scheme: light) {
+    :root {
+        --background-color: #e3e3e7;
+        --card-color: #fff;
+        --unknown-color: #4f545d;
+        --base-link-color: #2654c5;
+        --heading-color: #1d1d1f;
+        --text-color: #282a2c;
+        --event-background-color: #ababb4;
+    }
 
-/*    .card a {*/
-/*        filter: brightness(0.7);*/
-/*    }*/
-/*}*/
+    .card a {
+        filter: brightness(0.7);
+    }
+}
 
 body {
     min-height: 100vh;
