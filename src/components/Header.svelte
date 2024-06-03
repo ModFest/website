@@ -99,6 +99,7 @@
 	.links {
 		display: flex;
 		gap: 0.25rem;
+		flex-wrap: wrap;
 	}
 
 	a.link {
