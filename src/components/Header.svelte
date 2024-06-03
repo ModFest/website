@@ -86,6 +86,10 @@
 		.text {
 			font-size: 1rem;
 		}
+		
+		nav .main {
+			flex-direction: column;
+		}
 	}
 
 	.spacer {
