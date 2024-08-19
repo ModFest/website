@@ -176,6 +176,14 @@ button {
     color: var(--translucent-white);
 }
 
+.event-subtitle-dark {
+    font-weight: 500;
+    font-size: 1.5rem;
+    font-family: 'Fredoka One';
+    text-transform: uppercase;
+    color: #171d23e0;
+}
+
 .logo-image {
     height: 50%;
 }

@@ -22,7 +22,11 @@
                     alt="{event.name} wordmark"
                     aria-hidden="true"
             />
-            <span class="event-subtitle">{event.subtitle}</span>
+            {#if event.id.startsWith('ff') }
+                <span class="event-subtitle-dark">{event.subtitle}</span>
+            {:else}
+                <span class="event-subtitle">{event.subtitle}</span>
+            {/if}
         </div>
     </div>
     <div class="center card-spacing">
