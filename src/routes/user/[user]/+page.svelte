@@ -25,7 +25,7 @@
                 <h1>{user.name}</h1>
                 {#if user.submissions}
                     <p>
-                        {user.name} has created {user.submissions.length} mods for ModFest events.
+                        {user.name} has submitted {user.submissions.length} projects to ModFest events.
                     </p>
                 {:else}
                     <p>
