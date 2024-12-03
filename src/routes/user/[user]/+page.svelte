@@ -87,11 +87,13 @@
     }
 
     .card .icon .user-icon {
-        height: 4rem;
+        height: auto;
+        width: 4rem;
         border-radius: 50%;
     }
 
     .card .content {
+        flex: 1;
         align-self: center;
     }
 
