@@ -26,8 +26,15 @@
 				<a class="link icon clickable" href="https://modrinth.com/organization/modfest" target="_blank">
 					<img src={modrinthLogo} alt="Modrinth link" />
 				</a>
+				<div class="social_seperator"></div>
+				<a class="link icon clickable" href="https://floss.social/@modfest" rel="me" target="_blank">
+					<img src={mastodonLogo} alt="Mastodon link" />
+				</a>
 				<a class="link icon clickable" href="https://bsky.app/profile/modfest.net" target="_blank">
 					<img src={blueskyLogo} alt="Bluesky link" />
+				</a>
+				<a class="link icon clickable" href="https://tumblr.com/modfest" target="_blank">
+					<img src={tumblrLogo} alt="Tumblr link" />
 				</a>
 				<a class="link icon clickable" href="https://x.com/ModFestEvent" target="_blank">
 					<img src={xLogo} alt="X link" />
@@ -35,14 +42,9 @@
 				<a class="link icon clickable" href="https://cohost.org/modfest" target="_blank">
 					<img src={cohostLogo} alt="Cohost link" />
 				</a>
-				<a class="link icon clickable" href="https://tumblr.com/modfest" target="_blank">
-					<img src={tumblrLogo} alt="Tumblr link" />
-				</a>
-				<a class="link icon clickable" href="https://floss.social/@modfest" rel="me" target="_blank">
-					<img src={mastodonLogo} alt="Mastodon link" />
-				</a>
-				<a class="link icon clickable" href="https://discord.gg/gn543Ee" target="_blank">
-					<img src={discordLogo} alt="Discord server invite" />
+				<div class="social_seperator"></div>
+				<a class="link icon clickable icon_empha" href="https://discord.gg/gn543Ee" target="_blank">
+					<img class="icon_emph" src={discordLogo} alt="Discord server invite" />
 				</a>
 			</div>
 		</div>
@@ -86,6 +88,13 @@
 		color: var(--heading-color);
 	}
 
+	.social_seperator {
+		width: 2px;
+		height: auto;
+		background-color: var(--heading-color);
+		margin: 6px 0px;
+	}
+
 	@media (max-width: 600px) {
 		.text {
 			font-size: 1rem;
@@ -127,5 +136,10 @@
 		height: 1.25rem;
 		width: 1.25rem;
 		object-fit: contain;
+	}
+	
+	.icon_emph {
+		height: 1.6rem !important;
+		width: 1.6rem !important;
 	}
 </style>
