@@ -1,5 +1,6 @@
 <script lang="ts">
 	import logo from '$assets/logo/modfest.svg';
+	import blueskyLogo from '$assets/logo/bluesky.svg';
 	import discordLogo from '$assets/logo/discord.svg';
 	import xLogo from '$assets/logo/x.svg';
 	import cohostLogo from '$assets/logo/cohost.svg';
@@ -24,6 +25,9 @@
 				</a>
 				<a class="link icon clickable" href="https://modrinth.com/organization/modfest" target="_blank">
 					<img src={modrinthLogo} alt="Modrinth link" />
+				</a>
+				<a class="link icon clickable" href="https://bsky.app/profile/modfest.net" target="_blank">
+					<img src={blueskyLogo} alt="Bluesky link" />
 				</a>
 				<a class="link icon clickable" href="https://x.com/ModFestEvent" target="_blank">
 					<img src={xLogo} alt="X link" />
