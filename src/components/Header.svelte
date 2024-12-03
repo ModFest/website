@@ -3,7 +3,6 @@
 	import blueskyLogo from '$assets/logo/bluesky.svg';
 	import discordLogo from '$assets/logo/discord.svg';
 	import xLogo from '$assets/logo/x.svg';
-	import cohostLogo from '$assets/logo/cohost.svg';
 	import tumblrLogo from '$assets/logo/tumblr.svg';
 	import mastodonLogo from '$assets/logo/mastodon.svg';
 	import githubLogo from '$assets/logo/github.svg';
@@ -38,9 +37,6 @@
 				</a>
 				<a class="link icon clickable" href="https://x.com/ModFestEvent" target="_blank">
 					<img src={xLogo} alt="X link" />
-				</a>
-				<a class="link icon clickable" href="https://cohost.org/modfest" target="_blank">
-					<img src={cohostLogo} alt="Cohost link" />
 				</a>
 				<div class="social_seperator"></div>
 				<a class="link icon clickable icon_empha" href="https://discord.gg/gn543Ee" target="_blank">
