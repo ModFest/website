@@ -1,12 +1,14 @@
 <script lang="ts">
-    import '$styles/app.css';
-    import type {LayoutData} from './$types';
+	import type { LayoutData } from './$types';
 
-    export let data: LayoutData;
-    export let {event} = data
+	export let data: LayoutData;
+	export let { event } = data;
 </script>
 
-
-<div class="page" style="--link-color: #{event.colors.primary}; --event-background-color: #{event.colors.secondary}">
-    <slot/>
+<div
+	class="flex flex-col gap-4 mb-16"
+	style="--color-mf-link: #{event?.colors.primary}; --color-mf-event-background: #{event?.colors
+		.secondary}"
+>
+	<slot />
 </div>
