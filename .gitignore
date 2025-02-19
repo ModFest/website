@@ -1,9 +1,14 @@
-.DS_Store
-node_modules
-/build
-/.svelte-kit
-/package
+# Jetbrains
+.idea
+# dotenv environment variable files
 .env
-.env.*
-!.env.example
-/.idea/
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Fresh build directory
+_fresh/
+# npm dependencies
+node_modules/
+/static/styles.css
