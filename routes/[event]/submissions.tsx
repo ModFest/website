@@ -55,64 +55,76 @@ export default async function Submissions(
       </a>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {submissions.map((submission: Submission, submissionIndex) => (
-          <a
+          <div
             class="shadow-(--shadow-mf-card) rounded-2xl bg-mf-card overflow-hidden text-[unset] clickable"
             key={submissionIndex}
-            href={getLink(submission)}
             target="_blank"
           >
-            <div class="w-full bg-mf-unknown h-40 overflow-hidden z-[5]">
-              {submission.images && submission.images.screenshot && (
-                <img
-                  class="w-full h-40 object-cover"
-                  src={submission.images.screenshot}
-                  alt="Gallery image for {submission.name}"
-                />
-              )}
-            </div>
+            <a href={getLink(submission)} target="_blank">
+              <div class="w-full bg-mf-unknown h-40 overflow-hidden z-[5]">
+                {submission.images && submission.images.screenshot && (
+                  <img
+                    class="w-full h-40 object-cover"
+                    src={submission.images.screenshot}
+                    alt="Gallery image for {submission.name}"
+                  />
+                )}
+              </div>
+            </a>
             <div class="p-4 pt-3 self-center">
               {submission.images && submission.images.icon && (
-                <div class="w-24 h-24 object-contain rounded-2xl border-mf-card border-4 border-solid mt-[-4rem] bg-mf-unknown overflow-hidden z-10 absolute">
-                  <img
-                    class="w-24 h-24 pixelated"
-                    src={submission.images.icon}
-                    alt="Icon for {submission.name}"
-                  />
-                </div>
+                <a href={getLink(submission)} target="_blank">
+                  <div class="w-24 h-24 object-contain rounded-2xl border-mf-card border-4 border-solid mt-[-4rem] bg-mf-unknown overflow-hidden z-10 absolute">
+                    <img
+                      class="w-24 h-24 pixelated"
+                      src={submission.images.icon}
+                      alt="Icon for {submission.name}"
+                    />
+                  </div>
+                </a>
               )}
               <div
                 class={submission.images && submission.images.icon
                   ? "ml-[7.25rem]"
                   : ""}
               >
-                <h3 class="m-0 text-mf-heading">{submission.name}</h3>
+                <a
+                  href={getLink(submission)}
+                  target="_blank"
+                  style="text-decoration:none"
+                >
+                  <h3 class="m-0 text-mf-heading">{submission.name}</h3>
+                </a>
                 {submission.authors.map((author, index) => {
                   const user = users.find((u) => u.id === author);
                   return user
                     ? (
-                      <span key={`${submissionIndex}-${index}`}>
+                      <a
+                        key={`${submissionIndex}-${index}`}
+                        href={`/user/${user.id}`}
+                      >
                         {user.name}
-                      </span>
+                      </a>
                     )
                     : author;
                 }).map((userElement, index) => {
-                  let joinElement = <span />;
+                  let join = "";
                   if (index === submission.authors.length - 1) {
                     if (
                       submission.authors.length > 2
                     ) {
-                      joinElement = <span>, and `</span>;
+                      join = ", and ";
                     } else if (
                       submission.authors.length === 2
                     ) {
-                      joinElement = <span>and</span>;
+                      join = " and ";
                     }
                   } else if (index > 0) {
-                    joinElement = <span>,</span>;
+                    join = ", ";
                   }
                   return (
                     <span key={`${submissionIndex}-${index}`}>
-                      {joinElement}
+                      <span>{join}</span>
                       {userElement}
                     </span>
                   );
@@ -122,7 +134,7 @@ export default async function Submissions(
                 {submission.description}
               </p>
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </div>
