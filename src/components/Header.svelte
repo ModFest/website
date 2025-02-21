@@ -10,132 +10,39 @@
 </script>
 
 <header>
-	<nav class="card">
-		<div class="main">
-			<a class="link logo clickable" href="/">
-				<img src={logo} alt="ModFest Logo" />
-				<div class="text">ModFest</div>
+	<nav class="card mt-4 flex flex-col gap-2">
+		<div class="flex flex-col sm:flex-row justify-start items-center gap-2">
+			<a class="nav-link flex h-12 gap-2 no-underline clickable" href="/">
+				<img src={logo} class="h-10 object-contain" alt="ModFest Logo" />
+				<div class="text-base sm:text-3xl font-title text-mf-heading">ModFest</div>
 			</a>
 
-			<div class="spacer" />
-			<div class="links">
-				<a class="link icon clickable" href="https://github.com/ModFest" target="_blank">
+			<div class="grow" />
+			<div class="flex flex-wrap gap-1">
+				<a class="nav-link nav-icon clickable" href="https://github.com/ModFest" target="_blank">
 					<img src={githubLogo} alt="GitHub link" />
 				</a>
-				<a class="link icon clickable" href="https://modrinth.com/organization/modfest" target="_blank">
+				<a class="nav-link nav-icon clickable" href="https://modrinth.com/organization/modfest" target="_blank">
 					<img src={modrinthLogo} alt="Modrinth link" />
 				</a>
-				<div class="social_seperator"></div>
-				<a class="link icon clickable" href="https://floss.social/@modfest" rel="me" target="_blank">
+				<div class="w-0.5 h-auto rounded-full bg-mf-text mx-1.5 my-0"></div>
+				<a class="nav-link nav-icon clickable" href="https://floss.social/@modfest" rel="me" target="_blank">
 					<img src={mastodonLogo} alt="Mastodon link" />
 				</a>
-				<a class="link icon clickable" href="https://bsky.app/profile/modfest.net" target="_blank">
+				<a class="nav-link nav-icon clickable" href="https://bsky.app/profile/modfest.net" target="_blank">
 					<img src={blueskyLogo} alt="Bluesky link" />
 				</a>
-				<a class="link icon clickable" href="https://tumblr.com/modfest" target="_blank">
+				<a class="nav-link nav-icon clickable" href="https://tumblr.com/modfest" target="_blank">
 					<img src={tumblrLogo} alt="Tumblr link" />
 				</a>
-				<a class="link icon clickable" href="https://x.com/ModFestEvent" target="_blank">
+				<a class="nav-link nav-icon clickable" href="https://x.com/ModFestEvent" target="_blank">
 					<img src={xLogo} alt="X link" />
 				</a>
-				<div class="social_seperator"></div>
-				<a class="link icon clickable icon_empha" href="https://discord.gg/gn543Ee" target="_blank">
-					<img class="icon_emph" src={discordLogo} alt="Discord server invite" />
+				<div class="w-0.5 h-auto rounded-full bg-mf-text mx-1.5 my-0"></div>
+				<a class="nav-link nav-icon clickable" href="https://discord.gg/gn543Ee" target="_blank">
+					<img class="!h-[1.6] !w-[1.6]" src={discordLogo} alt="Discord server invite" />
 				</a>
 			</div>
 		</div>
 	</nav>
 </header>
-
-<style>
-	nav {
-		margin-top: 1rem;
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-	}
-
-	nav .main {
-		display: flex;
-		flex-direction: row;
-		justify-content: left;
-		align-items: center;
-		gap: 0.5rem;
-	}
-
-	.logo {
-		display: flex;
-		gap: 0.5rem;
-		text-decoration: none;
-	}
-
-	.logo img {
-		height: 2.5rem;
-		object-fit: contain;
-	}
-
-	.logo {
-		height: 2.5rem;
-	}
-
-	.text {
-		font-size: 1.75rem;
-		font-family: 'Fredoka One';
-		color: var(--heading-color);
-	}
-
-	.social_seperator {
-		width: 2px;
-		height: auto;
-		background-color: var(--heading-color);
-		margin: 6px 0px;
-	}
-
-	@media (max-width: 600px) {
-		.text {
-			font-size: 1rem;
-		}
-		
-		nav .main {
-			flex-direction: column;
-		}
-	}
-
-	.spacer {
-		flex-grow: 1;
-	}
-
-	.links {
-		display: flex;
-		gap: 0.25rem;
-		flex-wrap: wrap;
-	}
-
-	a.link {
-		padding: 0.5rem;
-		border-radius: 0.5rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	a.link:hover {
-		background-color: rgba(0, 0, 0, 0.2);
-	}
-
-	a.link:active,
-	a.link:focus {
-		background-color: rgba(0, 0, 0, 0.3);
-	}
-
-	a.link.icon img {
-		height: 1.25rem;
-		width: 1.25rem;
-		object-fit: contain;
-	}
-	
-	.icon_emph {
-		height: 1.6rem !important;
-		width: 1.6rem !important;
-	}
-</style>

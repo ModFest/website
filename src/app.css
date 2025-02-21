@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import 'tailwindcss';
+
+@theme {
+	--font-sans:
+		'Noto Sans', Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--font-mono: 'Fira Mono', monospace;
+	--font-title: 'Fredoka One', var(--font-sans);
+	--color-mf-bg: #171d23;
+	--color-mf-card: #31363f;
+	--color-mf-unknown: #4f545d;
+	--color-mf-link: #75aaff;
+	--color-mf-heading: #ebebeb;
+	--color-mf-text: #cacfda;
+	--color-mf-event-background: #31363f;
+	--color-mf-pre-bg: rgba(255, 255, 255, 0.45);
+	--color-mf-light-translucent: rgba(255, 255, 255, 1);
+	--color-mf-dark-translucent: #171d23e0;
+
+	--shadow-mf-card: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+	--shadow-mf-card-clickable: 0 0 10px 6px rgba(0, 0, 0, 0.1);
+	--shadow-mf-pre: 2px 2px 6px rgb(255 255 255 / 25%);
+
+	--transition-mf-clickable:
+		0.125s ease-in-out, filter 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+}
+
+/* FROM OLD APP.CSS. PALLETE HERE IF USEFUL IN FUTURE. */
+/*@media (prefers-color-scheme: light) {*/
+/*    :root {*/
+/*        --background-color: #e3e3e7;*/
+/*        --card-color: #fff;*/
+/*        --unknown-color: #4f545d;*/
+/*        --link-color: #2654c5;*/
+/*        --heading-color: #1d1d1f;*/
+/*        --text-color: #282a2c;*/
+/*        --event-background-color: #ababb4;*/
+/*    }*/
+
+/*    .card a {*/
+/*        filter: brightness(0.7);*/
+/*    }*/
+/*}*/
+
+html {
+	@apply bg-mf-bg text-mf-text min-h-dvh;
+}
+
+#svelte {
+	@apply min-h-[80vh] flex flex-col;
+}
+
+@layer base {
+	h1,
+	h2 {
+		@apply text-mf-heading;
+	}
+
+	p {
+		@apply leading-6;
+	}
+
+	a {
+		@apply text-mf-link no-underline;
+	}
+
+	a:hover {
+		@apply underline;
+	}
+
+	h1 {
+		@apply text-2xl font-title mb-2;
+	}
+
+	h2 {
+		@apply text-2xl font-title;
+	}
+
+	h3 {
+		@apply text-base font-bold;
+	}
+
+	input,
+	button {
+		font-size: inherit;
+		font-family: inherit;
+	}
+
+	pre {
+		@apply text-base font-mono bg-mf-pre-bg rounded-sm p-2 overflow-x-auto text-mf-text shadow-(--shadow-mf-pre);
+	}
+}
+
+@layer components {
+	.card {
+		@apply shadow-mf-card rounded-2xl bg-mf-card p-5;
+
+		h1,
+		h2:first-child {
+			@apply mt-0 text-2xl tracking-wider mb-2;
+		}
+
+		strong {
+			color: var(--heading-color);
+		}
+
+		p {
+			margin-top: 0.5rem;
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+
+		li {
+			line-height: 1.5rem;
+			margin-bottom: 0.5rem;
+		}
+
+		ul:last-child {
+			margin-bottom: 0;
+		}
+
+		.clickable:hover {
+			@apply shadow-mf-card-clickable;
+		}
+
+		.clickable:active,
+		.clickable:focus {
+			@apply shadow-mf-card-clickable;
+		}
+	}
+
+	.clickable {
+		@apply !no-underline transition-(--transition-mf-clickable);
+	}
+	.clickable:hover {
+		@apply scale-[1.0125] brightness-[0.9];
+		/*transform: scale(1.0125);
+		filter: brightness(0.9);*/
+	}
+	.clickable:active,
+	.clickable:focus-visible {
+		@apply scale-[1.025] brightness-[0.8];
+		/*transform: scale(1.025);
+		filter: brightness(0.8); */
+	}
+
+	.nav-link {
+		@apply p-2 rounded-lg flex items-center justify-center;
+	}
+	.nav-link:hover {
+		background-color: rgba(0, 0, 0, 0.2);
+	}
+	.nav-link:active,
+	.nav-link:focus-visible {
+		background-color: rgba(0, 0, 0, 0.3);
+	}
+	.nav-link.nav-icon img {
+		height: 1.25rem;
+		width: 1.25rem;
+		object-fit: contain;
+	}
+
+	.button {
+		@apply px-5 py-3 rounded-xl bg-(--color-mf-link) text-(--color-mf-event-background) font-bold no-underline inline-block;
+	}
+}
+
+@layer utilities {
+	.pixelated {
+		image-rendering: pixelated;
+		image-rendering: -moz-crisp-edges;
+		image-rendering: crisp-edges;
+	}
+}
