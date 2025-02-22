@@ -6,7 +6,7 @@ export function formatPlural(text: String, amount: Number) {
 }
 
 export function getLink(submission: Submission) {
-  if (submission.platform.type === "modrinth") {
+  if (submission.platform?.type === "modrinth") {
     const data = submission.platform as ModrinthData;
     return `https://modrinth.com/project/${data.project_id}`;
   }

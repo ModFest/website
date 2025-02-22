@@ -78,7 +78,7 @@ export declare interface Submission {
   name: string;
   description: string;
   authors: string[];
-  platform: ModrinthData | GitHubData | UnknownData;
+  platform: ModrinthData | GitHubData | undefined;
   images: SubmissionImages;
   download: string;
   source: string;
@@ -95,10 +95,6 @@ export declare interface GitHubData {
   type: "github";
   namespace: string;
   repo: string;
-}
-
-export declare interface UnknownData {
-  type: "unknown";
 }
 
 export declare interface SubmissionImages {
