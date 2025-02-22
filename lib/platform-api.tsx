@@ -11,10 +11,6 @@ async function baseFetch(fetch: fetchT, route: string): Promise<any> {
     });
 }
 
-export async function fetchUsers(fetch: fetchT): Promise<User[]> {
-  return await baseFetch(fetch, `users`);
-}
-
 export async function fetchUser(fetch: fetchT, id: string): Promise<User> {
   return await baseFetch(fetch, `user/${id}`);
 }
