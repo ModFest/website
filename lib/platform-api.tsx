@@ -23,9 +23,22 @@ export async function fetchEvent(fetch: fetchT, id: string): Promise<Event> {
   return await baseFetch(fetch, `event/${id}`);
 }
 
-export async function fetchSubmissions(
+/**
+ * Fetches all submissions that were made for a given event
+ */
+export async function fetchEventSubmissions(
   fetch: fetchT,
   eventId: string,
 ): Promise<Submission[]> {
   return await baseFetch(fetch, `event/${eventId}/submissions`);
+}
+
+/**
+ * Fetches all submissions that a given user made
+ */
+export async function fetchUserSubmissions(
+  fetch: fetchT,
+  userId: string,
+): Promise<Submission[]> {
+  return await baseFetch(fetch, `user/${userId}/submissions`);
 }

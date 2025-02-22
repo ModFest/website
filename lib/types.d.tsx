@@ -8,7 +8,6 @@ export declare interface User {
   bio: string;
   icon: string;
   registered: Set<string>;
-  submissions: Submission[] | null;
 }
 
 declare interface Event {

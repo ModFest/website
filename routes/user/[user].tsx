@@ -2,7 +2,7 @@ import { PageProps } from "$fresh/server.ts";
 
 import { RouteContext } from "$fresh/server.ts";
 import { formatPlural, getLink } from "../../lib/helpers.tsx";
-import { fetchUser } from "../../lib/platform-api.tsx";
+import { fetchUser, fetchUserSubmissions } from "../../lib/platform-api.tsx";
 
 export default async function User(
   props: PageProps,
@@ -10,6 +10,7 @@ export default async function User(
   ctx: RouteContext,
 ) {
   const user = await fetchUser(fetch, req.params.user);
+  const submissions = await fetchUserSubmissions(fetch, req.params.user)
   return (
     <div class="flex flex-col gap-4 mb-16">
       {user && (
@@ -26,11 +27,11 @@ export default async function User(
               <h1 class="m-0">{user.name}</h1>
               {user.pronouns && <p class="m-0 text-sm">({user.pronouns})</p>}
             </span>
-            {user.submissions
+            {submissions
               ? (
                 <p>
                   {user.name} has submitted{" "}
-                  {formatPlural("project", user.submissions.length)}{" "}
+                  {formatPlural("project", submissions.length)}{" "}
                   to ModFest events.
                 </p>
               )
@@ -42,9 +43,9 @@ export default async function User(
           </div>
         </div>
       )}
-      {user && user.submissions && (
+      {user && submissions && (
         <div class="grid grid-cols-2 sm:grid-cols-2 gap-4">
-          {user.submissions.map((submission: Submission, submissionIndex) => (
+          {submissions.map((submission: Submission, submissionIndex) => (
             <a
               class="shadow-(--shadow-mf-card) rounded-2xl bg-mf-card overflow-hidden text-[unset] clickable"
               key={submissionIndex}

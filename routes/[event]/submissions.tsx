@@ -1,7 +1,7 @@
 import { PageProps } from "$fresh/server.ts";
 
 import { RouteContext } from "$fresh/server.ts";
-import { fetchEvent, fetchSubmissions, fetchUser } from "../../lib/platform-api.tsx";
+import { fetchEvent, fetchEventSubmissions, fetchUser } from "../../lib/platform-api.tsx";
 import { formatPlural, getLink } from "../../lib/helpers.tsx";
 import { Submission } from "../../lib/types.d.tsx";
 
@@ -11,7 +11,7 @@ export default async function Submissions(
   ctx: RouteContext,
 ) {
   const event = await fetchEvent(fetch, req.params.event);
-  const submissions = await fetchSubmissions(fetch, req.params.event);
+  const submissions = await fetchEventSubmissions(fetch, req.params.event);
   // Fetch user data of all authors
   const users = (await Promise.all([...new Set(submissions.flatMap(s => s.authors))].map(author => fetchUser(fetch, author))))
   const participants = new Set<string>();
