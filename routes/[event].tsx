@@ -1,14 +1,12 @@
-import { PageProps } from "$fresh/server.ts";
+import { RouteContext } from "$fresh/server.ts";
 import { render } from "@deno/gfm";
 
 import { fetchEvent, fetchEventSubmissions } from "../lib/platform-api.tsx";
 import { MarkdownDescriptionItem } from "../lib/types.d.tsx";
 
-export default async function Event(
-  props: PageProps,
-) {
-  const event = await fetchEvent(fetch, props.params.event);
-  const submissions = await fetchEventSubmissions(fetch, props.params.event);
+export default async function Event(_req: Request, ctx: RouteContext) {
+  const event = await fetchEvent(fetch, ctx.params.event);
+  const submissions = await fetchEventSubmissions(fetch, ctx.params.event);
   return (
     <div
       class="flex flex-col gap-4 mb-16"
