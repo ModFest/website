@@ -1,16 +1,14 @@
 import { PageProps } from "$fresh/server.ts";
 import { render } from "@deno/gfm";
 
-import { RouteContext } from "$fresh/server.ts";
 import { fetchEvent, fetchEventSubmissions } from "../lib/platform-api.tsx";
+import { MarkdownDescriptionItem } from "../lib/types.d.tsx";
 
 export default async function Event(
   props: PageProps,
-  req: Request,
-  ctx: RouteContext,
 ) {
-  const event = await fetchEvent(fetch, req.params.event);
-  const submissions = await fetchEventSubmissions(fetch, req.params.event);
+  const event = await fetchEvent(fetch, props.params.event);
+  const submissions = await fetchEventSubmissions(fetch, props.params.event);
   return (
     <div
       class="flex flex-col gap-4 mb-16"
@@ -90,7 +88,7 @@ export default async function Event(
           <div
             class="card"
             dangerouslySetInnerHTML={{
-              __html: render(section.content.markdown),
+              __html: render((section as MarkdownDescriptionItem).content.markdown),
             }}
           />
         ))

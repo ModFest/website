@@ -10,7 +10,7 @@ export declare interface User {
   registered: Set<string>;
 }
 
-declare interface Event {
+export declare interface Event {
   id: string;
   name: string;
   subtitle: string;

@@ -1,16 +1,14 @@
 import { PageProps } from "$fresh/server.ts";
 
-import { RouteContext } from "$fresh/server.ts";
 import { formatPlural, getLink } from "../../lib/helpers.tsx";
 import { fetchUser, fetchUserSubmissions } from "../../lib/platform-api.tsx";
+import { Submission } from "../../lib/types.d.tsx";
 
 export default async function User(
   props: PageProps,
-  req: Request,
-  ctx: RouteContext,
 ) {
-  const user = await fetchUser(fetch, req.params.user);
-  const submissions = await fetchUserSubmissions(fetch, req.params.user)
+  const user = await fetchUser(fetch, props.params.user);
+  const submissions = await fetchUserSubmissions(fetch, props.params.user)
   return (
     <div class="flex flex-col gap-4 mb-16">
       {user && (

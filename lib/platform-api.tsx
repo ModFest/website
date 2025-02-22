@@ -1,8 +1,9 @@
-import type { Submission, User } from "./types.d.tsx";
+import type { Submission, User, Event } from "./types.d.tsx";
 
 type fetchT = typeof fetch;
 const API_URL = Deno.env.get("API_URL")
 
+// deno-lint-ignore no-explicit-any
 async function baseFetch(fetch: fetchT, route: string): Promise<any> {
   return await fetch(`${API_URL ?? "https://platform.modfest.net"}/${route}`)
     .then((response) => response.json())
