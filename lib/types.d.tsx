@@ -7,7 +7,6 @@ export declare interface User {
   discordId: string;
   bio: string;
   icon: string;
-  badges: Set<string>;
   registered: Set<string>;
   submissions: Submission[] | null;
 }
@@ -73,13 +72,6 @@ export declare interface MarkdownDescriptionItem {
 export declare interface UnknownDescriptionItem {
   type: string;
   content: object;
-}
-
-export declare interface Badge {
-  id: string;
-  name: string;
-  icon: string;
-  description: string;
 }
 
 export declare interface Submission {
