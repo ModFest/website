@@ -36,8 +36,8 @@ export declare interface DateRange {
   name: string;
   phase: Phase;
   description?: string;
-  start: Date;
-  end: Date;
+  start: string; // ISO-8086 formatted string
+  end: string; // ISO-8086 formatted string
 }
 
 export declare interface EventImages {
