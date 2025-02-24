@@ -7,14 +7,17 @@ import { Submission } from "../../lib/types.d.tsx";
 export default async function Submissions(_req: Request, ctx: RouteContext) {
   const event = await fetchEvent(fetch, ctx.params.event);
   const submissions = await fetchEventSubmissions(fetch, ctx.params.event);
+  submissions.sort((a,b) => a?.name?.localeCompare(b?.name));
   // Fetch user data of all authors
   const users = (await Promise.all([...new Set(submissions.flatMap(s => s.authors))].map(author => fetchUser(fetch, author))))
   const participants = new Set<string>();
+
   if (submissions) {
     submissions.forEach((submissions: Submission) => {
       submissions.authors.forEach((author) => participants.add(author));
     });
   }
+  
   return (
     <div
       class="flex flex-col gap-4 mb-16"
