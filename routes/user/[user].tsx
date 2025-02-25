@@ -60,6 +60,15 @@ export default async function User(_req: Request, ctx: RouteContext) {
                     alt="Gallery image for {submission.name}"
                   />
                 )}
+                {submission.images && !submission.images.screenshot &&
+                  submission.images.icon && (
+                  <img
+                    draggable={false}
+                    class="w-full rotate-45 scale-[300%] opacity-95 pixelated h-40 object-cover"
+                    src={submission.images.icon}
+                    alt={`Icon for ${submission.name}`}
+                  />
+                )}
               </div>
               <div class="p-4 pt-3 self-center">
                 {submission.images && submission.images.icon && (
