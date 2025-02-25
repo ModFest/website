@@ -6,7 +6,11 @@ import { Submission } from "../../lib/types.d.tsx";
 
 export default async function User(_req: Request, ctx: RouteContext) {
   const user = await fetchUser(fetch, ctx.params.user);
-  const submissions = await fetchUserSubmissions(fetch, ctx.params.user)
+  const submissions = await fetchUserSubmissions(fetch, ctx.params.user);
+
+  if (!user.id) {
+    return ctx.renderNotFound();
+  }
   return (
     <div class="flex flex-col gap-4 mb-16">
       {user && (

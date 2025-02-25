@@ -1,15 +1,28 @@
 import { RouteContext } from "$fresh/server.ts";
 
-import { fetchEvent, fetchEventSubmissions, fetchUser } from "../../lib/platform-api.tsx";
+import {
+  fetchEvent,
+  fetchEventSubmissions,
+  fetchUser,
+} from "../../lib/platform-api.tsx";
 import { formatPlural, getLink } from "../../lib/helpers.tsx";
 import { Submission } from "../../lib/types.d.tsx";
 
 export default async function Submissions(_req: Request, ctx: RouteContext) {
   const event = await fetchEvent(fetch, ctx.params.event);
+
+  if (!event.id) {
+    return ctx.renderNotFound();
+  }
+
   const submissions = await fetchEventSubmissions(fetch, ctx.params.event);
-  submissions.sort((a,b) => a?.name?.localeCompare(b?.name));
+  submissions.sort((a, b) => a?.name?.localeCompare(b?.name));
   // Fetch user data of all authors
-  const users = (await Promise.all([...new Set(submissions.flatMap(s => s.authors))].map(author => fetchUser(fetch, author))))
+  const users = await Promise.all(
+    [...new Set(submissions.flatMap((s) => s.authors))].map((author) =>
+      fetchUser(fetch, author)
+    ),
+  );
   const participants = new Set<string>();
 
   if (submissions) {
@@ -17,7 +30,7 @@ export default async function Submissions(_req: Request, ctx: RouteContext) {
       submissions.authors.forEach((author) => participants.add(author));
     });
   }
-  
+
   return (
     <div
       class="flex flex-col gap-4 mb-16"
@@ -26,7 +39,7 @@ export default async function Submissions(_req: Request, ctx: RouteContext) {
       <a
         href={`/${event.id}`}
         class="card flex flex-row gap-4 clickable"
-        style="background-color: #{event.colors.secondary}"
+        style={`background-color: #${event.colors.secondary}`}
       >
         <div class="icon">
           <img
@@ -47,7 +60,7 @@ export default async function Submissions(_req: Request, ctx: RouteContext) {
                 "modder",
                 participants.size,
               )
-            } ${event.phase === "modding" ? " so far" : ""}.`}
+            }${event.phase === "modding" ? "so far" : ""}.`}
           </p>
         </div>
       </a>
@@ -62,9 +75,19 @@ export default async function Submissions(_req: Request, ctx: RouteContext) {
               <div class="w-full bg-mf-unknown h-40 overflow-hidden z-[5]">
                 {submission.images && submission.images.screenshot && (
                   <img
+                    draggable={false}
                     class="w-full h-40 object-cover"
                     src={submission.images.screenshot}
-                    alt="Gallery image for {submission.name}"
+                    alt={`Gallery image for ${submission.name}`}
+                  />
+                )}
+                {submission.images && !submission.images.screenshot &&
+                  submission.images.icon && (
+                  <img
+                    draggable={false}
+                    class="w-full rotate-45 scale-[300%] opacity-95 pixelated h-40 object-cover"
+                    src={submission.images.icon}
+                    alt={`Icon for ${submission.name}`}
                   />
                 )}
               </div>
@@ -74,9 +97,10 @@ export default async function Submissions(_req: Request, ctx: RouteContext) {
                 <a href={getLink(submission)} target="_blank">
                   <div class="w-24 h-24 object-contain rounded-2xl border-mf-card border-4 border-solid mt-[-4rem] bg-mf-unknown overflow-hidden z-10 absolute">
                     <img
+                      draggable={false}
                       class="w-24 h-24 pixelated"
                       src={submission.images.icon}
-                      alt="Icon for {submission.name}"
+                      alt={`Icon for ${submission.name}`}
                     />
                   </div>
                 </a>

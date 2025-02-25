@@ -6,6 +6,11 @@ import { MarkdownDescriptionItem } from "../lib/types.d.tsx";
 
 export default async function Event(_req: Request, ctx: RouteContext) {
   const event = await fetchEvent(fetch, ctx.params.event);
+
+  if (!event.id) {
+    return ctx.renderNotFound();
+  }
+
   const submissions = await fetchEventSubmissions(fetch, ctx.params.event);
   return (
     <div
@@ -86,7 +91,9 @@ export default async function Event(_req: Request, ctx: RouteContext) {
           <div
             class="card"
             dangerouslySetInnerHTML={{
-              __html: render((section as MarkdownDescriptionItem).content.markdown),
+              __html: render(
+                (section as MarkdownDescriptionItem).content.markdown,
+              ),
             }}
           />
         ))
