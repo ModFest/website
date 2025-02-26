@@ -71,7 +71,7 @@ export default async function Submissions(_req: Request, ctx: RouteContext) {
             <SubmissionComponent
               submission={submission}
               users={users}
-              submissionIndex={submissionIndex}
+              key={submissionIndex}
             />
             <div
               class="shadow-(--shadow-mf-card) rounded-2xl bg-mf-card overflow-hidden text-[unset] clickable"
