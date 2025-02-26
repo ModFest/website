@@ -57,7 +57,7 @@ export default async function User(_req: Request, ctx: RouteContext) {
                   <img
                     class="w-full h-40 object-cover"
                     src={submission.images.screenshot}
-                    alt="Gallery image for {submission.name}"
+                    alt={`Gallery image for ${submission.name}`}
                   />
                 )}
                 {submission.images && !submission.images.screenshot &&
@@ -76,7 +76,7 @@ export default async function User(_req: Request, ctx: RouteContext) {
                     <img
                       class="w-24 h-24 pixelated"
                       src={submission.images.icon}
-                      alt="Icon for {submission.name}"
+                      alt={`Icon for ${submission.name}`}
                     />
                   </div>
                 )}

@@ -23,7 +23,7 @@ export default async function Index(req: Request, ctx: RouteContext) {
         <a
           href={event.id}
           className="card p-0 overflow-hidden relative aspect-[5/2] clickable"
-          style="background-color: #{event.colors.secondary}"
+          style={`background-color: #${event.colors.secondary}`}
         >
           <img
             className="absolute w-full h-full inset-0 object-cover p-0"
