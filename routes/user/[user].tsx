@@ -1,6 +1,6 @@
 import { RouteContext } from "$fresh/server.ts";
 
-import { formatPlural, getLink } from "../../lib/helpers.tsx";
+import { formatPlural } from "../../lib/helpers.tsx";
 import { fetchUser, fetchUserSubmissions } from "../../lib/platform-api.tsx";
 import { Submission } from "../../lib/types.d.tsx";
 import { Submission as SubmissionComponent } from "../../components/Submission.tsx";
@@ -49,58 +49,10 @@ export default async function User(_req: Request, ctx: RouteContext) {
       {user && submissions && (
         <div class="grid grid-cols-2 sm:grid-cols-2 gap-4">
           {submissions.map((submission: Submission, submissionIndex) => (
-            <>
-              <SubmissionComponent
-                submission={submission}
-                key={submissionIndex}
-              />
-              <a
-                class="shadow-(--shadow-mf-card) rounded-2xl bg-mf-card overflow-hidden text-[unset] clickable"
-                key={submissionIndex}
-                href={getLink(submission)}
-                target="_blank"
-              >
-                <div class="w-full bg-mf-unknown h-40 overflow-hidden z-[5]">
-                  {submission.images && submission.images.screenshot && (
-                    <img
-                      class="w-full h-40 object-cover"
-                      src={submission.images.screenshot}
-                      alt="Gallery image for {submission.name}"
-                    />
-                  )}
-                  {submission.images && !submission.images.screenshot &&
-                    submission.images.icon && (
-                    <img
-                      draggable={false}
-                      class="w-full rotate-45 scale-[300%] opacity-95 pixelated h-40 object-cover"
-                      src={submission.images.icon}
-                      alt={`Icon for ${submission.name}`}
-                    />
-                  )}
-                </div>
-                <div class="p-4 pt-3 self-center">
-                  {submission.images && submission.images.icon && (
-                    <div class="w-24 h-24 object-contain rounded-2xl border-mf-card border-4 border-solid mt-[-4rem] bg-mf-unknown overflow-hidden z-10 absolute">
-                      <img
-                        class="w-24 h-24 pixelated"
-                        src={submission.images.icon}
-                        alt="Icon for {submission.name}"
-                      />
-                    </div>
-                  )}
-                  <div
-                    class={submission.images && submission.images.icon
-                      ? "ml-[7.25rem]"
-                      : ""}
-                  >
-                    <h3 class="m-0 text-mf-heading">{submission.name}</h3>
-                  </div>
-                  <p className="m-0 mt-2 text-mf-heading">
-                    {submission.description}
-                  </p>
-                </div>
-              </a>
-            </>
+            <SubmissionComponent
+              submission={submission}
+              key={submissionIndex}
+            />
           ))}
         </div>
       )}
