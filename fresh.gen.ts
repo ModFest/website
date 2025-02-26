@@ -7,6 +7,7 @@ import * as $_event_submissions from "./routes/[event]/submissions.tsx";
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $index from "./routes/index.tsx";
+import * as $pages_page_ from "./routes/pages/[page].tsx";
 import * as $user_user_ from "./routes/user/[user].tsx";
 
 import type { Manifest } from "$fresh/server.ts";
@@ -18,6 +19,7 @@ const manifest = {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
     "./routes/index.tsx": $index,
+    "./routes/pages/[page].tsx": $pages_page_,
     "./routes/user/[user].tsx": $user_user_,
   },
   islands: {},
