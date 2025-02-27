@@ -118,16 +118,20 @@ export default async function Event(_req: Request, ctx: RouteContext) {
         </header>
         <div className="w-full bg-[#86dbfe] bg-[url(/assets/vanity/bc25/sprites/gradient.png)] h-6 mt-2 bg-repeat-x bg-contain pixelated" />
       </div>
-      <div className="flex flex-col gap-4 bg-[url(/assets/vanity/bc25/sprites/clouds.png)] bg-cover bg-repeat-x pixelated slide">
+      <div className="flex flex-col bg-[url(/assets/vanity/bc25/sprites/clouds.png)] bg-cover bg-repeat-x pixelated slide">
+        <img
+          src="/assets/vanity/bc25/Logo_Opening.png"
+          className=" w-56 pixelated pt-12 max-w-4xl m-[auto] hover"
+          alt=""
+        />
         <img
           src="/assets/vanity/bc25/bc25_logo.png"
-          className="w-full pixelated px-12 py-24 max-w-4xl m-[auto] hover"
+          className="w-full pixelated px-4 pb-24 -mt-8 max-w-4xl m-[auto] hover"
           alt=""
         />
       </div>
       <div className="bg-[#185090]">
-        <div className="w-full bg-[url(/assets/vanity/bc25/sprites/wave.png)] h-10 bg-repeat-x bg-contain pixelated slide">
-        </div>
+        <div className="w-full bg-[url(/assets/vanity/bc25/sprites/wave.png)] h-10 bg-repeat-x bg-contain pixelated slide" />
         <div className="flex flex-col gap-4 max-w-4xl m-[auto] ">
           {event.description.map((section) => (section.type === "markdown" &&
             (
