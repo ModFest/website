@@ -5,17 +5,21 @@ export type SubmissionProps = {
   submission: Submission;
   users?: User[];
   key?: number;
+  className?: string;
 };
 
 const defaultProps = {
   users: undefined,
   key: undefined,
+  className: "",
 };
 
 export function Submission(props: SubmissionProps) {
   props = { ...defaultProps, ...props };
   return (
-    <div class="shadow-(--shadow-mf-card) rounded-2xl bg-mf-card overflow-hidden text-[unset] clickable">
+    <div
+      class={`shadow-(--shadow-mf-card) rounded-2xl bg-mf-card overflow-hidden text-[unset] clickable ${props.className}`}
+    >
       <a href={getLink(props.submission)} target="_blank">
         <div class="w-full bg-mf-unknown h-40 overflow-hidden z-[5]">
           {props.submission.images && props.submission.images.screenshot && (
@@ -35,6 +39,16 @@ export function Submission(props: SubmissionProps) {
               alt={`Icon for ${props.submission.name}`}
             />
           )}
+          {props.submission.images &&
+            (
+              <div
+                class="w-full h-40 object-cover"
+                style={`background-color: var(--event-${
+                  props.submission.event?.replace(".", "-")
+                }-coloured)`}
+              >
+              </div>
+            )}
         </div>
       </a>
       <div class="p-4 pt-3 self-center">

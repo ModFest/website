@@ -76,6 +76,7 @@ export declare interface UnknownDescriptionItem {
 export declare interface Submission {
   id: string;
   name: string;
+  event?: string;
   description: string;
   authors: string[];
   platform: ModrinthData | GitHubData | undefined;

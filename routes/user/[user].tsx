@@ -1,12 +1,19 @@
 import { RouteContext } from "$fresh/server.ts";
 
-import { formatPlural } from "../../lib/helpers.tsx";
-import { fetchUser, fetchUserSubmissions } from "../../lib/platform-api.tsx";
-import { Submission } from "../../lib/types.d.tsx";
-import { Submission as SubmissionComponent } from "../../components/Submission.tsx";
+import { formatPlural, getDate } from "../../lib/helpers.tsx";
+import {
+  fetchEvents,
+  fetchUser,
+  fetchUserSubmissions,
+} from "../../lib/platform-api.tsx";
+import { Event, Submission } from "../../lib/types.d.tsx";
+import {
+  Submission as SubmissionComponent,
+} from "../../components/Submission.tsx";
 
 export default async function User(_req: Request, ctx: RouteContext) {
   const user = await fetchUser(fetch, ctx.params.user);
+  const events = await fetchEvents(fetch);
 
   if (!user.id) {
     return ctx.renderNotFound();
@@ -47,14 +54,42 @@ export default async function User(_req: Request, ctx: RouteContext) {
         </div>
       )}
       {user && submissions && (
-        <div class="grid grid-cols-2 sm:grid-cols-2 gap-4">
-          {submissions.map((submission: Submission, submissionIndex) => (
-            <SubmissionComponent
-              submission={submission}
-              key={submissionIndex}
-            />
-          ))}
-        </div>
+        <>
+          <div class="flex flex-col items-center gap-4">
+            <h1 class="">Event Submissions</h1>
+            {events.sort((a: Event, b: Event) =>
+              getDate(a) > getDate(b) ? 1 : -1
+            ).reverse()
+              .filter((event: Event) => {
+                return submissions.filter((submission: Submission) =>
+                  submission.event === event.id
+                ).length > 0;
+              }).map((event: Event, eventIndex) => (
+                <div
+                  class="card flex flex-col gap-2 w-full"
+                  style={`--event-${
+                    event.id.replace(".", "-")
+                  }-coloured: #${event.colors.secondary}`}
+                  key={eventIndex}
+                >
+                  <h2>{event.name}</h2>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {submissions.filter((submission: Submission) => {
+                      return submission.event === event.id;
+                    }).sort((a: Submission, b: Submission) =>
+                      a.name.localeCompare(b.name)
+                    ).map((submission: Submission, submissionIndex) => (
+                      <SubmissionComponent
+                        className="!bg-mf-bg"
+                        submission={submission}
+                        key={submissionIndex}
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))}
+          </div>
+        </>
       )}
     </div>
   );

@@ -1,4 +1,4 @@
-import { ModrinthData, Submission } from "./types.d.tsx";
+import { Event, ModrinthData, Submission } from "./types.d.tsx";
 
 export function formatPlural(text: String, amount: Number) {
   // i18n can be a future problem.
@@ -10,4 +10,15 @@ export function getLink(submission: Submission) {
     const data = submission.platform as ModrinthData;
     return `https://modrinth.com/project/${data.project_id}`;
   }
+}
+
+export function getDate(event: Event): string {
+  let startPhase = event.dates.find((d) => d.phase === "modding");
+  if (!startPhase) {
+    startPhase = event.dates.find((d) => d.phase === "planning");
+  }
+  if (!startPhase) {
+    startPhase = event.dates[0];
+  }
+  return startPhase.start === undefined ? startPhase.end : startPhase.start;
 }
