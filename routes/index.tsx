@@ -1,22 +1,13 @@
 import { RouteContext } from "$fresh/server.ts";
+import { getDate } from "../lib/helpers.tsx";
 import { fetchEvents } from "../lib/platform-api.tsx";
 import { Event } from "../lib/types.d.tsx";
-
-function getDate(event: Event): string {
-  let startPhase = event.dates.find(d => d.phase === "modding")
-  if (!startPhase) {
-    startPhase = event.dates.find(d => d.phase === "planning")
-  }
-  if (!startPhase) {
-    startPhase = event.dates[0]
-  }
-  return startPhase.start === undefined ? startPhase.end : startPhase.start;
-}
 
 export default async function Index(req: Request, ctx: RouteContext) {
   const events = await fetchEvents(fetch);
   // ISO-8086 dates can be compared lexicographically
-  events.sort((a,b) => getDate(a) > getDate(b) ? 1 : -1).reverse();
+  events.sort((a: Event, b: Event) => getDate(a) > getDate(b) ? 1 : -1)
+    .reverse();
   return (
     <div class="flex flex-col gap-4 mb-16">
       {events.map((event) => (
