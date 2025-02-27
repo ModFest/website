@@ -1,16 +1,26 @@
 import { RouteContext } from "$fresh/server.ts";
 
-import { formatPlural, getLink } from "../../lib/helpers.tsx";
-import { fetchUser, fetchUserSubmissions } from "../../lib/platform-api.tsx";
-import { Submission } from "../../lib/types.d.tsx";
+import { formatPlural, getDate } from "../../lib/helpers.tsx";
+import {
+  fetchEvents,
+  fetchUser,
+  fetchUserSubmissions,
+} from "../../lib/platform-api.tsx";
+import { Event, Submission } from "../../lib/types.d.tsx";
+import {
+  Submission as SubmissionComponent,
+} from "../../components/Submission.tsx";
 
 export default async function User(_req: Request, ctx: RouteContext) {
   const user = await fetchUser(fetch, ctx.params.user);
-  const submissions = await fetchUserSubmissions(fetch, ctx.params.user);
+  const events = await fetchEvents(fetch);
 
   if (!user.id) {
     return ctx.renderNotFound();
   }
+
+  const submissions = await fetchUserSubmissions(fetch, ctx.params.user);
+
   return (
     <div class="flex flex-col gap-4 mb-16">
       {user && (
@@ -18,7 +28,7 @@ export default async function User(_req: Request, ctx: RouteContext) {
           <div>
             <img
               alt={`Icon for user ${user.name}`}
-              class="h-16 bg-mf-unknown w-16 rounded-full"
+              class="h-16 bg-mf-unknown w-16 rounded-full min-w-16 object-cover"
               src={user.icon}
             />
           </div>
@@ -44,56 +54,42 @@ export default async function User(_req: Request, ctx: RouteContext) {
         </div>
       )}
       {user && submissions && (
-        <div class="grid grid-cols-2 sm:grid-cols-2 gap-4">
-          {submissions.map((submission: Submission, submissionIndex) => (
-            <a
-              class="shadow-(--shadow-mf-card) rounded-2xl bg-mf-card overflow-hidden text-[unset] clickable"
-              key={submissionIndex}
-              href={getLink(submission)}
-              target="_blank"
-            >
-              <div class="w-full bg-mf-unknown h-40 overflow-hidden z-[5]">
-                {submission.images && submission.images.screenshot && (
-                  <img
-                    class="w-full h-40 object-cover"
-                    src={submission.images.screenshot}
-                    alt={`Gallery image for ${submission.name}`}
-                  />
-                )}
-                {submission.images && !submission.images.screenshot &&
-                  submission.images.icon && (
-                  <img
-                    draggable={false}
-                    class="w-full rotate-45 scale-[300%] opacity-95 pixelated h-40 object-cover"
-                    src={submission.images.icon}
-                    alt={`Icon for ${submission.name}`}
-                  />
-                )}
-              </div>
-              <div class="p-4 pt-3 self-center">
-                {submission.images && submission.images.icon && (
-                  <div class="w-24 h-24 object-contain rounded-2xl border-mf-card border-4 border-solid mt-[-4rem] bg-mf-unknown overflow-hidden z-10 absolute">
-                    <img
-                      class="w-24 h-24 pixelated"
-                      src={submission.images.icon}
-                      alt={`Icon for ${submission.name}`}
-                    />
-                  </div>
-                )}
+        <>
+          <div class="flex flex-col items-center gap-4">
+            <h1 class="">Event Submissions</h1>
+            {events.sort((a: Event, b: Event) =>
+              getDate(a) > getDate(b) ? 1 : -1
+            ).reverse()
+              .filter((event: Event) => {
+                return submissions.filter((submission: Submission) =>
+                  submission.event === event.id
+                ).length > 0;
+              }).map((event: Event, eventIndex) => (
                 <div
-                  class={submission.images && submission.images.icon
-                    ? "ml-[7.25rem]"
-                    : ""}
+                  class="card flex flex-col gap-2 w-full"
+                  style={`--event-${
+                    event.id.replace(".", "-")
+                  }-coloured: #${event.colors.secondary}`}
+                  key={eventIndex}
                 >
-                  <h3 class="m-0 text-mf-heading">{submission.name}</h3>
+                  <h2>{event.name}</h2>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {submissions.filter((submission: Submission) => {
+                      return submission.event === event.id;
+                    }).sort((a: Submission, b: Submission) =>
+                      a.name.localeCompare(b.name)
+                    ).map((submission: Submission, submissionIndex) => (
+                      <SubmissionComponent
+                        className="!bg-mf-bg"
+                        submission={submission}
+                        key={submissionIndex}
+                      />
+                    ))}
+                  </div>
                 </div>
-                <p className="m-0 mt-2 text-mf-heading">
-                  {submission.description}
-                </p>
-              </div>
-            </a>
-          ))}
-        </div>
+              ))}
+          </div>
+        </>
       )}
     </div>
   );

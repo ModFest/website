@@ -13,7 +13,7 @@ export default function App({ Component }: PageProps) {
 
       <body>
         <div>
-          <div class="flex flex-col gap-4 max-w-4xl m-[auto]">
+          <div class="flex flex-col gap-4 max-w-4xl px-4 m-[auto]">
             <Header />
             <main>
               <Component />
