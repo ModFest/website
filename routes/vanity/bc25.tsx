@@ -24,10 +24,10 @@ export default async function Event(_req: Request, ctx: RouteContext) {
       </Head>
       <div className="bg-[#222034]">
         <header className="max-w-4xl m-[auto]">
-          <nav className="card mt-4 flex flex-col gap-2 relative">
+          <nav className="card p-0 mt-4 flex flex-col gap-2 relative">
             <div className="flex flex-col sm:flex-row justify-start items-center gap-2">
               <a
-                className="nav-link flex h-12 gap-2 no-underline clickable-vanity absolute left-0"
+                className="nav-link flex h-12 gap-2 no-underline clickable-vanity absolute -left-2"
                 href="/"
               >
                 <img
