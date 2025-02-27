@@ -19,7 +19,7 @@ export default async function Event(_req: Request, ctx: RouteContext) {
     >
       <div
         class="card p-0 overflow-hidden relative aspect-[5/2]"
-        style="background-color: #{event.colors.secondary}"
+        style={`background-color: #${event.colors.secondary}`}
       >
         <img
           class="absolute w-full h-full inset-0 object-cover p-0"

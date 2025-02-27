@@ -1,5 +1,5 @@
 import {JSX} from "preact";
-export function Header(_props: JSX.HTMLAttributes<HTMLButtonElement>) {
+export function Header(_props: JSX.HTMLAttributes<HTMLElement>) {
     return (
         <header>
             <nav className="card mt-4 flex flex-col gap-2">
