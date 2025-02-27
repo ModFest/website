@@ -28,7 +28,7 @@ export default async function User(_req: Request, ctx: RouteContext) {
           <div>
             <img
               alt={`Icon for user ${user.name}`}
-              class="h-16 bg-mf-unknown w-16 rounded-full"
+              class="h-16 bg-mf-unknown w-16 rounded-full min-w-16 object-cover"
               src={user.icon}
             />
           </div>
