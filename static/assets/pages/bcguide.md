@@ -146,7 +146,7 @@ Once built, a screenshot and coordinates should be sent in for approval, whereup
 ## Booth Building
 
 When building your booth note that, by default, tourists **cannot**:
-- Perform suvival mode actions (break and place blocks, start fires, or place entities)
+- Perform survival mode actions (break and place blocks, start fires, or place entities)
 - Interact with containers such as chests, dispensers, shulker boxes, or hoppers.
 - Interact with common decoratives such as trapdoors, flower pots, and fence gates.
 - Interact with non-input redstone components such as repeaters and comparators.
@@ -162,11 +162,29 @@ Generally, when building your booth, try to:
 
 <details>
 <summary>Helpful Utilities</summary>
-- Glowcase Displays
-- Arealib Areas
-- Barricade
-- WE/Axiom
-- Fireblanket Spawns
+<center>
+    
+![Glowcase Displays](https://hackmd.io/_uploads/BJomMuT51e.png)
+**Glowcase** *offers various displays for text, items, sprites, sounds and more.*<br>
+*If you need an asset such as a sprite or sound added to the resource pack, contact the team so we can arrange it.*
+
+![Arealib Areas](https://hackmd.io/_uploads/BJflHupcJl.png)
+**Arealib** *allows builders to define* Areas *for commands and compatible mods to efficiently track player presence.*<br/>
+*For example, our in-house mod Meret uses areas to control location-specific music.*<br>
+*You can also use Area Tools to restrict item use on the inside or outside of an Area.*
+
+![Barricade](https://hackmd.io/_uploads/rynLUuTcyl.png)
+**Barricade**'s *barriers limit movement, filtering by entity type or movement direction.*<br/>
+*A more expensive but powerful Advanced Barrier is also available.*
+
+![WE/Axiom](https://hackmd.io/_uploads/HJL6TwTqyg.png)
+**WorldEdit** *and* **Axiom** *let you make large, detailed modifications to the world.*<br>
+*They are also particularly useful for clearing space, or copying builds around.*
+
+![Fireblanket Spawns](https://hackmd.io/_uploads/HkNYwOp5Jx.png)
+*Fireblanket makes most entities immortal by default.*<br/>
+*To make an entity killable, spawn it with a spawn egg, or modify your command.*
+</center>
 </details>
 
 ---
