@@ -39,7 +39,7 @@ export function Submission(props: SubmissionProps) {
               alt={`Icon for ${props.submission.name}`}
             />
           )}
-          {props.submission.images &&
+          {!props.submission.images &&
             (
               <div
                 class="w-full h-40 object-cover"
