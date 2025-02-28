@@ -10,7 +10,7 @@ export default async function Index(req: Request, ctx: RouteContext) {
     .reverse();
   return (
     <div class="flex flex-col gap-4 mb-16">
-      {events.map((event) => (
+      {events.map((event) => event.phase == "planning" ? "" : (
         <a
           href={event.id}
           className="card p-0 overflow-hidden relative aspect-[5/2] clickable"
