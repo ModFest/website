@@ -126,16 +126,54 @@ export default async function Event(_req: Request, ctx: RouteContext) {
         />
         <img
           src="/assets/vanity/bc25/bc25_logo.png"
-          className="w-full pixelated px-4 pb-24 -mt-8 max-w-4xl m-[auto] hover"
+          className="w-full pixelated px-4 -mt-8 max-w-4xl m-[auto] hover"
           alt=""
         />
+        <div class="justify-center flex gap-4 mb-24">
+          {(event.phase === "planning" || event.phase === "modding") &&
+            (
+              <a
+                href="https://discord.gg/gn543Ee"
+                target="_blank"
+                class="button"
+              >
+                Register on Discord!
+              </a>
+            )}
+          {event.phase === "showcase" && event.modpack &&
+            (
+              <a
+                href={event.modpack}
+                target="_blank"
+                class="button"
+              >
+                Play!
+              </a>
+            )}
+          {event.phase === "complete" && event.modpack &&
+            (
+              <a
+                href={event.modpack}
+                target="_blank"
+                class="button"
+              >
+                Download Modpack
+              </a>
+            )}
+          {submissions.length > 0 &&
+            (
+              <a href={`/${event.id}/submissions`} class="button clickable">
+                View Submissions
+              </a>
+            )}
+        </div>
       </div>
       <div className="bg-[#185090] bg-repeat bg-[auto_96px] bg-[center_top_48px] pixelated">
         <div className="w-full bg-[url(/assets/vanity/bc25/sprites/wave.png)] h-[48px] bg-repeat-x bg-contain pixelated slide" />
         <img
-          src="/assets/vanity/bc25/island.webp"
+          src="/assets/vanity/bc25/island.apng"
           alt="the volcano island spinning"
-          className="pixelated w-4xl -mt-12 mx-auto"
+          className="pixelated w-6xl -translate-y-[20%] mx-auto"
         />
       </div>
       <div className="bg-[url(assets/vanity/bc25/sprites/water_bg.png)] bg-repeat bg-[auto_96px] bg-[center_top] pixelated">

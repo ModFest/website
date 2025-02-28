@@ -32,6 +32,15 @@
     }
   }
 
+  .button {
+    border-image: url("backgrounds/bg-button.png") 3 3 fill;
+    border-width: 12px;
+    padding: 0.1em 0.2em;
+    background-color: transparent;
+    font-family: pixel;
+    color: black;
+  }
+
   .nav-link:hover {
     background-color: initial;
     translate: 0 -2px;
