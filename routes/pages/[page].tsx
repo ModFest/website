@@ -1,13 +1,18 @@
+import * as path from "jsr:@std/path";
 import { RouteContext } from "$fresh/server.ts";
 import { render } from "@deno/gfm";
 
 export default async function Page(_req: Request, ctx: RouteContext) {
-  const fetchURL = `${ctx.url.origin}/assets/pages/${ctx.params.page}.md`;
-  const response = await fetch(fetchURL)
-  if (!response.ok) {
-    return ctx.renderNotFound();
+  let mdFile = "";
+  try {
+    mdFile = await Deno.readTextFile(path.format({
+      dir: `${Deno.cwd()}/static/assets/pages`,
+      ext: ".md",
+      name: ctx.params.page,
+    }));
+  } catch (_e) {
+    return ctx.renderNotFound()
   }
-  const mdFile = await response.text()
 
   const blocks = mdFile.split("---");
   return (
