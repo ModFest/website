@@ -10,13 +10,13 @@ export const config: RouteConfig = {
 };
 
 export default async function Event(_req: Request, ctx: RouteContext) {
-  const event = await fetchEvent(fetch, "bc23");
+  const event = await fetchEvent(fetch, "bc25");
 
   if (!event.id) {
     return ctx.renderNotFound();
   }
 
-  const submissions = await fetchEventSubmissions(fetch, "bc23");
+  const submissions = await fetchEventSubmissions(fetch, "bc25");
   return (
     <div className="bg-[#86dbfe]">
       <Head>
@@ -130,9 +130,9 @@ export default async function Event(_req: Request, ctx: RouteContext) {
           alt=""
         />
       </div>
-      <div className="bg-[#185090]">
-        <div className="w-full bg-[url(/assets/vanity/bc25/sprites/wave.png)] h-10 bg-repeat-x bg-contain pixelated slide" />
-        <div className="flex flex-col gap-4 max-w-4xl m-[auto] ">
+      <div className="bg-[url(assets/vanity/bc25/sprites/water_bg.png)] bg-repeat bg-[auto_96px] bg-[center_top_48px] pixelated">
+        <div className="w-full bg-[url(/assets/vanity/bc25/sprites/wave.png)] h-[48px] bg-repeat-x bg-contain pixelated slide" />
+        <div className="flex flex-col gap-4 max-w-4xl m-[auto] pt-[32px]">
           {event.description.map((section) => (section.type === "markdown" &&
             (
               <div

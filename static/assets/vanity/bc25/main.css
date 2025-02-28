@@ -18,6 +18,10 @@
       font-family: inherit;
       color: inherit;
     }
+    table td {
+      border: 2px solid black;
+      padding: 0.5rem 1rem;
+    }
   }
 
   .nav-link:hover {
