@@ -12,6 +12,8 @@ export default async function Event(_req: Request, ctx: RouteContext) {
   }
 
   const submissions = await fetchEventSubmissions(fetch, ctx.params.event);
+  console.log(event.phase);
+  console.log(event.phase === "planning")
   return (
     <div
       class="flex flex-col gap-4 mb-16"
@@ -48,7 +50,7 @@ export default async function Event(_req: Request, ctx: RouteContext) {
         </div>
       </div>
       <div class="justify-center flex gap-4">
-        {event.phase === "planning" || event.phase === "modding" &&
+        {(event.phase === "planning" || event.phase === "modding") &&
             (
               <a
                 href="https://discord.gg/gn543Ee"
@@ -78,7 +80,7 @@ export default async function Event(_req: Request, ctx: RouteContext) {
               Download Modpack
             </a>
           )}
-        {submissions.length && submissions.length > 0 &&
+        {submissions.length > 0 &&
           (
             <a href={`/${event.id}/submissions`} class="button clickable">
               View Submissions

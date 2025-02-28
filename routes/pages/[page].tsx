@@ -6,12 +6,12 @@ export default async function Page(_req: Request, ctx: RouteContext) {
   let mdFile = "";
   try {
     mdFile = await Deno.readTextFile(path.format({
-      dir: `${Deno.cwd()}\\static\\assets\\pages`,
+      dir: `${Deno.cwd()}/static/assets/pages`,
       ext: ".md",
       name: ctx.params.page,
     }));
   } catch (_e) {
-    return ctx.renderNotFound();
+    return ctx.renderNotFound()
   }
 
   const blocks = mdFile.split("---");
