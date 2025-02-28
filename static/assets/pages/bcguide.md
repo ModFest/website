@@ -5,7 +5,7 @@
 ## What is BlanketCon?
 **BlanketCon is a collaborative event celebrating the art of Minecraft modding!**
 
-It features keynotes and panels hosted by members of the community, and takes place on a modded minecraft server full of booths that showcase mods and mod-related projects.
+It features keynotes and panels hosted by members of the community, and takes place on a modded minecraft server full of booths that showcase mods and modding projects.
 
 Once the event is announced, mod authors and other community members can sign up to build booths for their own projects, or pitch an event they'd like to host!
 
@@ -163,27 +163,26 @@ Generally, when building your booth, try to:
 <details>
 <summary>Helpful Utilities</summary>
 <center>
-    
+
 ![Glowcase Displays](https://hackmd.io/_uploads/BJomMuT51e.png)
 **Glowcase** *offers various displays for text, items, sprites, sounds and more.*<br>
-*If you need an asset such as a sprite or sound added to the resource pack, contact the team so we can arrange it.*
+*Everything is resource-driven, so send any custom assets you'd like to use to the team.*
 
 ![Arealib Areas](https://hackmd.io/_uploads/BJflHupcJl.png)
-**Arealib** *allows builders to define* Areas *for commands and compatible mods to efficiently track player presence.*<br/>
-*For example, our in-house mod Meret uses areas to control location-specific music.*<br>
-*You can also use Area Tools to restrict item use on the inside or outside of an Area.*
+**Arealib** *allows builders to define **Areas** that affect players and entities.*<br/>
+*This can be utilized by mods - **Meret** uses areas to add location-specific music.*<br>
+*You can also use Area Tools allow item use only inside a specific area.*
 
 ![Barricade](https://hackmd.io/_uploads/rynLUuTcyl.png)
 **Barricade**'s *barriers limit movement, filtering by entity type or movement direction.*<br/>
-*A more expensive but powerful Advanced Barrier is also available.*
 
 ![WE/Axiom](https://hackmd.io/_uploads/HJL6TwTqyg.png)
 **WorldEdit** *and* **Axiom** *let you make large, detailed modifications to the world.*<br>
-*They are also particularly useful for clearing space, or copying builds around.*
+*They're particularly useful terraforming, clearing space, and moving builds.*
 
 ![Fireblanket Spawns](https://hackmd.io/_uploads/HkNYwOp5Jx.png)
-*Fireblanket makes most entities immortal by default.*<br/>
-*To make an entity killable, spawn it with a spawn egg, or modify your command.*
+*Fireblanket makes entities like armor stands, item frames, and spawn egg mobs invulnerable when placed by hand.*<br/>
+*To avoid this, use a command block with /summon, or a dispenser hoppered up to an item provider.*
 </center>
 </details>
 
@@ -195,7 +194,7 @@ To make showcase worlds easy to navigate despite their size, we adhere to some k
 - The map can be broken into looping tour paths (or "streets") defined before claiming.
 - Every booth has its entrance along one of these tour paths, effectively giving it a "street address"
 - **Booths can share a path entrance**. To do so, the entrance should form **a smaller looping path** - as if each booth is a numbered unit at the same address.
-    - Like booths, these smaller paths should also be a "place", with clear signage.
+  - Like booths, these smaller paths should also be a "place", with clear signage.
 
 This creates a natural "checklist" of streets and booths that tourists can complete as if they're doing a paper round. Easy!
 
