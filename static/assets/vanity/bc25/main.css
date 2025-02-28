@@ -1,0 +1,86 @@
+@font-face {
+  font-family: pixel;
+  src: url("PublicPixel-rv0pA.ttf");
+}
+
+@layer components {
+  .card {
+    border-radius: 0;
+    background-color: transparent;
+    color: black;
+    font-family: pixel;
+    image-rendering: pixelated;
+    border-image: url("backgrounds/bg-card.png") 6 6 fill;
+    border-width: 24px;
+    padding: 0.5em 1em;
+    box-shadow: 0 0 0;
+    h1, h2 {
+      font-family: inherit;
+      color: inherit;
+    }
+    table {
+      overflow-x: auto;
+      display: inline-block;
+      max-width: 100%;
+      color: #e6ffa4;
+      background-color: black;
+      padding: 4px;
+    }
+    table td {
+      border: 2px solid #e6ffa4;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  .button {
+    border-image: url("backgrounds/bg-button.png") 3 3 fill;
+    border-width: 12px;
+    padding: 0.1em 0.2em;
+    background-color: transparent;
+    font-family: pixel;
+    color: black;
+  }
+
+  .nav-link:hover {
+    background-color: initial;
+    translate: 0 -2px;
+  }
+
+  .nav-icon {
+    /* height: 48px; */
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .nav-link.nav-icon img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .slide {
+    animation: slide 180s linear;
+    animation-iteration-count: infinite;
+  }
+  .hover {
+    animation: hover 7s ease-in-out;
+    animation-iteration-count: infinite;
+  }
+}
+@keyframes slide {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 100%;
+  }
+}
+
+@keyframes hover {
+  0% {
+    translate: 0 -3%;
+  }
+  50% {
+    translate: 0 3%;
+  }
+  100% {
+    translate: 0 -3%;
+  }
+}

@@ -1,5 +1,4 @@
 import { type PageProps } from "$fresh/server.ts";
-import { Header } from "../components/Header.tsx";
 export default function App({ Component }: PageProps) {
   return (
     <html>
@@ -12,14 +11,7 @@ export default function App({ Component }: PageProps) {
       </head>
 
       <body>
-        <div>
-          <div class="flex flex-col gap-4 max-w-4xl px-4 m-[auto]">
-            <Header />
-            <main>
-              <Component />
-            </main>
-          </div>
-        </div>
+        <Component />
       </body>
     </html>
   );
