@@ -23,11 +23,11 @@ export default async function Event(_req: Request, ctx: RouteContext) {
         <link rel="stylesheet" href={asset("/assets/vanity/bc25/main.css")} />
       </Head>
       <div className="bg-[#222034]">
-        <header className="max-w-4xl m-[auto]">
+        <header className="max-w-4xl m-[auto] flex flex-col items-stretch">
           <nav className="card p-0 mt-4 flex flex-col gap-2 relative">
-            <div className="flex flex-col sm:flex-row justify-start items-center gap-2">
+            <div className="flex flex-col md:flex-row justify-start items-center gap-2">
               <a
-                className="nav-link flex h-12 gap-2 no-underline clickable-vanity absolute -left-2"
+                className="nav-link flex h-12 gap-2 no-underline clickable-vanity relative md:absolute -left-2"
                 href="/"
               >
                 <img
@@ -132,7 +132,7 @@ export default async function Event(_req: Request, ctx: RouteContext) {
       </div>
       <div className="bg-[url(assets/vanity/bc25/sprites/water_bg.png)] bg-repeat bg-[auto_96px] bg-[center_top_48px] pixelated">
         <div className="w-full bg-[url(/assets/vanity/bc25/sprites/wave.png)] h-[48px] bg-repeat-x bg-contain pixelated slide" />
-        <div className="flex flex-col gap-4 max-w-4xl m-[auto] pt-[32px]">
+        <div className="flex flex-col gap-4 max-w-4xl m-[auto] pt-[32px] text-sm">
           {event.description.map((section) => (section.type === "markdown" &&
             (
               <div

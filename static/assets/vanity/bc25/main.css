@@ -18,8 +18,16 @@
       font-family: inherit;
       color: inherit;
     }
+    table {
+      overflow-x: auto;
+      display: inline-block;
+      max-width: 100%;
+      color: #e6ffa4;
+      background-color: black;
+      padding: 4px;
+    }
     table td {
-      border: 2px solid black;
+      border: 2px solid #e6ffa4;
       padding: 0.5rem 1rem;
     }
   }
@@ -43,7 +51,7 @@
     animation-iteration-count: infinite;
   }
   .hover {
-    animation: hover 15s ease-in-out;
+    animation: hover 7s ease-in-out;
     animation-iteration-count: infinite;
   }
 }
@@ -58,12 +66,12 @@
 
 @keyframes hover {
   0% {
-    translate: 0 -1%;
+    translate: 0 -3%;
   }
   50% {
-    translate: 0 1%;
+    translate: 0 3%;
   }
   100% {
-    translate: 0 -1%;
+    translate: 0 -3%;
   }
 }
