@@ -168,7 +168,7 @@ export default async function Event(_req: Request, ctx: RouteContext) {
             )}
         </div>
       </div>
-      <div className="bg-[#185090] bg-repeat bg-[auto_96px] bg-[center_top_48px] pixelated">
+      <div className="bg-[#185090] bg-repeat bg-[auto_96px] bg-[center_top_48px] pixelated -mb-20">
         <div className="w-full bg-[url(/assets/vanity/bc25/sprites/wave.png)] h-[48px] bg-repeat-x bg-contain pixelated slide" />
         <img
           src="/assets/vanity/bc25/island.apng"
@@ -176,7 +176,7 @@ export default async function Event(_req: Request, ctx: RouteContext) {
           className="pixelated w-6xl -translate-y-[20%] mx-auto"
         />
       </div>
-      <div className="bg-[url(assets/vanity/bc25/sprites/water_bg.png)] bg-repeat bg-[auto_96px] bg-[center_top] pixelated">
+      <div className="bg-[url(assets/vanity/bc25/sprites/water_bg.png)] bg-repeat bg-[auto_96px] bg-[center_top] pixelated pb-24">
         <div className="flex flex-col gap-4 max-w-4xl m-[auto] pt-[32px] text-sm">
           {event.description.map((section) => (section.type === "markdown" &&
             (
