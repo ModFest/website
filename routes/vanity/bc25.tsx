@@ -162,7 +162,7 @@ export default async function Event(_req: Request, ctx: RouteContext) {
             )}
           {submissions.length > 0 &&
             (
-              <a href={`/${event.id}/submissions`} class="button clickable">
+              <a href={`/${event.id}/submissions`} class="button">
                 View Submissions
               </a>
             )}
