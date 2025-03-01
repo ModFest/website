@@ -53,7 +53,7 @@ export default async function Submissions(_req: Request, ctx: RouteContext) {
           <h1>{event.name}</h1>
           <p>
             {`${event.name} ${
-              event.phase !== "modding" ? "has" : "had"
+              event.phase == "modding" ? "has" : "had"
             } a total of ${
               formatPlural("submission", submissions.length)
             } created by ${
