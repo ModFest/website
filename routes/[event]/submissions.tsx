@@ -61,7 +61,7 @@ export default async function Submissions(_req: Request, ctx: RouteContext) {
                 "modder",
                 participants.size,
               )
-            }${event.phase === "modding" ? "so far" : ""}.`}
+            }${event.phase === "modding" ? " so far" : ""}.`}
           </p>
         </div>
       </a>
