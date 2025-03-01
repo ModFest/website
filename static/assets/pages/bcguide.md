@@ -51,7 +51,7 @@ Your average booth showcases a mod, and contains:
 
 <center>
 
-![Familiar Magic Overview](/assets/pages/images/bcguide/familiar_magic_overview.png)
+![Familiar Magic Overview](/assets/pages/images/bcguide/familiar_magic_overview.jpg)
 *not every booth has to be a singular building - any cohesive space can work well.*</br>
 ***familiar magic (1.21)** is comprised of small forest clearings, with a cave underneath.*
 
@@ -87,7 +87,7 @@ Your average booth showcases a mod, and contains:
 *command blocks utilizing `/shard award` are used to award shards for challenges.*<br/>
 ***Confetti Stuff (Carnival)** uses this for to award a shard in a cleaning race minigame.*
 
-![DBSV Overview](/assets/pages/images/bcguide/dbsc_overview.jpg)
+![DBSV Overview](/assets/pages/images/bcguide/dbsv_overview.jpg)
 *mods with high-depth mechanics can use course-like booths, with 'levels' per shard.*<br/>
 ***Dream Burst Spirit Vector (Carnival)** is laid out as a platformer - with a basic tutorial, advanced tutorial, and a challenging level ascending a mountain.*
 
