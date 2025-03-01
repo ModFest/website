@@ -168,7 +168,7 @@ export default async function Event(_req: Request, ctx: RouteContext) {
             )}
         </div>
       </div>
-      <div className="bg-[#185090] bg-repeat bg-[auto_96px] bg-[center_top_48px] pixelated -mb-20">
+      <div className="bg-[#2e508e] bg-repeat bg-[auto_96px] bg-[center_top_48px] pixelated -mb-20">
         <div className="w-full bg-[url(/assets/vanity/bc25/sprites/wave.png)] h-[48px] bg-repeat-x bg-contain pixelated slide" />
         <img
           src="/assets/vanity/bc25/island.apng"
