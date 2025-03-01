@@ -51,26 +51,26 @@ Your average booth showcases a mod, and contains:
 
 <center>
 
-![Familiar Magic Overview](https://hackmd.io/_uploads/ByJvokWUye.jpg)
+![Familiar Magic Overview](/assets/pages/images/bcguide/familiar_magic_overview.png)
 *not every booth has to be a singular building - any cohesive space can work well.*</br>
 ***familiar magic (1.21)** is comprised of small forest clearings, with a cave underneath.*
 
-![Familiar Magic Entrance](https://hackmd.io/_uploads/ryNDE1bI1g.png)
+![Familiar Magic Entrance](/assets/pages/images/bcguide/familiar_magic_entrance.png)
 *on-path entrance signage helps tourists find your booth, and delineates it from the path so they wont wander into it unintentionally.*
 
-![Familiar Magic Mod Description](https://hackmd.io/_uploads/BkgOByWL1g.png)
+![Familiar Magic Mod Description](/assets/pages/images/bcguide/familiar_magic_mod_description.png)
 *a mod summary explains what to expect from the booth, preventing confusion later on - this one also displays some formatting benefits of text blocks compared to signs.*
 
-![Familiar Magic Visitor Shard](https://hackmd.io/_uploads/rkG08ybUJe.png)
+![Familiar Magic Visitor Shard](/assets/pages/images/bcguide/familiar_magic_vistor_shard.png)
 *a visitor shard helps tourists track booth completion - touching this one would collect it.*
 
-![Familiar Magic Feature](https://hackmd.io/_uploads/rk2jDkZU1e.png)
+![Familiar Magic Feature](/assets/pages/images/bcguide/familiar_magic_feature.png)
 *this area tutorializes a mechanic step-by step using text blocks. the item provider allows tourists to take a copy of the flint and steel item for use.*
 
-![Familiar Magic Bonus Shard](https://hackmd.io/_uploads/Sky-K1ZU1l.png)
+![Familiar Magic Bonus Shard](/assets/pages/images/bcguide/familiar_magic_bonus_shard.png)
 *shards have a custom name, icon, and hint set by the booth author. reaching this one required using the teleport mechanic from the mod.*
 
-![Familiar Magic Credits](https://hackmd.io/_uploads/BJRn31ZU1g.png)
+![Familiar Magic Credits](/assets/pages/images/bcguide/familiar_magic_credits.png)
 *a mod page link lets tourists follow your mod if they enjoyed it, and placing it at the exit prevents the page from spoiling your booth!*
 
 </center>
@@ -79,22 +79,22 @@ Your average booth showcases a mod, and contains:
 
 <center>
 
-![Dust Mansion](https://hackmd.io/_uploads/ryKPNgGDkl.png)
+![Dust Mansion](/assets/pages/images/bcguide/dust_mansion.png)
 *some booths use very little text, and show mod features purely experientially.*<br/>
 ***Dust (Carnival)** features a dusty mansion the player can brush to clean.*
 
-![Confetti Stuff Clean Burst](https://hackmd.io/_uploads/S1iNIgGDke.png)
+![Confetti Stuff Clean Burst](/assets/pages/images/bcguide/confetti_stuff_clean_burst.png)
 *command blocks utilizing `/shard award` are used to award shards for challenges.*<br/>
 ***Confetti Stuff (Carnival)** uses this for to award a shard in a cleaning race minigame.*
 
-![DBSV Overview](https://hackmd.io/_uploads/HkdoWxGPyg.jpg)
+![DBSV Overview](/assets/pages/images/bcguide/dbsc_overview.jpg)
 *mods with high-depth mechanics can use course-like booths, with 'levels' per shard.*<br/>
 ***Dream Burst Spirit Vector (Carnival)** is laid out as a platformer - with a basic tutorial, advanced tutorial, and a challenging level ascending a mountain.*
 
-![Vanilla Extract](https://hackmd.io/_uploads/S1CUF-Mwke.jpg)
+![Vanilla Extract](/assets/pages/images/bcguide/vanilla_extract.jpg)
 *booths for non-mod projects like modpacks or websites are usually walk-through, but follow the same overall structure*
 
-![Obscure Masks Minibooth](https://hackmd.io/_uploads/S1YquxfPyx.png)
+![Obscure Masks Minibooth](/assets/pages/images/bcguide/obscure_masks_minibooth.png)
 *for low-depth mods or on a time budget, a one-shard 'mini-booth' is often suitable*<br/>
 ***Obscure Masks (Carnival)** uses acceptors to sell its cosmetic items, and that's it!*
 </center>
@@ -105,21 +105,21 @@ These features ill-suit most booths, but work great pitched as collaborative bui
 
 <center>
 
-![Cyberpunk Hangout](https://hackmd.io/_uploads/Syrc8ZGPye.png)
+![Cyberpunk Hangout](/assets/pages/images/bcguide/cyberpunk_hangout.png)
 *Hangout areas give tourists a break, and helps avoid group splits. (**BC23**)*
 
-![Big Top Arena](https://hackmd.io/_uploads/rJxYoxMPkx.jpg)
+![Big Top Arena](/assets/pages/images/bcguide/big_top_arena.jpg)
 *Competitive arenas like this provide repeatable fun in multiplayer. (**Carnival**)*<br/>
 *They're kept as separated attractions with their own warps, even if mod-themed.*
 
-![Cannons Ahoy Playground](https://hackmd.io/_uploads/Hk98RxGvJl.png)
+![Cannons Ahoy Playground](/assets/pages/images/bcguide/cannons_ahoy_playground.png)
 *Playgrounds and minigames add a fun non-booth activity to break things up. (**1.21**)*<br/>
 *This allows skilled builders to get creative with other submitted mods!*
 
-![Sinister Food Stand](https://hackmd.io/_uploads/Skjo3xfv1x.png)
+![Sinister Food Stand](/assets/pages/images/bcguide/sinister_food_stand.png)
 *Food stands help tourists get around, and add placeness to the world. (**Carnival**)*
 
-![Granbury City Limits](https://hackmd.io/_uploads/BktlsgMPyx.jpg)
+![Granbury City Limits](/assets/pages/images/bcguide/granbury_city_limits.jpg)
 *Decorative areas like this integrate with the world lore. (**Carnival**)*<br/>
 *They contain nothing useful, but give tourists something interesting to look at.*
 
@@ -164,23 +164,23 @@ Generally, when building your booth, try to:
 <summary>Helpful Utilities</summary>
 <center>
 
-![Glowcase Displays](https://hackmd.io/_uploads/BJomMuT51e.png)
+![Glowcase Displays](/assets/pages/images/bcguide/glowcase.png)
 **Glowcase** *offers various displays for text, items, sprites, sounds and more.*<br>
 *Everything is resource-driven, so send any custom assets you'd like to use to the team.*
 
-![Arealib Areas](https://hackmd.io/_uploads/BJflHupcJl.png)
+![Arealib Areas](/assets/pages/images/bcguide/arealib.png)
 **Arealib** *allows builders to define **Areas** that affect players and entities.*<br/>
 *This can be utilized by mods - **Meret** uses areas to add location-specific music.*<br>
 *You can also use Area Tools allow item use only inside a specific area.*
 
-![Barricade](https://hackmd.io/_uploads/rynLUuTcyl.png)
+![Barricade](/assets/pages/images/bcguide/barricade.png)
 **Barricade**'s *barriers limit movement, filtering by entity type or movement direction.*<br/>
 
-![WE/Axiom](https://hackmd.io/_uploads/HJL6TwTqyg.png)
+![WE/Axiom](/assets/pages/images/bcguide/worldedit.png)
 **WorldEdit** *and* **Axiom** *let you make large, detailed modifications to the world.*<br>
 *They're particularly useful terraforming, clearing space, and moving builds.*
 
-![Fireblanket Spawns](https://hackmd.io/_uploads/HkNYwOp5Jx.png)
+![Fireblanket Spawns](/assets/pages/images/bcguide/fireblanket.png)
 *Fireblanket makes entities like armor stands, item frames, and spawn egg mobs invulnerable when placed by hand.*<br/>
 *To avoid this, use a command block with /summon, or a dispenser hoppered up to an item provider.*
 </center>
