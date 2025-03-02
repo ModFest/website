@@ -11,7 +11,9 @@ export function getLink(submission: Submission) {
     return `https://modrinth.com/project/${data.project_id}`;
   } else if (submission.platform?.type === "other") {
     const data = submission.platform as OtherData;
-    return `${data.homepage_url}`;
+    if (data.homepage_url) {
+      return `${data.homepage_url}`;
+    }
   }
 }
 
