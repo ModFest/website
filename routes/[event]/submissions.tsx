@@ -50,7 +50,15 @@ export default async function Submissions(_req: Request, ctx: RouteContext) {
           />
         </div>
         <div>
-          <h1>{event.name}</h1>
+          <h1
+            style={{
+              color: (event.id !== "bc23"
+                ? "var(--color-mf-heading)"
+                : "var(--color-mf-card)"),
+            }}
+          >
+            {event.name}
+          </h1>
           <p>
             {`${event.name} ${
               event.phase == "modding" ? "has" : "had"
