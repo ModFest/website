@@ -1,4 +1,4 @@
-import { Event, ModrinthData, Submission } from "./types.d.tsx";
+import {Event, ModrinthData, OtherData, Submission} from "./types.d.tsx";
 
 export function formatPlural(text: String, amount: Number) {
   // i18n can be a future problem.
@@ -9,6 +9,9 @@ export function getLink(submission: Submission) {
   if (submission.platform?.type === "modrinth") {
     const data = submission.platform as ModrinthData;
     return `https://modrinth.com/project/${data.project_id}`;
+  } else if (submission.platform?.type === "other") {
+    const data = submission.platform as OtherData;
+    return `${data.homepage_url}`;
   }
 }
 

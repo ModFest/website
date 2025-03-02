@@ -79,7 +79,7 @@ export declare interface Submission {
   event?: string;
   description: string;
   authors: string[];
-  platform: ModrinthData | GitHubData | undefined;
+  platform: ModrinthData | GitHubData | OtherData | undefined;
   images: SubmissionImages;
   download: string;
   source: string;
@@ -90,6 +90,12 @@ export declare interface ModrinthData {
   type: "modrinth";
   project_id: string;
   version_id: string;
+}
+
+export declare interface OtherData {
+  type: "other";
+  homepage_url: string;
+  download_url: string;
 }
 
 export declare interface GitHubData {
