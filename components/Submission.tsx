@@ -86,7 +86,7 @@ export function Submission(props: SubmissionProps) {
                 ? (
                   <a
                     key={`${props.key ?? "submission"}-${index}`}
-                    href={`/user/${user.modrinthId ?? user.id}`}
+                    href={`/user/${user.id}`}
                   >
                     {user.name}
                   </a>

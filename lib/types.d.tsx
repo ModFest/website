@@ -3,11 +3,12 @@ export declare interface User {
   slug: string;
   name: string;
   pronouns: string;
-  modrinthId: string;
-  discordId: string;
+  modrinth_id: string;
+  discord_id: string;
   bio: string;
   icon: string;
   registered: Set<string>;
+  minecraft_accounts: Set<string>;
 }
 
 export declare interface Event {
