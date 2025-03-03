@@ -22,7 +22,7 @@ export default async function User(_req: Request, ctx: RouteContext) {
     }
   }
 
-  const submissions = await fetchUserSubmissions(fetch, ctx.params.user);
+  const submissions = await fetchUserSubmissions(fetch, user.id);
 
   return (
     <div class="flex flex-col gap-4 mb-16">
