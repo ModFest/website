@@ -12,11 +12,14 @@ import {
 } from "../../components/Submission.tsx";
 
 export default async function User(_req: Request, ctx: RouteContext) {
-  const user = await fetchUser(fetch, ctx.params.user);
+  let user = await fetchUser(fetch, ctx.params.user);
   const events = await fetchEvents(fetch);
 
   if (!user.id) {
-    return ctx.renderNotFound();
+    user = await fetchUser(fetch, `mr:${ctx.params.user}`);
+    if (!user.id) {
+      return ctx.renderNotFound();
+    }
   }
 
   const submissions = await fetchUserSubmissions(fetch, ctx.params.user);
