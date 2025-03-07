@@ -168,6 +168,12 @@ html {
     td:not(:last-of-type) {
       @apply border-mf-unknown border-r-[1px];
     }
+    th:not(:last-of-type) {
+      @apply border-mf-unknown border-r-[1px];
+    }
+    th {
+      @apply font-bold text-mf-heading p-2;
+    }
   }
 }
 [open] {
