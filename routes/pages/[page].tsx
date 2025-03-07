@@ -3,7 +3,7 @@ import { RouteContext } from "$fresh/server.ts";
 import { render } from "@deno/gfm";
 import {markdownRenderOptions} from "../../lib/helpers.tsx";
 
-const blockSeperator: RegExp = new RegExp('---\r')
+const blockSeperator: RegExp = new RegExp('[\r\n]+---[\r\n]+')
 
 export default async function Page(_req: Request, ctx: RouteContext) {
   let mdFile = "";
