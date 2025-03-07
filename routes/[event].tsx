@@ -1,9 +1,8 @@
 import { RouteContext } from "$fresh/server.ts";
-import { render } from "@deno/gfm";
 
 import { fetchEvent, fetchEventSubmissions } from "../lib/platform-api.tsx";
-import { MarkdownDescriptionItem } from "../lib/types.d.tsx";
-import {markdownRenderOptions} from "../lib/helpers.tsx";
+import { getPagesMarkdown } from "../lib/helpers.tsx";
+import { MarkdownBlocks } from "../components/MarkdownBlocks.tsx";
 
 export default async function Event(_req: Request, ctx: RouteContext) {
   const event = await fetchEvent(fetch, ctx.params.event);
@@ -13,6 +12,7 @@ export default async function Event(_req: Request, ctx: RouteContext) {
   }
 
   const submissions = await fetchEventSubmissions(fetch, ctx.params.event);
+  const content = await getPagesMarkdown(`event/${ctx.params.event}`);
   return (
     <div
       class="flex flex-col gap-4 mb-16"
@@ -86,19 +86,8 @@ export default async function Event(_req: Request, ctx: RouteContext) {
             </a>
           )}
       </div>
-      {event.description.map((section) => (section.type === "markdown" &&
-        (
-          <div
-            class="card"
-            dangerouslySetInnerHTML={{
-              __html: render(
-                (section as MarkdownDescriptionItem).content.markdown,
-                  markdownRenderOptions
-              ),
-            }}
-          />
-        ))
-      )}
+
+      <MarkdownBlocks content={content} />
     </div>
   );
 }

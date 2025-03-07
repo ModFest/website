@@ -23,7 +23,6 @@ export declare interface Event {
   mod_loader: string;
   minecraft_version: string;
   modpack: string;
-  description: EventDescriptionItem[];
 }
 
 export declare type Phase =
@@ -56,22 +55,6 @@ export declare interface EventColors {
 export declare interface EventDiscordRoles {
   participant: string;
   award: string;
-}
-
-export declare type EventDescriptionItem =
-  | MarkdownDescriptionItem
-  | UnknownDescriptionItem;
-
-export declare interface MarkdownDescriptionItem {
-  type: "markdown";
-  content: {
-    markdown: string;
-  };
-}
-
-export declare interface UnknownDescriptionItem {
-  type: string;
-  content: object;
 }
 
 export declare interface Submission {

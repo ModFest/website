@@ -1,9 +1,22 @@
 import { RenderOptions } from "@deno/gfm";
+import * as path from "jsr:@std/path";
 import { Event, ModrinthData, OtherData, Submission } from "./types.d.tsx";
 
 export const markdownRenderOptions: RenderOptions = {
   allowedTags: ["center"],
 };
+
+export async function getPagesMarkdown(page: string) {
+  try {
+    return await Deno.readTextFile(path.format({
+      dir: `${Deno.cwd()}/static/assets/pages`,
+      ext: ".md",
+      name: page,
+    }));
+  } catch (_e) {
+    return "";
+  }
+}
 
 export function formatPlural(text: string, amount: number) {
   // i18n can be a future problem.
