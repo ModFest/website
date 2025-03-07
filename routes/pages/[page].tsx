@@ -1,6 +1,7 @@
 import * as path from "jsr:@std/path";
 import { RouteContext } from "$fresh/server.ts";
 import { render } from "@deno/gfm";
+import {markdownRenderOptions} from "../../lib/helpers.tsx";
 
 export default async function Page(_req: Request, ctx: RouteContext) {
   let mdFile = "";
@@ -21,14 +22,14 @@ export default async function Page(_req: Request, ctx: RouteContext) {
           <div
               class="ml-6 mt-4"
               dangerouslySetInnerHTML={{
-                __html: render(block),
+                __html: render(block, markdownRenderOptions),
               }}
           />
               ) : (
         <div
           className="card"
           dangerouslySetInnerHTML={{
-            __html: render(block),
+            __html: render(block, markdownRenderOptions),
           }}
         />
       ))}

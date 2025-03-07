@@ -1,4 +1,9 @@
+import { RenderOptions } from "@deno/gfm";
 import {Event, ModrinthData, OtherData, Submission} from "./types.d.tsx";
+
+export const markdownRenderOptions: RenderOptions = {
+  allowedTags: ["center"]
+}
 
 export function formatPlural(text: String, amount: Number) {
   // i18n can be a future problem.

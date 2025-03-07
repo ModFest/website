@@ -3,6 +3,7 @@ import { render } from "@deno/gfm";
 
 import { fetchEvent, fetchEventSubmissions } from "../lib/platform-api.tsx";
 import { MarkdownDescriptionItem } from "../lib/types.d.tsx";
+import {markdownRenderOptions} from "../lib/helpers.tsx";
 
 export default async function Event(_req: Request, ctx: RouteContext) {
   const event = await fetchEvent(fetch, ctx.params.event);
@@ -95,6 +96,7 @@ export default async function Event(_req: Request, ctx: RouteContext) {
             dangerouslySetInnerHTML={{
               __html: render(
                 (section as MarkdownDescriptionItem).content.markdown,
+                  markdownRenderOptions
               ),
             }}
           />
