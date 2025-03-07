@@ -3,6 +3,8 @@ import { RouteContext } from "$fresh/server.ts";
 import { render } from "@deno/gfm";
 import {markdownRenderOptions} from "../../lib/helpers.tsx";
 
+const blockSeperator: RegExp = new RegExp('---\r')
+
 export default async function Page(_req: Request, ctx: RouteContext) {
   let mdFile = "";
   try {
@@ -15,7 +17,7 @@ export default async function Page(_req: Request, ctx: RouteContext) {
     return ctx.renderNotFound()
   }
 
-  const blocks = mdFile.split("---");
+  const blocks = mdFile.split(blockSeperator);
   return (
     <div class="flex flex-col gap-4 mb-16">
       {blocks.map((block) => block.startsWith("# ") ? (
