@@ -83,6 +83,9 @@ html {
 
   p {
     @apply leading-6;
+    > * {
+      @apply my-4;
+    }
   }
 
   a {
@@ -131,7 +134,7 @@ html {
   }
 
   details {
-    @apply bg-mf-bg rounded-md;
+    @apply bg-mf-bg rounded-md mb-2;
     summary {
       @apply text-mf-heading font-bold cursor-pointer p-2 hover:bg-slate-950
         rounded-md px-4 transition select-none;
@@ -141,6 +144,29 @@ html {
     }
     > :last-child {
       @apply pb-4;
+    }
+  }
+
+  table {
+    @apply border-[1px] border-mf-unknown border-separate border-spacing-0
+      max-w-full w-max rounded-xl overflow-auto block;
+    td {
+      @apply px-2 py-1 border-mf-unknown border-b-[1px];
+    }
+    tr {
+      @apply bg-mf-bg;
+    }
+    tr:nth-child(2n) {
+      @apply bg-mf-card;
+    }
+    tr:not(:last-of-type) td {
+      @apply border-solid;
+    }
+    tr:last-of-type td {
+      @apply border-b-0;
+    }
+    td:not(:last-of-type) {
+      @apply border-mf-unknown border-r-[1px];
     }
   }
 }
