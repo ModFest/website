@@ -12,8 +12,6 @@ export default async function Event(_req: Request, ctx: RouteContext) {
   }
 
   const submissions = await fetchEventSubmissions(fetch, ctx.params.event);
-  console.log(event.phase);
-  console.log(event.phase === "planning")
   return (
     <div
       class="flex flex-col gap-4 mb-16"
@@ -51,15 +49,15 @@ export default async function Event(_req: Request, ctx: RouteContext) {
       </div>
       <div class="justify-center flex gap-4">
         {(event.phase === "planning" || event.phase === "modding") &&
-            (
-              <a
-                href="https://discord.gg/gn543Ee"
-                target="_blank"
-                class="button clickable"
-              >
-                Register on Discord!
-              </a>
-            )}
+          (
+            <a
+              href="https://discord.gg/gn543Ee"
+              target="_blank"
+              class="button clickable"
+            >
+              Register on Discord!
+            </a>
+          )}
         {event.phase === "showcase" && event.modpack &&
           (
             <a
@@ -87,7 +85,6 @@ export default async function Event(_req: Request, ctx: RouteContext) {
             </a>
           )}
       </div>
-
       {event.description.map((section) => (section.type === "markdown" &&
         (
           <div

@@ -59,6 +59,28 @@ html {
     @apply text-mf-heading;
   }
 
+  h1,
+  h2,
+  h3 {
+    @apply font-title;
+  }
+
+  h1 {
+    @apply text-3xl mb-2;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  h4 {
+    @apply text-lg font-bold;
+  }
+
   p {
     @apply leading-6;
   }
@@ -71,18 +93,6 @@ html {
     @apply underline;
   }
 
-  h1 {
-    @apply text-3xl font-title mb-2;
-  }
-
-  h2 {
-    @apply text-2xl font-title;
-  }
-
-  h3 {
-    @apply text-base font-bold;
-  }
-
   input,
   button {
     font-size: inherit;
@@ -93,15 +103,65 @@ html {
     @apply text-base font-mono bg-mf-pre-bg rounded-sm p-2 overflow-x-auto
       text-mf-text shadow-(--shadow-mf-pre);
   }
+
+  hr {
+    @apply mb-3;
+  }
+
+  ul {
+    @apply list-disc ml-6 my-2;
+
+    li > ul {
+      @apply list-[square];
+      li > ul {
+        @apply list-[lower-alpha];
+        li > ul {
+          @apply list-[lower-roman];
+          li > ul {
+            @apply list-disc;
+          }
+        }
+      }
+    }
+  }
+
+  blockquote {
+    @apply border-l-mf-heading border-l-6 px-4 rounded-md bg-mf-bg pb-2 flex
+      flex-col justify-center mb-2;
+  }
+
+  details {
+    @apply bg-mf-bg rounded-md;
+    summary {
+      @apply text-mf-heading font-bold cursor-pointer p-2 hover:bg-slate-950
+        rounded-md px-4 transition select-none;
+    }
+    > :not(summary) {
+      @apply px-5;
+    }
+    > :last-child {
+      @apply pb-4;
+    }
+  }
+}
+[open] {
+  summary {
+    @apply border-b-[1px] border-mf-text mb-4 rounded-b-none;
+  }
 }
 
 @layer components {
   .card {
-    @apply shadow-mf-card rounded-2xl bg-mf-card p-5;
+    @apply shadow-mf-card rounded-2xl bg-mf-card px-6 py-4;
 
-    h1,
-    h2:first-child {
+    h1 {
       @apply mt-0 text-2xl tracking-wider mb-2;
+    }
+    h2 {
+      @apply mt-0 text-xl tracking-wider mb-2;
+    }
+    h3 {
+      @apply mt-0 text-lg tracking-wider mb-2;
     }
 
     strong {

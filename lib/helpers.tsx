@@ -1,6 +1,6 @@
-import {Event, ModrinthData, OtherData, Submission} from "./types.d.tsx";
+import { Event, ModrinthData, OtherData, Submission } from "./types.d.tsx";
 
-export function formatPlural(text: String, amount: Number) {
+export function formatPlural(text: string, amount: number) {
   // i18n can be a future problem.
   return `${amount} ${amount === 1 ? text : text + "s"}`;
 }

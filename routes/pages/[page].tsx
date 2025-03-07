@@ -11,27 +11,31 @@ export default async function Page(_req: Request, ctx: RouteContext) {
       name: ctx.params.page,
     }));
   } catch (_e) {
-    return ctx.renderNotFound()
+    return ctx.renderNotFound();
   }
 
   const blocks = mdFile.split("---");
   return (
     <div class="flex flex-col gap-4 mb-16">
-      {blocks.map((block) => block.startsWith("# ") ? (
-          <div
+      {blocks.map((block) =>
+        block.startsWith("# ")
+          ? (
+            <div
               class="ml-6 mt-4"
               dangerouslySetInnerHTML={{
                 __html: render(block),
               }}
-          />
-              ) : (
-        <div
-          className="card"
-          dangerouslySetInnerHTML={{
-            __html: render(block),
-          }}
-        />
-      ))}
+            />
+          )
+          : (
+            <div
+              className="card"
+              dangerouslySetInnerHTML={{
+                __html: render(block),
+              }}
+            />
+          )
+      )}
     </div>
   );
 }
