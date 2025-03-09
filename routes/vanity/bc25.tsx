@@ -116,6 +116,14 @@ export default async function Event(_req: Request, ctx: RouteContext) {
             </div>
           </nav>
         </header>
+        {
+          /* <audio
+          src="/assets/vanity/bc25/dormant.wav"
+          className="audio-button lg:absolute right-0 top-4 mx-auto"
+          controls
+          loop
+        /> */
+        }
         <div className="w-full bg-[#86dbfe] bg-[url(/assets/vanity/bc25/sprites/gradient.png)] h-6 mt-2 bg-repeat-x bg-contain pixelated" />
       </div>
       <div className="flex flex-col bg-[url(/assets/vanity/bc25/sprites/clouds.png)] bg-cover bg-repeat-x pixelated slide">
@@ -129,7 +137,7 @@ export default async function Event(_req: Request, ctx: RouteContext) {
           className="w-full pixelated px-4 -mt-8 max-w-4xl m-[auto] hover"
           alt=""
         />
-        <div class="justify-center flex gap-4 mb-24">
+        <div class="justify-center items-center flex flex-col md:flex-row gap-4 mb-24">
           {(event.phase === "planning" || event.phase === "modding") &&
             (
               <a
@@ -178,6 +186,19 @@ export default async function Event(_req: Request, ctx: RouteContext) {
       </div>
       <div className="bg-[url(assets/vanity/bc25/sprites/water_bg.png)] bg-repeat bg-[auto_96px] bg-[center_top] pixelated pb-24">
         <div className="flex flex-col gap-4 max-w-4xl m-[auto] pt-[32px] text-sm">
+          <article className="card flex flex-col gap-3">
+            <h1 className="text-center sm:text-3xl">Welcome to BlanketCon25</h1>
+            <div className="flex justify-center gap-3 flex-col md:flex-row">
+              <a href="/bc25" className="button">Classic Site</a>
+              <a
+                href="https://www.youtube.com/watch?v=QWKwrW-VozI"
+                className="button"
+                target="_blank"
+              >
+                Watch Trailer
+              </a>
+            </div>
+          </article>
           {event.description.map((section) => (section.type === "markdown" &&
             (
               <article
