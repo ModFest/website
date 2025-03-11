@@ -4,6 +4,7 @@ import { render } from "@deno/gfm";
 import { fetchEvent, fetchEventSubmissions } from "../../lib/platform-api.tsx";
 import { MarkdownDescriptionItem } from "../../lib/types.d.tsx";
 import { asset, Head } from "$fresh/runtime.ts";
+import {markdownRenderOptions} from "../../lib/helpers.tsx";
 
 export const config: RouteConfig = {
   skipInheritedLayouts: true,
@@ -207,6 +208,7 @@ export default async function Event(_req: Request, ctx: RouteContext) {
                 dangerouslySetInnerHTML={{
                   __html: render(
                     (section as MarkdownDescriptionItem).content.markdown,
+                      markdownRenderOptions
                   ),
                 }}
               />

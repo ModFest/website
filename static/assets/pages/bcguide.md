@@ -61,7 +61,7 @@ Your average booth showcases a mod, and contains:
 ![Familiar Magic Mod Description](/assets/pages/images/bcguide/familiar_magic_mod_description.png)
 *a mod summary explains what to expect from the booth, preventing confusion later on - this one also displays some formatting benefits of text blocks compared to signs.*
 
-![Familiar Magic Visitor Shard](/assets/pages/images/bcguide/familiar_magic_vistor_shard.png)
+![Familiar Magic Visitor Shard](/assets/pages/images/bcguide/familiar_magic_visitor_shard.png)
 *a visitor shard helps tourists track booth completion - touching this one would collect it.*
 
 ![Familiar Magic Feature](/assets/pages/images/bcguide/familiar_magic_feature.png)

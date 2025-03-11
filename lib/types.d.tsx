@@ -3,11 +3,12 @@ export declare interface User {
   slug: string;
   name: string;
   pronouns: string;
-  modrinthId: string;
-  discordId: string;
+  modrinth_id: string;
+  discord_id: string;
   bio: string;
   icon: string;
   registered: Set<string>;
+  minecraft_accounts: Set<string>;
 }
 
 export declare interface Event {
@@ -22,7 +23,6 @@ export declare interface Event {
   mod_loader: string;
   minecraft_version: string;
   modpack: string;
-  description: EventDescriptionItem[];
 }
 
 export declare type Phase =
@@ -57,29 +57,13 @@ export declare interface EventDiscordRoles {
   award: string;
 }
 
-export declare type EventDescriptionItem =
-  | MarkdownDescriptionItem
-  | UnknownDescriptionItem;
-
-export declare interface MarkdownDescriptionItem {
-  type: "markdown";
-  content: {
-    markdown: string;
-  };
-}
-
-export declare interface UnknownDescriptionItem {
-  type: string;
-  content: object;
-}
-
 export declare interface Submission {
   id: string;
   name: string;
   event?: string;
   description: string;
   authors: string[];
-  platform: ModrinthData | GitHubData | undefined;
+  platform: ModrinthData | GitHubData | OtherData | undefined;
   images: SubmissionImages;
   download: string;
   source: string;
@@ -90,6 +74,12 @@ export declare interface ModrinthData {
   type: "modrinth";
   project_id: string;
   version_id: string;
+}
+
+export declare interface OtherData {
+  type: "other";
+  homepage_url: string;
+  download_url: string;
 }
 
 export declare interface GitHubData {

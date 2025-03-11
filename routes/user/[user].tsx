@@ -12,14 +12,17 @@ import {
 } from "../../components/Submission.tsx";
 
 export default async function User(_req: Request, ctx: RouteContext) {
-  const user = await fetchUser(fetch, ctx.params.user);
+  let user = await fetchUser(fetch, ctx.params.user);
   const events = await fetchEvents(fetch);
 
   if (!user.id) {
-    return ctx.renderNotFound();
+    user = await fetchUser(fetch, `mr:${ctx.params.user}`);
+    if (!user.id) {
+      return ctx.renderNotFound();
+    }
   }
 
-  const submissions = await fetchUserSubmissions(fetch, ctx.params.user);
+  const submissions = await fetchUserSubmissions(fetch, user.id);
 
   return (
     <div class="flex flex-col gap-4 mb-16">
@@ -28,27 +31,28 @@ export default async function User(_req: Request, ctx: RouteContext) {
           <div>
             <img
               alt={`Icon for user ${user.name}`}
-              class="h-16 bg-mf-unknown w-16 rounded-full min-w-16 object-cover"
+              class="h-20 bg-mf-unknown w-20 rounded-full min-w-20 object-cover"
               src={user.icon}
             />
           </div>
-          <div class="flex-grow self-center">
+          <div class="flex-grow flex-col flex self-center">
             <span class="flex flex-row items-end gap-2">
               <h1 class="m-0">{user.name}</h1>
               {user.pronouns && <p class="m-0 text-sm">({user.pronouns})</p>}
             </span>
+            {user.bio && <span>{user.bio}</span>}
             {submissions
               ? (
-                <p>
+                <span>
                   {user.name} has submitted{" "}
                   {formatPlural("project", submissions.length)}{" "}
                   to ModFest events.
-                </p>
+                </span>
               )
               : (
-                <p>
+                <span>
                   {user.name} has not participated in a ModFest event yet.
-                </p>
+                </span>
               )}
           </div>
         </div>
