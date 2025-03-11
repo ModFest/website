@@ -4,7 +4,7 @@ import { render } from "@deno/gfm";
 import { fetchEvent, fetchEventSubmissions } from "../../lib/platform-api.tsx";
 import { MarkdownDescriptionItem } from "../../lib/types.d.tsx";
 import { asset, Head } from "$fresh/runtime.ts";
-import {markdownRenderOptions} from "../../lib/helpers.tsx";
+import { markdownRenderOptions } from "../../lib/helpers.tsx";
 
 export const config: RouteConfig = {
   skipInheritedLayouts: true,
@@ -181,8 +181,13 @@ export default async function Event(_req: Request, ctx: RouteContext) {
       <div className="bg-[url(assets/vanity/bc25/sprites/water_bg.png)] bg-repeat bg-[auto_96px] bg-[center_top] pixelated pb-24">
         <div className="flex flex-col gap-4 max-w-4xl m-[auto] pt-[32px] text-sm">
           <article className="card flex flex-col gap-3 w-auto mx-auto">
-            {/* <h1 className="text-center sm:text-3xl">Welcome to BlanketCon25</h1> */}
             <div className="flex justify-center gap-3 flex-row flex-wrap">
+              <audio
+                src="/assets/vanity/bc25/dormant.wav"
+                className="audio-button"
+                controls
+                loop
+              />
               <a href="/bc25" className="button flex items-center">
                 Classic Site
               </a>
@@ -193,12 +198,6 @@ export default async function Event(_req: Request, ctx: RouteContext) {
               >
                 Watch Trailer
               </a>
-              <audio
-                src="/assets/vanity/bc25/dormant.wav"
-                className="audio-button"
-                controls
-                loop
-              />
             </div>
           </article>
           {event.description.map((section) => (section.type === "markdown" &&
@@ -208,7 +207,7 @@ export default async function Event(_req: Request, ctx: RouteContext) {
                 dangerouslySetInnerHTML={{
                   __html: render(
                     (section as MarkdownDescriptionItem).content.markdown,
-                      markdownRenderOptions
+                    markdownRenderOptions,
                   ),
                 }}
               />
