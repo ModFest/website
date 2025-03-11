@@ -4,12 +4,16 @@
 }
 
 @layer components {
+  * {
+    border-radius: 0 !important;
+  }
   .card {
     border-radius: 0;
     background-color: transparent;
     color: black;
     font-family: pixel;
     image-rendering: pixelated;
+    font-size: small;
     border-image: url("backgrounds/bg-card.png") 6 6 fill;
     border-width: 24px;
     padding: 0.5em 1em;
@@ -25,10 +29,14 @@
       color: #e6ffa4;
       background-color: black;
       padding: 4px;
+      border: 0;
     }
     table td {
       border: 2px solid #e6ffa4;
       padding: 0.5rem 1rem;
+    }
+    blockquote {
+      color: white;
     }
   }
 
@@ -62,6 +70,25 @@
   .hover {
     animation: hover 7s ease-in-out;
     animation-iteration-count: infinite;
+  }
+  audio.audio-button {
+    border-image: url("backgrounds/bg-button.png") 3 3 fill;
+    border-width: 12px;
+    padding: 0;
+    background-color: transparent;
+    font-family: pixel;
+    image-rendering: pixelated;
+    /* width: 100px; */
+    color: black;
+    &::-webkit-media-controls-current-time-display,
+    &::-webkit-media-controls-time-remaining-display,
+    &::-webkit-media-controls-overlay-play-button,
+    &::-webkit-media-controls-volume-slider,
+    &::-webkit-media-controls-timeline,
+    &::-webkit-media-controls-timeline-container {
+      font-family: pixel;
+      font-size: x-small;
+    }
   }
 }
 @keyframes slide {
