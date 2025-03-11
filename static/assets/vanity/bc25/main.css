@@ -67,7 +67,7 @@
   audio.audio-button {
     border-image: url("backgrounds/bg-button.png") 3 3 fill;
     border-width: 12px;
-    padding: 0.1em 0.2em;
+    padding: 0;
     background-color: transparent;
     font-family: pixel;
     image-rendering: pixelated;
