@@ -10,7 +10,6 @@ import * as $_layout from "./routes/_layout.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $pages_page_ from "./routes/pages/[page].tsx";
 import * as $user_user_ from "./routes/user/[user].tsx";
-import * as $vanity_bc23 from "./routes/vanity/bc23.tsx";
 import * as $vanity_bc25 from "./routes/vanity/bc25.tsx";
 
 import type { Manifest } from "$fresh/server.ts";
@@ -25,7 +24,6 @@ const manifest = {
     "./routes/index.tsx": $index,
     "./routes/pages/[page].tsx": $pages_page_,
     "./routes/user/[user].tsx": $user_user_,
-    "./routes/vanity/bc23.tsx": $vanity_bc23,
     "./routes/vanity/bc25.tsx": $vanity_bc25,
   },
   islands: {},
