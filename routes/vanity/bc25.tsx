@@ -1,23 +1,24 @@
 import { RouteConfig, RouteContext } from "$fresh/server.ts";
-import { render } from "@deno/gfm";
 
 import { fetchEvent, fetchEventSubmissions } from "../../lib/platform-api.tsx";
-import { MarkdownDescriptionItem } from "../../lib/types.d.tsx";
 import { asset, Head } from "$fresh/runtime.ts";
-import { markdownRenderOptions } from "../../lib/helpers.tsx";
+import { getPagesMarkdown } from "../../lib/helpers.tsx";
+import { MarkdownBlocks } from "../../components/MarkdownBlocks.tsx";
 
 export const config: RouteConfig = {
   skipInheritedLayouts: true,
 };
 
 export default async function Event(_req: Request, ctx: RouteContext) {
-  const event = await fetchEvent(fetch, "bc25");
+  const eventId = "bc25";
+  const event = await fetchEvent(fetch, eventId);
 
   if (!event.id) {
     return ctx.renderNotFound();
   }
 
-  const submissions = await fetchEventSubmissions(fetch, "bc25");
+  const submissions = await fetchEventSubmissions(fetch, eventId);
+  const content = await getPagesMarkdown(`event/${eventId}`);
   return (
     <div className="bg-[#86dbfe]">
       <Head>
@@ -200,19 +201,7 @@ export default async function Event(_req: Request, ctx: RouteContext) {
               </a>
             </div>
           </article>
-          {event.description.map((section) => (section.type === "markdown" &&
-            (
-              <article
-                class="card"
-                dangerouslySetInnerHTML={{
-                  __html: render(
-                    (section as MarkdownDescriptionItem).content.markdown,
-                    markdownRenderOptions,
-                  ),
-                }}
-              />
-            ))
-          )}
+          <MarkdownBlocks content={content} />
         </div>
       </div>
     </div>
