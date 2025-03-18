@@ -68,48 +68,57 @@ export function Submission(props: SubmissionProps) {
           </a>
         )}
         <div
-          class={props.submission.images && props.submission.images.icon
-            ? "ml-[7.25rem]"
-            : ""}
+            class={props.submission.images && props.submission.images.icon
+                ? "ml-[7.25rem]"
+                : ""}
         >
-          <a
-            href={getLink(props.submission)}
-            target="_blank"
-            style="text-decoration:none"
-          >
-            <h3 class="m-0 text-mf-heading">{props.submission.name}</h3>
-          </a>
+          <div className="flex flex-row">
+            <div class="basis-full">
+              <a
+                  href={getLink(props.submission)}
+                  target="_blank"
+                  style="text-decoration:none"
+              >
+                <h3 class="m-0 text-mf-heading inline">{props.submission.name}</h3>
+              </a>
+            </div>
+            {props.submission.source ?
+                <div class="justify-self-end">
+                  <a href={props.submission.source}>[source]</a>
+                </div>
+                : ""}
+          </div>
           {props.users &&
-            props.submission.authors.map((author, index) => {
-              const user = props.users!.find((u) => u.id === author);
-              return user
-                ? (
-                  <a
-                    key={`${props.key ?? "submission"}-${index}`}
-                    href={`/user/${user.id}`}
-                  >
-                    {user.name}
-                  </a>
-                )
-                : author;
-            }).map((userElement, index) => {
-              let join = "";
-              if (index === props.submission.authors.length - 1) {
-                if (props.submission.authors.length > 2) {
-                  join = ", and ";
-                } else if (props.submission.authors.length === 2) {
-                  join = " and ";
+              props.submission.authors.map((author, index) => {
+                const user = props.users!.find((u) => u.id === author);
+                return user
+                    ? (
+                        <a
+                            key={`${props.key ?? "submission"}-${index}`}
+                            href={`/user/${user.id}`}
+                        >
+                          {user.name}
+                        </a>
+                    )
+                    : author;
+              }).map((userElement, index) => {
+                let join = "";
+                if (index === props.submission.authors.length - 1) {
+                  if (props.submission.authors.length > 2) {
+                    join = ", and ";
+                  } else if (props.submission.authors.length === 2) {
+                    join = " and ";
+                  }
+                } else if (index > 0) {
+                  join = ", ";
                 }
-              } else if (index > 0) {
-                join = ", ";
-              }
-              return (
-                <span key={`${props.key ?? "submission"}-${index}`}>
+                return (
+                    <span key={`${props.key ?? "submission"}-${index}`}>
                   <span>{join}</span>
-                  {userElement}
+                      {userElement}
                 </span>
-              );
-            })}
+                );
+              })}
         </div>
         <p className="m-0 mt-2 text-mf-heading">
           {props.submission.description}
