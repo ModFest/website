@@ -70,6 +70,24 @@ export declare interface Submission {
   awards: SubmissionAwards;
 }
 
+export declare interface ScheduleEntryData {
+  id: string;
+  event: string;
+  title: string | undefined;
+  type: string | undefined;
+  location: string | undefined;
+  description: string | undefined;
+  authors: string[];
+  /**
+   * The start time of the schedule entry, ISO-8086 formatted string
+   */
+  start: string | null | undefined;
+  /**
+   * The end time of the schedule entry, ISO-8086 formatted string
+   */
+  end: string | null | undefined;
+}
+
 export declare interface ModrinthData {
   type: "modrinth";
   project_id: string;

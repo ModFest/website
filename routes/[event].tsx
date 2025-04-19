@@ -1,8 +1,11 @@
 import { RouteContext } from "$fresh/server.ts";
 
-import { fetchEvent, fetchEventSubmissions } from "../lib/platform-api.tsx";
+import { fetchEvent, fetchEventSchedule, fetchEventSubmissions, fetchUser } from "../lib/platform-api.tsx";
 import { getPagesMarkdown } from "../lib/helpers.tsx";
 import { MarkdownBlocks } from "../components/MarkdownBlocks.tsx";
+import { ScheduleEntryData, User } from "../lib/types.d.tsx";
+import UserLink from "../components/UserLink.tsx";
+import FormattedDateTime from "../components/DateTime.tsx";
 
 export default async function Event(_req: Request, ctx: RouteContext) {
   const event = await fetchEvent(fetch, ctx.params.event);
@@ -12,7 +15,15 @@ export default async function Event(_req: Request, ctx: RouteContext) {
   }
 
   const submissions = await fetchEventSubmissions(fetch, ctx.params.event);
+  const schedule = await fetchEventSchedule(fetch, ctx.params.event);
+  const users = await Promise.all(
+      [...new Set(schedule.flatMap((s) => s.authors))].map((author) =>
+        fetchUser(fetch, author)
+      ),
+    )
+    
   const content = await getPagesMarkdown(`event/${ctx.params.event}`);
+
   return (
     <div
       class="flex flex-col gap-4 mb-16"
@@ -86,8 +97,69 @@ export default async function Event(_req: Request, ctx: RouteContext) {
             </a>
           )}
       </div>
-
+      
+      {schedule && schedule.length > 0 ? <Schedule schedule={schedule} users={users}></Schedule> : null}
       <MarkdownBlocks content={content} />
     </div>
   );
+}
+
+function Schedule(props: {schedule: ScheduleEntryData[], users?: User[]}) {
+  return <div class="card">
+      <h1>Event Schedule</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Event
+            </th>
+            <th>
+              Type
+            </th>
+            <th>
+              Location
+            </th>
+            <th>
+              Start
+            </th>
+            <th>
+              End
+            </th>
+            <th>
+              Hosts
+            </th>
+            <th>
+              Summary
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.schedule.map(entry => 
+            <tr key={entry.id}>
+              <td>
+                {entry.title}
+              </td>
+              <td>
+                {entry.type}
+              </td>
+              <td>
+                {entry.location}
+              </td>
+              <td>
+                {entry.start ? <FormattedDateTime time={entry.start}></FormattedDateTime> : "-"}
+              </td>
+              <td>
+                {entry.end ? <FormattedDateTime time={entry.end} timeOnly></FormattedDateTime> : "-"}
+              </td>
+              <td>
+                {entry.authors.map(author => <UserLink key={author} id={author} users={props.users}></UserLink>)}
+              </td>
+              <td>
+                {entry.description}
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+  </div>
 }

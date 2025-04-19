@@ -1,4 +1,4 @@
-import type { Submission, User, Event } from "./types.d.tsx";
+import type { Submission, User, Event, ScheduleEntryData } from "./types.d.tsx";
 
 type fetchT = typeof fetch;
 const API_URL = Deno.env.get("API_URL")
@@ -32,6 +32,16 @@ export async function fetchEventSubmissions(
   eventId: string,
 ): Promise<Submission[]> {
   return await baseFetch(fetch, `event/${eventId}/submissions`);
+}
+
+/**
+ * Fetches the schedule for a given event
+ */
+export async function fetchEventSchedule(
+  fetch: fetchT,
+  eventId: string,
+): Promise<ScheduleEntryData[]> {
+  return await baseFetch(fetch, `event/${eventId}/schedule`);
 }
 
 /**
