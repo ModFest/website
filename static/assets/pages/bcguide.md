@@ -139,6 +139,8 @@ Claims help participants collaborate on booth ideas and placement. They should:
 - Indicate the booth entrance using **white wool**. Black wool can be used for back exits.
 - Indicate if they'll be taller than two storeys, or contain a large underground element.
 
+![wool claim example](/assets/pages/images/bcguide/claim.jpg)
+
 Once built, a screenshot and coordinates should be sent in for approval, whereupon the team will add a map marker, warp, and placeholders for an entrance sign and visitor shard!
 
 ---
