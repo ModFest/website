@@ -152,7 +152,28 @@ function Schedule(props: {schedule: ScheduleEntryData[], users?: User[]}) {
                 {entry.end ? <FormattedDateTime time={entry.end} timeOnly></FormattedDateTime> : "-"}
               </td>
               <td>
-                {entry.authors.map(author => <UserLink key={author} id={author} users={props.users}></UserLink>)}
+                {
+                // TODO split off into more generic stuff
+                  entry.authors.map(author => <UserLink key={author} id={author} users={props.users}></UserLink>)
+                  .map((userElement, index) => {
+                    let join = "";
+                    if (index === entry.authors.length - 1) {
+                      if (entry.authors.length > 2) {
+                        join = ", and ";
+                      } else if (entry.authors.length === 2) {
+                        join = " and ";
+                      }
+                    } else if (index > 0) {
+                      join = ", ";
+                    }
+                    return (
+                        <span key={index}>
+                      <span>{join}</span>
+                          {userElement}
+                    </span>
+                    );
+                  })
+                }
               </td>
               <td>
                 {entry.description}
