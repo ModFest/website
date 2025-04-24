@@ -16,6 +16,7 @@ export default async function Event(_req: Request, ctx: RouteContext) {
 
   const submissions = await fetchEventSubmissions(fetch, ctx.params.event);
   const schedule = await fetchEventSchedule(fetch, ctx.params.event);
+  schedule.sort((a, b) => (a.start ?? "") > (b.start ?? "") ? 1 : -1)
   const users = await Promise.all(
       [...new Set(schedule.flatMap((s) => s.authors))].map((author) =>
         fetchUser(fetch, author)
