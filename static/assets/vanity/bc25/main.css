@@ -6,6 +6,8 @@
 @layer components {
   * {
     border-radius: 0 !important;
+    scroll-behavior: smooth;
+    scroll-margin-top: 1em;
   }
   h1, h2, h3 {
     font-family: pixel;
