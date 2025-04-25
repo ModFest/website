@@ -5,7 +5,7 @@ import { getPagesMarkdown } from "../lib/helpers.tsx";
 import { MarkdownBlocks } from "../components/MarkdownBlocks.tsx";
 import { ScheduleEntryData, User } from "../lib/types.d.tsx";
 import UserLink from "../components/UserLink.tsx";
-import FormattedDateTime from "../components/DateTime.tsx";
+import FormattedDateTime from "../islands/DateTime.tsx";
 
 export default async function Event(_req: Request, ctx: RouteContext) {
   const event = await fetchEvent(fetch, ctx.params.event);
