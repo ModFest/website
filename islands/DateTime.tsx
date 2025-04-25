@@ -25,5 +25,5 @@ export default function FormattedDateTime(props: {time: string, timeOnly?: boole
         {
             (props.timeOnly ? FORMAT_TIMEONLY : FORMAT).format(new Date(props.time))
         }
-    </time> 
+    </time>
 }
