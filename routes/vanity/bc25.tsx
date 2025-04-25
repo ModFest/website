@@ -1,6 +1,11 @@
 import { RouteConfig, RouteContext } from "$fresh/server.ts";
 
-import { fetchEvent, fetchEventSchedule, fetchEventSubmissions, fetchUser } from "../../lib/platform-api.tsx";
+import {
+  fetchEvent,
+  fetchEventSchedule,
+  fetchEventSubmissions,
+  fetchUser,
+} from "../../lib/platform-api.tsx";
 import { asset, Head } from "$fresh/runtime.ts";
 import { getPagesMarkdown } from "../../lib/helpers.tsx";
 import { MarkdownBlocks } from "../../components/MarkdownBlocks.tsx";
@@ -20,12 +25,12 @@ export default async function Event(_req: Request, ctx: RouteContext) {
 
   const submissions = await fetchEventSubmissions(fetch, eventId);
   const schedule = await fetchEventSchedule(fetch, eventId);
-  schedule.sort((a, b) => (a.start ?? "") > (b.start ?? "") ? 1 : -1)
+  schedule.sort((a, b) => (a.start ?? "") > (b.start ?? "") ? 1 : -1);
   const users = await Promise.all(
-      [...new Set(schedule.flatMap((s) => s.authors))].map((author) =>
-        fetchUser(fetch, author)
-      ),
-    )
+    [...new Set(schedule.flatMap((s) => s.authors))].map((author) =>
+      fetchUser(fetch, author)
+    ),
+  );
   const content = await getPagesMarkdown(`event/${eventId}`);
   return (
     <div className="bg-[#86dbfe]">
@@ -177,6 +182,11 @@ export default async function Event(_req: Request, ctx: RouteContext) {
                 View Submissions
               </a>
             )}
+          {!!schedule && schedule.length > 0 && (
+            <a href="#schedule" class="button">
+              View Schedule
+            </a>
+          )}
         </div>
       </div>
       <div className="bg-[#185090] bg-repeat bg-[auto_96px] bg-[center_top_48px] pixelated -mb-20">
@@ -210,7 +220,9 @@ export default async function Event(_req: Request, ctx: RouteContext) {
             </div>
           </article>
           <MarkdownBlocks content={content} />
-          {schedule && schedule.length > 0 ? <Schedule schedule={schedule} users={users}></Schedule> : null}
+          {schedule && schedule.length > 0
+            ? <Schedule schedule={schedule} users={users}></Schedule>
+            : null}
         </div>
       </div>
     </div>

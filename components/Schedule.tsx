@@ -1,4 +1,3 @@
-import { Fragment } from "preact/jsx-runtime";
 import FormattedDateTime from "../islands/DateTime.tsx";
 import { ScheduleEntryData, User } from "../lib/types.d.tsx";
 import UserLink from "./UserLink.tsx";
@@ -8,7 +7,7 @@ export function Schedule(
 ) {
   return (
     <div class="card">
-      <h1>Event Schedule</h1>
+      <h1 id="schedule">Event Schedule</h1>
       <div>
         {props.schedule.map((entry) => {
           return (
