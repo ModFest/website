@@ -11,7 +11,7 @@ import * as $index from "./routes/index.tsx";
 import * as $pages_page_ from "./routes/pages/[page].tsx";
 import * as $user_user_ from "./routes/user/[user].tsx";
 import * as $vanity_bc25 from "./routes/vanity/bc25.tsx";
-
+import * as $DateTime from "./islands/DateTime.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -26,7 +26,9 @@ const manifest = {
     "./routes/user/[user].tsx": $user_user_,
     "./routes/vanity/bc25.tsx": $vanity_bc25,
   },
-  islands: {},
+  islands: {
+    "./islands/DateTime.tsx": $DateTime,
+  },
   baseUrl: import.meta.url,
 } satisfies Manifest;
 

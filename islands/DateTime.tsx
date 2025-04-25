@@ -1,5 +1,10 @@
-const FORMAT = new Intl.DateTimeFormat("en-GB", {
-    timeZone: "UTC",
+import { IS_BROWSER } from "$fresh/runtime.ts";
+
+const LOCALE = IS_BROWSER ? undefined : "en-GB";
+const TIME_ZONE = IS_BROWSER ? undefined : "UTC";
+
+const FORMAT = new Intl.DateTimeFormat(LOCALE, {
+    timeZone: TIME_ZONE,
     timeZoneName: "short",
     day: "numeric",
     month: "short",
@@ -7,8 +12,9 @@ const FORMAT = new Intl.DateTimeFormat("en-GB", {
     hour: "numeric",
     minute: "2-digit"
 })
-const FORMAT_TIMEONLY = new Intl.DateTimeFormat("en-GB", {
-    timeZone: "UTC",
+
+const FORMAT_TIMEONLY = new Intl.DateTimeFormat(LOCALE, {
+    timeZone: TIME_ZONE,
     timeZoneName: "short",
     hour: "numeric",
     minute: "2-digit"
@@ -19,5 +25,5 @@ export default function FormattedDateTime(props: {time: string, timeOnly?: boole
         {
             (props.timeOnly ? FORMAT_TIMEONLY : FORMAT).format(new Date(props.time))
         }
-    </time>
+    </time> 
 }
