@@ -15,7 +15,7 @@ export function MarkdownBlocks(props: MarkdownBlocksProps) {
   props = { ...defaultProps, ...props };
   const blocks = props.content.split(blockSeperator);
   return (
-    <div class="flex flex-col gap-4 mb-16">
+    <div class="flex flex-col gap-4">
       {blocks.map((block) =>
         block.startsWith("# ")
           ? (

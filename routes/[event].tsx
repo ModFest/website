@@ -99,8 +99,8 @@ export default async function Event(_req: Request, ctx: RouteContext) {
           )}
       </div>
       
-      {schedule && schedule.length > 0 ? <Schedule schedule={schedule} users={users}></Schedule> : null}
       <MarkdownBlocks content={content} />
+      {schedule && schedule.length > 0 ? <Schedule schedule={schedule} users={users}></Schedule> : null}
     </div>
   );
 }
