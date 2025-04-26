@@ -1,11 +1,16 @@
 import type { Submission, User } from "../lib/types.d.tsx";
 import { getLink } from "../lib/helpers.tsx";
+import CopyButton, {
+  CopyPing,
+  CreditsGeneration,
+} from "../islands/CopyButton.tsx";
 
 export type SubmissionProps = {
   submission: Submission;
   users?: User[];
   key?: number;
   className?: string;
+  devtools?: boolean;
 };
 
 const defaultProps = {
@@ -68,61 +73,87 @@ export function Submission(props: SubmissionProps) {
           </a>
         )}
         <div
-            class={props.submission.images && props.submission.images.icon
-                ? "ml-[7.25rem]"
-                : ""}
+          class={props.submission.images && props.submission.images.icon
+            ? "ml-[7.25rem]"
+            : ""}
         >
           <div className="flex flex-row">
             <div class="basis-full">
               <a
-                  href={getLink(props.submission)}
-                  target="_blank"
-                  style="text-decoration:none"
+                href={getLink(props.submission)}
+                target="_blank"
+                style="text-decoration:none"
               >
-                <h3 class="m-0 text-mf-heading inline">{props.submission.name}</h3>
+                <h3 class="m-0 text-mf-heading inline">
+                  {props.submission.name}
+                </h3>
               </a>
             </div>
-            {props.submission.source ?
+            {props.submission.source
+              ? (
                 <div class="justify-self-end">
                   <a href={props.submission.source}>[source]</a>
                 </div>
-                : ""}
+              )
+              : ""}
           </div>
           {props.users &&
-              props.submission.authors.map((author, index) => {
-                const user = props.users!.find((u) => u.id === author);
-                return user
-                    ? (
-                        <a
-                            key={`${props.key ?? "submission"}-${index}`}
-                            href={`/user/${user.id}`}
-                        >
-                          {user.name}
-                        </a>
-                    )
-                    : author;
-              }).map((userElement, index) => {
-                let join = "";
-                if (index === props.submission.authors.length - 1) {
-                  if (props.submission.authors.length > 2) {
-                    join = ", and ";
-                  } else if (props.submission.authors.length === 2) {
-                    join = " and ";
-                  }
-                } else if (index > 0) {
-                  join = ", ";
+            props.submission.authors.map((author, index) => {
+              const user = props.users!.find((u) => u.id === author);
+              return user
+                ? (
+                  <a
+                    key={`${props.key ?? "submission"}-${index}`}
+                    href={`/user/${user.id}`}
+                  >
+                    {user.name}
+                  </a>
+                )
+                : author;
+            }).map((userElement, index) => {
+              let join = "";
+              if (index === props.submission.authors.length - 1) {
+                if (props.submission.authors.length > 2) {
+                  join = ", and ";
+                } else if (props.submission.authors.length === 2) {
+                  join = " and ";
                 }
-                return (
-                    <span key={`${props.key ?? "submission"}-${index}`}>
+              } else if (index > 0) {
+                join = ", ";
+              }
+              return (
+                <span key={`${props.key ?? "submission"}-${index}`}>
                   <span>{join}</span>
-                      {userElement}
+                  {userElement}
                 </span>
-                );
-              })}
+              );
+            })}
         </div>
         <p className="m-0 mt-2 text-mf-heading">
           {props.submission.description}
         </p>
+        {props.devtools && (
+          <>
+            <hr class="mt-2" />
+            <div class="flex flex-row gap-2 items-center flex-wrap">
+              {props.users &&
+                (
+                  <>
+                    <CreditsGeneration
+                      name={props.submission.name}
+                      authors={props.submission.authors}
+                      users={props.users}
+                    />
+                    <CopyPing
+                      authors={props.submission.authors}
+                      users={props.users}
+                    />
+                  </>
+                )}
+              <CopyButton content={props.submission.id}>Copy ID</CopyButton>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

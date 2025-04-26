@@ -1,6 +1,6 @@
 import { RouteContext } from "$fresh/server.ts";
 
-import { formatPlural, getDate } from "../../lib/helpers.tsx";
+import { formatPlural, getDate, getDevtools } from "../../lib/helpers.tsx";
 import {
   fetchEvents,
   fetchUser,
@@ -10,6 +10,7 @@ import { Event, Submission } from "../../lib/types.d.tsx";
 import {
   Submission as SubmissionComponent,
 } from "../../components/Submission.tsx";
+import CopyButton from "../../islands/CopyButton.tsx";
 
 export default async function User(_req: Request, ctx: RouteContext) {
   let user = await fetchUser(fetch, ctx.params.user);
@@ -23,6 +24,7 @@ export default async function User(_req: Request, ctx: RouteContext) {
   }
 
   const submissions = await fetchUserSubmissions(fetch, user.id);
+  const devtoolsEnabled = getDevtools(_req);
 
   return (
     <div class="flex flex-col gap-4 mb-16">
@@ -54,6 +56,25 @@ export default async function User(_req: Request, ctx: RouteContext) {
                   {user.name} has not participated in a ModFest event yet.
                 </span>
               )}
+            {devtoolsEnabled && (
+              <>
+                <hr class="mt-2" />
+                <div class="flex flex-row gap-2 items-center flex-wrap">
+                  <CopyButton content={user.id}>Copy ModFest ID</CopyButton>
+                  <CopyButton content={user.discord_id}>
+                    Copy Discord ID
+                  </CopyButton>
+                  <CopyButton content={`<@${user.discord_id}>`}>
+                    Copy Ping
+                  </CopyButton>
+                  {user.modrinth_id && (
+                    <CopyButton content={user.modrinth_id}>
+                      Copy Modrinth ID
+                    </CopyButton>
+                  )}
+                </div>
+              </>
+            )}
           </div>
         </div>
       )}
@@ -87,6 +108,7 @@ export default async function User(_req: Request, ctx: RouteContext) {
                         className="!bg-mf-bg"
                         submission={submission}
                         key={submissionIndex}
+                        devtools={devtoolsEnabled}
                       />
                     ))}
                   </div>

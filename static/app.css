@@ -175,6 +175,12 @@ html {
       @apply font-bold text-mf-heading p-2;
     }
   }
+
+  button {
+    @apply bg-mf-card rounded-xl font-bold p-2 shadow-xl border
+      border-mf-unknown active:scale-95 hover:brightness-110
+      active:brightness-95 transition cursor-pointer;
+  }
 }
 [open] {
   summary {

@@ -1,9 +1,15 @@
 import { RouteContext } from "$fresh/server.ts";
 
-import { fetchEvent, fetchEventSchedule, fetchEventSubmissions, fetchUser } from "../lib/platform-api.tsx";
-import { getPagesMarkdown } from "../lib/helpers.tsx";
+import {
+  fetchEvent,
+  fetchEventSchedule,
+  fetchEventSubmissions,
+  fetchUser,
+} from "../lib/platform-api.tsx";
+import { getDevtools, getPagesMarkdown } from "../lib/helpers.tsx";
 import { MarkdownBlocks } from "../components/MarkdownBlocks.tsx";
 import { Schedule } from "../components/Schedule.tsx";
+import CopyButton from "../islands/CopyButton.tsx";
 
 export default async function Event(_req: Request, ctx: RouteContext) {
   const event = await fetchEvent(fetch, ctx.params.event);
@@ -14,14 +20,16 @@ export default async function Event(_req: Request, ctx: RouteContext) {
 
   const submissions = await fetchEventSubmissions(fetch, ctx.params.event);
   const schedule = await fetchEventSchedule(fetch, ctx.params.event);
-  schedule.sort((a, b) => (a.start ?? "") > (b.start ?? "") ? 1 : -1)
+  schedule.sort((a, b) => (a.start ?? "") > (b.start ?? "") ? 1 : -1);
   const users = await Promise.all(
-      [...new Set(schedule.flatMap((s) => s.authors))].map((author) =>
-        fetchUser(fetch, author)
-      ),
-    )
-    
+    [...new Set(schedule.flatMap((s) => s.authors))].map((author) =>
+      fetchUser(fetch, author)
+    ),
+  );
+
   const content = await getPagesMarkdown(`event/${ctx.params.event}`);
+
+  const devtoolsEnabled = getDevtools(_req);
 
   return (
     <div
@@ -95,10 +103,13 @@ export default async function Event(_req: Request, ctx: RouteContext) {
               View Submissions
             </a>
           )}
+        {devtoolsEnabled && <CopyButton content={event.id}>Copy ID</CopyButton>}
       </div>
-      
+
       <MarkdownBlocks content={content} />
-      {schedule && schedule.length > 0 ? <Schedule schedule={schedule} users={users}></Schedule> : null}
+      {schedule && schedule.length > 0
+        ? <Schedule schedule={schedule} users={users}></Schedule>
+        : null}
     </div>
   );
 }

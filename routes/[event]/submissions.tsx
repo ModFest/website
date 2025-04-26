@@ -5,9 +5,10 @@ import {
   fetchEventSubmissions,
   fetchUser,
 } from "../../lib/platform-api.tsx";
-import { formatPlural } from "../../lib/helpers.tsx";
+import { formatPlural, getDevtools } from "../../lib/helpers.tsx";
 import { Submission } from "../../lib/types.d.tsx";
 import { Submission as SubmissionComponent } from "../../components/Submission.tsx";
+import { FullCreditsGeneration } from "../../islands/CopyButton.tsx";
 
 export default async function Submissions(_req: Request, ctx: RouteContext) {
   const event = await fetchEvent(fetch, ctx.params.event);
@@ -31,6 +32,8 @@ export default async function Submissions(_req: Request, ctx: RouteContext) {
       submissions.authors.forEach((author) => participants.add(author));
     });
   }
+
+  const devtools = getDevtools(_req);
 
   return (
     <div
@@ -73,12 +76,15 @@ export default async function Submissions(_req: Request, ctx: RouteContext) {
           </p>
         </div>
       </a>
+      {devtools &&
+        <FullCreditsGeneration submissions={submissions} users={users} />}
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {submissions.map((submission: Submission, submissionIndex) => (
           <SubmissionComponent
             submission={submission}
             users={users}
             key={submissionIndex}
+            devtools={devtools}
           />
         ))}
       </div>
