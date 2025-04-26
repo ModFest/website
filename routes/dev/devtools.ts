@@ -18,6 +18,8 @@ export const handler: Handlers = {
       path: "/",
     });
 
-    return new Response(null, { status: 303, headers });
+    const response = new Response(null, { status: 303, headers });
+
+    return response;
   },
 };
