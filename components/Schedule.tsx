@@ -1,5 +1,6 @@
 import FormattedDateTime from "../islands/DateTime.tsx";
 import { ScheduleEntryData, User } from "../lib/types.d.tsx";
+import IntlList from "./IntlList.tsx";
 import UserLink from "./UserLink.tsx";
 
 export function Schedule(
@@ -42,7 +43,9 @@ export function Schedule(
                   <tr>
                     <td>Hosts</td>
                     <td>
-                      <Authors authors={entry.authors} users={props.users} />
+                      <IntlList>
+                        {entry.authors.map(author=><UserLink key={author} id={author} users={props.users}/>)}
+                      </IntlList>
                     </td>
                   </tr>
                   <tr>
@@ -56,34 +59,5 @@ export function Schedule(
         })}
       </div>
     </div>
-  );
-}
-
-function Authors({ authors, users }: { authors: string[]; users?: User[] }) {
-  return (
-    <>
-      {authors.map((author) => (
-        <UserLink key={author} id={author} users={users}>
-        </UserLink>
-      ))
-        .map((userElement, index) => {
-          let join = "";
-          if (index === authors.length - 1) {
-            if (authors.length > 2) {
-              join = ", and ";
-            } else if (authors.length === 2) {
-              join = " and ";
-            }
-          } else if (index > 0) {
-            join = ", ";
-          }
-          return (
-            <span key={index}>
-              <span>{join}</span>
-              {userElement}
-            </span>
-          );
-        })}
-    </>
   );
 }
