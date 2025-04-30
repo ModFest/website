@@ -1,6 +1,13 @@
 import { RenderOptions } from "@deno/gfm";
 import * as path from "jsr:@std/path";
-import { Event, ModrinthData, OtherData, Submission } from "./types.d.tsx";
+import {
+  Event,
+  ModrinthData,
+  OtherData,
+  Submission,
+  User,
+} from "./types.d.tsx";
+import { getCookies } from "$std/http/cookie.ts";
 
 export const markdownRenderOptions: RenderOptions = {
   allowedTags: ["center"],
@@ -44,4 +51,37 @@ export function getDate(event: Event): string {
     startPhase = event.dates[0];
   }
   return startPhase.start === undefined ? startPhase.end : startPhase.start;
+}
+
+export function getJsonForCredits(
+  title: string,
+  people: string[],
+  users: User[],
+) {
+  const names = new Array<string>();
+  people.forEach((id) =>
+    names.push((users!.find((u) => u.id === id) || { name: "Null" }).name)
+  );
+
+  const creditEntry = {
+    "title": title,
+    "names": names,
+  };
+
+  return creditEntry;
+}
+
+export function copyJsonForCredits(
+  title: string,
+  people: string[],
+  users: User[],
+) {
+  navigator.clipboard.writeText(
+    JSON.stringify(getJsonForCredits(title, people, users), null, 4),
+  );
+}
+
+export function getDevtools(req: Request) {
+  const cookies = getCookies(req.headers);
+  return cookies.devtools === "true";
 }

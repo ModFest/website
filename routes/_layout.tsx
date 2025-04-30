@@ -1,4 +1,4 @@
-import { PageProps } from "$fresh/server.ts";
+import { Handlers, PageProps } from "$fresh/server.ts";
 import { Header } from "../components/Header.tsx";
 
 export default function Layout({ Component, state }: PageProps) {
@@ -10,6 +10,11 @@ export default function Layout({ Component, state }: PageProps) {
         <main>
           <Component />
         </main>
+        <span class="text-sm text-center mb-4">
+          See site source <a href="https://github.com/modfest/website">here</a>.
+          {" | "}
+          <a href="/dev">ModFest Developer Tools</a>
+        </span>
       </div>
     </div>
   );

@@ -1,9 +1,15 @@
 import { RouteContext } from "$fresh/server.ts";
 
-import { fetchEvent, fetchEventSchedule, fetchEventSubmissions, fetchUser } from "../lib/platform-api.tsx";
-import { getPagesMarkdown } from "../lib/helpers.tsx";
+import {
+  fetchEvent,
+  fetchEventSchedule,
+  fetchEventSubmissions,
+  fetchUser,
+} from "../lib/platform-api.tsx";
+import { getDevtools, getPagesMarkdown } from "../lib/helpers.tsx";
 import { MarkdownBlocks } from "../components/MarkdownBlocks.tsx";
 import { Schedule } from "../components/Schedule.tsx";
+import CopyButton from "../islands/CopyButton.tsx";
 import { Head } from "$fresh/runtime.ts";
 
 export default async function Event(_req: Request, ctx: RouteContext) {
@@ -15,22 +21,22 @@ export default async function Event(_req: Request, ctx: RouteContext) {
 
   const submissions = await fetchEventSubmissions(fetch, ctx.params.event);
   const schedule = await fetchEventSchedule(fetch, ctx.params.event);
-  schedule.sort((a, b) => (a.start ?? "") > (b.start ?? "") ? 1 : -1)
+  schedule.sort((a, b) => (a.start ?? "") > (b.start ?? "") ? 1 : -1);
   const users = await Promise.all(
-      [...new Set(schedule.flatMap((s) => s.authors))].map((author) =>
-        fetchUser(fetch, author)
-      ),
-    )
-    
+    [...new Set(schedule.flatMap((s) => s.authors))].map((author) =>
+      fetchUser(fetch, author)
+    ),
+  );
+
   const content = await getPagesMarkdown(`event/${ctx.params.event}`);
 
-  console.log(event.images)
+  const devtoolsEnabled = getDevtools(_req);
 
   return (
     <>
       <Head>
-        <meta property="og:title" content={event.name} key="ogtitle"/>
-        <meta property="og:description" content={event.subtitle}/>
+        <meta property="og:title" content={event.name} key="ogtitle" />
+        <meta property="og:description" content={event.subtitle} />
       </Head>
       <div
         class="flex flex-col gap-4 mb-16"
@@ -103,10 +109,15 @@ export default async function Event(_req: Request, ctx: RouteContext) {
                 View Submissions
               </a>
             )}
+          {devtoolsEnabled && (
+            <CopyButton content={event.id}>Copy ID</CopyButton>
+          )}
         </div>
-      
+
         <MarkdownBlocks content={content} />
-        {schedule && schedule.length > 0 ? <Schedule schedule={schedule} users={users}></Schedule> : null}
+        {schedule && schedule.length > 0
+          ? <Schedule schedule={schedule} users={users}></Schedule>
+          : null}
       </div>
     </>
   );
