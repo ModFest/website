@@ -1,5 +1,9 @@
-import { markdownRenderOptions } from "../lib/helpers.tsx";
+import {
+  markdownRenderOptions,
+  parseSoundtrackMarkdown,
+} from "../lib/helpers.tsx";
 import { render } from "@deno/gfm";
+import { Album } from "./Album.tsx";
 
 const blockSeperator: RegExp = new RegExp("[\r\n]+---[\r\n]+");
 
@@ -27,12 +31,38 @@ export function MarkdownBlocks(props: MarkdownBlocksProps) {
             />
           )
           : (
-            <div
-              className="card"
-              dangerouslySetInnerHTML={{
-                __html: render(block, markdownRenderOptions),
-              }}
-            />
+            block.startsWith("#SOUNDTRACK")
+              ? (
+                <div className="card">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: render(
+                        parseSoundtrackMarkdown(block).html.split(
+                          "#SOUNDTRACKSLOT",
+                        ).shift() ?? "",
+                        markdownRenderOptions,
+                      ),
+                    }}
+                  />
+                  <Album {...parseSoundtrackMarkdown(block).data} />
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: render(
+                        block.split("#SOUNDTRACKSLOT").pop() ?? "",
+                        markdownRenderOptions,
+                      ),
+                    }}
+                  />
+                </div>
+              )
+              : (
+                <div
+                  className="card"
+                  dangerouslySetInnerHTML={{
+                    __html: render(block, markdownRenderOptions),
+                  }}
+                />
+              )
           )
       )}
     </div>

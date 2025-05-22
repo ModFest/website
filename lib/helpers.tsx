@@ -8,6 +8,7 @@ import {
   User,
 } from "./types.d.tsx";
 import { getCookies } from "$std/http/cookie.ts";
+import { AlbumProps } from "../components/Album.tsx";
 
 export const markdownRenderOptions: RenderOptions = {
   allowedTags: ["center"],
@@ -84,4 +85,58 @@ export function copyJsonForCredits(
 export function getDevtools(req: Request) {
   const cookies = getCookies(req.headers);
   return cookies.devtools === "true";
+}
+
+export function parseSoundtrackMarkdown(raw: string) {
+  // WE NEED TO SWITCH TO MDX DESPERATELY.
+
+  const data: AlbumProps = {
+    title: "",
+    iconUrl: "",
+    themeColour: "",
+    links: [],
+  };
+
+  const titleRegex = /\#SOUNDTRACKTITLE{(.*?)\}/;
+  const titleMatches = raw.match(titleRegex);
+  const coverRegex = /\#SOUNDTRACKCOVER{(.*?)\}/;
+  const coverMatches = raw.match(coverRegex);
+  const colourRegex = /\#SOUNDTRACKCOLOUR{(.*?)\}/;
+  const colourMatches = raw.match(colourRegex);
+  const bandcampRegex = /\#SOUNDTRACKBANDCAMP{(.*?)\}/;
+  const bandcampMatches = raw.match(bandcampRegex);
+  const spotifyRegex = /\#SOUNDTRACKSPOTIFY{(.*?)\}/;
+  const spotifyMatches = raw.match(spotifyRegex);
+  const appleMusicRegex = /\#SOUNDTRACKAPPLEMUSIC{(.*?)\}/;
+  const appleMusicMatches = raw.match(appleMusicRegex);
+
+  data.title = titleMatches
+    ? titleMatches[1].replaceAll("_", " ")
+    : "Title not found";
+  data.iconUrl = coverMatches ? coverMatches[1] : undefined;
+  data.themeColour = colourMatches ? colourMatches[1] : undefined;
+  data.links?.push({
+    title: "Bandcamp",
+    to: bandcampMatches ? bandcampMatches[1] : "#",
+  });
+  data.links?.push({
+    title: "Spotify",
+    to: spotifyMatches ? spotifyMatches[1] : "#",
+  });
+  data.links?.push({
+    title: "Apple Music",
+    to: appleMusicMatches ? appleMusicMatches[1] : "#",
+  });
+
+  return {
+    "data": data,
+    html: raw
+      .replace("#SOUNDTRACK", "")
+      .replace(titleRegex, "")
+      .replace(coverRegex, "")
+      .replace(colourRegex, "")
+      .replace(bandcampRegex, "")
+      .replace(spotifyRegex, "")
+      .replace(appleMusicRegex, ""),
+  };
 }
