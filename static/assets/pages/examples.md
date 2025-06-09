@@ -59,16 +59,16 @@
 <center>
 
 **Lucky Ducks**<br/>
-![lucky ducks overview](https://hackmd.io/_uploads/Hkf6e6C3C.png)
+![lucky ducks overview](/assets/pages/images/guide/lucky_ducks_overview.png)
 
 **Up and Away**<br/>
-![up and away overview](https://hackmd.io/_uploads/Hy51WpAhA.png)
+![up and away overview](/assets/pages/images/guide/up_and_away_overview.png)
 
 **Obscure Masks**<br/>
-![obscure masks overview](https://hackmd.io/_uploads/Syb0TTRnA.png)
+![obscure masks overview](/assets/pages/images/guide/obscure_masks_overview.png)
 
 **Balloons Away!**<br/>
-![balloons away front](https://hackmd.io/_uploads/SkObg60n0.png)
+![balloons away overview](/assets/pages/images/guide/balloons_away_overview.png)
 
 </center>
 
