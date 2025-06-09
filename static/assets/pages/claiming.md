@@ -27,3 +27,5 @@ This breaks up touring into completable parts (districts), and ensures they can 
 ## What's Next?
 
 During claiming, you can help build common areas! 
+
+Check out the [Building](/pages/building) guide!

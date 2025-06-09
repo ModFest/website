@@ -12,3 +12,5 @@ Once on the test server:
 - Test on the test server, post tagged bug reports and ping mod authors in them
 - Diagnose root causes to help speed up the bugfixing process
 - PR fixes to issues if you feel capable & comfortable
+
+Check out the [Claiming](/pages/claiming) guide!

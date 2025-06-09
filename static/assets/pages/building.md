@@ -105,7 +105,6 @@ To help out during the **building phase**:
     - E.g. palettes, worldedit, furniture designs, command blocks, item displays
 - Answer questions about vanilla / modfest base mods / booth guidelines (link this!)
 
-
 ### Common Areas
 
 Your building skills don't need to be isolated to your booth!
@@ -113,3 +112,5 @@ Your building skills don't need to be isolated to your booth!
 Starting from claiming, participants are welcome to collaborate with the team and eachother to improve paths and existing common areas like spawn and the stage.
 
 Once building starts, feel free to suggest and help build new (setting-friendly) common areas! Use mods where you can - food stands, lookout spots, arenas and races, minigames, or small decorative areas. Just run it by the team first to check for potential tourist issues!
+
+If this is a BlanketCon, maybe you'd like to read the [Event Hosting](/pages/events) guide? Otherwise, enjoy the opening!

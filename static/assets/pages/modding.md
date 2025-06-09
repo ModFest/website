@@ -29,3 +29,5 @@ Additionally, you may be asked to make changes to the submitted version of your 
 
 ## What's Next?
 Provide support to other participants developing their mods!
+
+Check out the [Testing](/pages/testing) guide!
