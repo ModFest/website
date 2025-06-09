@@ -1,5 +1,7 @@
 # Build Examples
 
+[<- Back to the building guide](/pages/building)
+
 ## Full Booth Walkthrough - Familiar Magic @ ModFest: Carnival
 
 <center>
