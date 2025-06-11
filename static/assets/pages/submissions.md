@@ -21,8 +21,7 @@ In order to appear on the modfest website and be eligible in voting, mods must b
 
 - **Feature-complete when submissions close** - only fix/polish updates are allowed post-deadline
 - **Built from publicly-visible source code** - this allows other participants to identify/patch issues
-- **Developed from scratch** (ModFest) / **New to ModFest events OR meaningfully updated since** (BlanketCon)
-- **Publicly released via Modrinth** (for ModFest unlisted is okay) and **submitted via the ModFest discord** using `/submit`
+- **Developed from scratch** (ModFest) / **New to MF/BC or meaningfully updated since** (BlanketCon)
 - **Free of "troll", explicit, hateful, or AI-generated content**
 
 The team makes exceptions for slightly late submissions & fairly reused assets - just ask!
