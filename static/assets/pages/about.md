@@ -55,12 +55,4 @@ Our [api / bot](https://github.com/ModFest/platform), [modpack infrastructure](h
 
 Feel free to run your own derivative events - in your own community or for the modding community at large.
 
-<br/>
-
-#### TRADE UNMARKED
-
-The word "ModFest" also isn't ours. We suffix it, so if you want to avoid being confusing, prefix it. 
-
-_Blue ModFest, Green's ModFest, Old Timey ModFest?_ - just do your best to carry the spirit!
-
-Use it as a noun for mod-build jams if you like - _There's a new modfest called [Mod Garden](http://modgarden.net) these days_...
+ModFest attracts players by being run well - not because we own the keys. If we ever stop making good events - there'll simply be another modfest, at another time, _[with another name](http://modgarden.net)_...
