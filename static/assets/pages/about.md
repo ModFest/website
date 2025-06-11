@@ -1,6 +1,8 @@
-# Who is ModFest?
+# About Us
 
 ---
+
+## Who is ModFest?
 
 ModFest and BlanketCon are made possible by **enthusiastic members of the community**. These are:
 - **Participants**, who create mods, builds, and events, help less experienced peers, and bring an audience!
@@ -14,9 +16,7 @@ ModFest and BlanketCon are made possible by **enthusiastic members of the commun
 
 ---
 
-# What isn't ModFest?
-
----
+## What isn't ModFest?
 
 > _Here's some clarifications about the non-goals of ModFest and its events - and effectively ModFest's "spirit"_
 
@@ -64,11 +64,3 @@ The word "ModFest" also isn't ours. We suffix it, so if you want to avoid being 
 _Blue ModFest, Green's ModFest, Old Timey ModFest?_ - just do your best to carry the spirit!
 
 Use it as a noun for mod-build jams if you like - _There's a new modfest called [Mod Garden](http://modgarden.net) these days_...
-
----
-
-# Volunteering
-
----
-
-Blurb about getting involved (PRs, music, performance, participation, etc) goes here.

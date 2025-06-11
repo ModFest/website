@@ -11,6 +11,8 @@ export default function Layout({ Component, state }: PageProps) {
           <Component />
         </main>
         <span class="text-sm text-center mb-4">
+          <a href="/pages/about">About</a>
+          {" | "}
           See site source <a href="https://github.com/modfest/website">here</a>.
           {" | "}
           <a href="/dev">ModFest Developer Tools</a>
