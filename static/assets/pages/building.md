@@ -95,6 +95,8 @@ When creating collectible *shards* for your booth, please:
 - Do not hide shards in obscure locations - they should be discoverable by a first-timer!
 - Provide a hint that clearly describes shard location / requirements
 
+## Playtests
+
 ---
 
 ## What's Next?

@@ -1,15 +1,59 @@
 # What is BlanketCon?
-**BlanketCon is a collaborative event celebrating the art of Minecraft modding!**
 
-It features keynotes and panels hosted by members of the community, and takes place on a modded minecraft server full of booths that showcase mods and modding projects.
+---
 
-Once the event is announced, mod authors and other community members can sign up to build booths for their own projects, or pitch an event they'd like to host!
+At BlanketCon, participants **show off minecraft modding projects** through **interactive demos**, and **share experience** through **virtual presentations** - all alongside hundreds of other modders, builders, and artists.
 
-**The BlanketCon guide can be broken down into the event's "phases":**
-- **[Signups](/pages/modding)**: Mods, booths, and events are submitted through the ModFest Discord.
-- **[Testing](/pages/testing)**: Participants collaboratively test the assembled modpack/server and fix bugs.
-- **[Claiming](/pages/claiming)**: Participants reserve booth space, and plan builds with the team/eachother.
-- **[Building](/pages/building)**: Participants build their booths, playtest them, and improve common areas.
-- **[Opening](/pages/events)**: Stage events are held, players tour the server's booths and vote on their favourites.
+<br/>
 
-Not sure where to start? Try the [Modding Guide](/pages/modding)!
+**BlanketCon brings modders and players together**: Hone your projects in a real-world environment, talk to other participants (or a live audience!) about your work, and get feedback from real players and modders.
+
+---
+
+# Event Phases
+
+---
+
+#### SIGNUPS
+
+Pitch live events, and submit **any minecraft-modding-related project** for an in-world "booth"!
+
+Compatible mods can have interactive demos, but websites, modpacks, other events, etc. - are welcome too!
+
+_Guide: [Submissions](/pages/submissions)_
+
+<br/>
+
+#### CLAIMING
+
+Plan your booth, and reserve space for it on the showcase server!
+
+_Guide: [Claiming](/pages/claiming)_
+
+<br/>
+
+#### TESTING
+
+Validate your mod works on the test server, and get feedback to polish it up for the showcase server!
+
+_Guide: [Testing](/pages/testing)_
+
+<br/>
+
+#### BUILDING
+
+Build your demo booth using a variety of helpful build utilities, including placeable images for screenshots!
+
+_Guide: [Building](/pages/building)_
+
+<br/>
+
+#### SHOWCASE
+
+The showcase server is public - visit other booths, and host/attend live events!
+
+_Guide: [Event Hosting](/pages/events). Or just invite your friends and have fun!_
+
+---
+
+### Next: [Submissions 🡆](/pages/submissions)
