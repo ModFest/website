@@ -2,6 +2,8 @@
 
 [<- Back to the building guide](/pages/building)
 
+---
+
 ## Full Booth Walkthrough - Familiar Magic @ ModFest: Carnival
 
 <center>
@@ -29,6 +31,8 @@
 *a mod page link lets tourists follow your mod if they enjoyed it, and placing it at the exit prevents the page from spoiling your booth!*
 </center>
 
+---
+
 ## Nonstandard Booths
 
 <center>
@@ -54,6 +58,8 @@
 
 </center>
 
+---
+
 ## More Booths! @ ModFest: Carnival
 
 <center>
@@ -71,6 +77,32 @@
 ![balloons away overview](/assets/pages/images/guide/balloons_away_overview.png)
 
 </center>
+
+---
+
+## Helpful Utilities
+
+![Glowcase Displays](/assets/pages/images/guide/glowcase.png)
+**Glowcase** *offers various displays for text, items, sprites, sounds and more.*<br>
+*Everything is resource-driven, so send any custom assets you'd like to use to the team.*
+
+![Arealib Areas](/assets/pages/images/guide/arealib.png)
+**Arealib** *allows builders to define **Areas** that affect players and entities.*<br/>
+*This can be utilized by mods - **Meret** uses areas to add location-specific music.*<br>
+*You can also use Area Tools allow item use only inside a specific area.*
+
+![Barricade](/assets/pages/images/guide/barricade.png)
+**Barricade**'s *barriers limit movement, filtering by entity type or movement direction.*<br/>
+
+![WE/Axiom](/assets/pages/images/guide/worldedit.png)
+**WorldEdit** *and* **Axiom** *let you make large, detailed modifications to the world.*<br>
+*They're particularly useful terraforming, clearing space, and moving builds.*
+
+![Fireblanket Spawns](/assets/pages/images/guide/fireblanket.png)
+*Fireblanket makes entities like armor stands, item frames, and spawn egg mobs invulnerable when placed by hand.*<br/>
+*To avoid this, use a command block with /summon, or a dispenser hoppered up to an item provider.*
+
+---
 
 ## Common Areas
 

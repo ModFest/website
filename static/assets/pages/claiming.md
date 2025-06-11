@@ -1,31 +1,36 @@
 # Claiming Booth Space
 
-Each booth starts as a **Wool Claim** - an in-world outline that shows its location and size.<br/>
-Claims help participants collaborate on booth ideas and placement. They should:
-- Be built 50-100 blocks above the ground, to avoid colliding with the build itself later.
-- Be placed on **one side** of a tourist path - away from crossroads, spawn, and stage.
-- Contain a **vanilla sign** displaying the project name, and optionally the booth concept.
-- Indicate the booth entrance using **white wool**. Black wool can be used for back exits.
-- Indicate if they'll be taller than two storeys, or contain a large underground element.
+---
+
+## Submitting Claims
+
+To complete the claiming phase, you need to reserve space in the showcase world to build your booths:
+- Download the showcase modpack instance and join the **showcase server**.
+- Review the booth district paths on the map, and select a spot along one to build your booth.
+- Navigate to your desired spot, around ~100 blocks above the ground (use `/up 1` for a block!)
+- Build a colored wool perimeter ("claim") equalling your core booth size
+- Build lines ("spikes") indicating neighbouring area you'd like to decorate ("front garden")
+- Place an oak sign on the claim with the name of your submission and your booth idea.
+- Use white wool to indicate the rough entrance so you don't get blocked by another build.
+- Once you're happy with your claim, run `/submission claim [submission]` and fill in the details.
 
 ![wool claim example](/assets/pages/images/guide/claim.jpg)
 
-To submit your claim, run `/claim [submission]` in any discord channel! You'll be asked for:
-- A screenshot of the claim
-- The coordinates (XZ) of the map marker 
-- The coordinates (XYZ-Yaw) of the warp (spot on the main path facing your claim)
+---
 
-### ASIDE: Booth Layouts
+### EXPLANATION: Booth Layouts
 
 To make the map digestible for tourists, we use one key concept:  **Booths are like mailboxes**.
 - The base map is broken into a few large, named tour paths (or "district paths")
-- Booth entrances must be either ON these paths, or on a short path connecting several booths to one point on the main path.
-- This resembles mailboxes - booths have a "street name" (path), "number" (point along path), and maybe "unit number" (point along short path)
+- Booth entrances are on these paths OR on a shorter with multiple booths connecting to the main path.
+- Effectively, booths have a "street" (path), "number" (district spot), and maybe "unit" (short path spot)
 
-This breaks up touring into completable parts (districts), and ensures they can be completed linearly - the same way you'd do a paper round!
+This breaks up touring into completable parts (districts), and let you tour them like doing a paper round!
 
-## What's Next?
+---
 
-During claiming, you can help build common areas! 
+### Next: [Building 🡆](/pages/building)
 
-Check out the [Building](/pages/building) guide!
+> _If you're done early, you can help build common areas!_
+
+##### _Prev: [🡄 Testing](/pages/testing)_

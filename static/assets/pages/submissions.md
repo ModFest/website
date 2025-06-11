@@ -9,6 +9,7 @@ Want modding advice? try the [Modding Guide](/pages/modding).
 To submit a project to a ModFest event:
 - Join the [ModFest Discord](https://modrinth.com/) and `/register` for the event to access participant chat channels.
 - Upload your project to [Modrinth](https://modrinth.com/) (with source/description/images!) and get it reviewed and published.
+- Validate your project works in the **base modpack/server** for the event, fixing any incompatibilities.
 - Submit your project using `/submit modrinth` and enter your project URL.
 - Check the submissions section of the event page and validate your submission is visible!
 
@@ -53,3 +54,5 @@ You may also be asked to make changes to the submitted version of your mod for "
 ### Next: [Testing 🡆](/pages/testing)
 
 > _If you've submitted early, you can support to other participants developing their mods!_
+
+##### _Prev: [🡄 ModFest](/pages/modfest) / [🡄 BlanketCon](/pages/blanketcon)_
