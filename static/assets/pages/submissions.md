@@ -53,6 +53,6 @@ You may also be asked to make changes to the submitted version of your mod for "
 
 ### Next: [Testing 🡆](/pages/testing)
 
-> _If you've submitted early, you can support to other participants developing their mods!_
+> _If you've submitted early, you can support other participants developing their mods!_
 
 ##### _Prev: [🡄 ModFest](/pages/modfest) / [🡄 BlanketCon](/pages/blanketcon)_
