@@ -6,7 +6,7 @@ export default async function DeveloperTools(_req: Request, ctx: RouteContext) {
   const devtoolsEnabled = getDevtools(_req);
 
   return (
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col card gap-2">
       <h1>ModFest Developer Tools</h1>
       <span>
         <p>Tools to make developing with/for ModFest events easier.</p>

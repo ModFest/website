@@ -8,15 +8,16 @@ export const handler: Handlers = {
     const enabled = params.get("enabled") ?? "false";
 
     const headers = new Headers();
-    headers.set("location", "/dev");
 
     setCookie(headers, {
       name: "devtools",
       value: enabled,
       sameSite: "Lax",
-      domain: url.hostname,
       path: "/",
     });
+    //console.log(headers.get("set-cookie"));
+
+    headers.set("location", "/dev");
 
     const response = new Response(null, { status: 303, headers });
 
