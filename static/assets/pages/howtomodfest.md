@@ -25,13 +25,14 @@ It's intended to be exhaustive - a bible created by studying previous events, an
 
 ---
 
-- [ ] [#event-art] Create shard set ideas thread
-- [ ] [#event-dev] Post the porting hitlist for base pack mods / any platform development
-- [ ] [#event-prep-build] Encourage creating any fun vanilla schematics for later addition to the map, post any existing
+- [ ] [#event-art] Shard set ideas thread
+- [ ] [#event-dev] Porting hitlist for base pack mods / any platform development
+- [ ] [#event-prep-build] Encourage creating schematics for later addition to the map
 - [ ] [#event-art @everyone] Post a 24h poll with the contender ideas once there's strong ones
 - [ ] [#event-prep-info @everyone] Post the base pack instance with the build server IP included
 - [ ] [#event-prep-info @everyone] Post the completed event modfest.net page
 - [ ] [#event-prep-info @everyone] Post the completed basemap's preview screenshots / hoofprint screenshot
+- [ ] [#announcements] Teasers
 - [ ] [#socials @ModFest Team] Draft the #events post and accompanying #announcements post
 
 ---
@@ -40,8 +41,10 @@ It's intended to be exhaustive - a bible created by studying previous events, an
 
 ---
 
+- [ ] [#event-info] Submission restrictions, participant guide link, event channel/thread directory (participants, submissions, bugs, screenshots), timestamp timeline
 - [ ] [#events] Post the event post, with event page, social media posts, and promotional image - hit publish!
 - [ ] [#announcements @everyone] Post event companion announcement
+- [ ] [#announcements] Anticipation jokes
 
 ---
 
@@ -49,7 +52,10 @@ It's intended to be exhaustive - a bible created by studying previous events, an
 
 ---
 
-- [ ] 
+- [ ] [#announcements @everyone] Post development period start announcement
+- [ ] [#event-info @event participants] Dawn of the first day (3 days left) - expedited modrinth review instructions
+- [ ] [#event-info] Dawn of the first day (3 days left) - expedited modrinth review instructions
+- [ ] [#announcements @everyone] Post development period close announcement (with submission number & link + showcase date)
 
 ---
 
