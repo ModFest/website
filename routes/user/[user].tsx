@@ -108,7 +108,7 @@ export default async function User(_req: Request, ctx: RouteContext) {
                     key={eventIndex}
                   >
                     <h2>
-                      <a class="text-mf-heading" href={`/event/${event.id}`}>
+                      <a class="text-mf-heading" href={`/${event.id}`}>
                         {event.name}
                       </a>
                     </h2>
