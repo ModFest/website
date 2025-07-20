@@ -48,11 +48,6 @@ export default async function Submissions(_req: Request, ctx: RouteContext) {
           property="og:description"
           content={`All submissions to ${event.name}.`}
         />
-        <meta
-          property="og:image"
-          content={"https://wsrv.nl/?url=" + event.images.background}
-        />
-        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <div
         class="flex flex-col gap-4 mb-16"
