@@ -38,7 +38,10 @@ export default async function Event(_req: Request, ctx: RouteContext) {
         <title>{event.name} - ModFest</title>
         <meta property="og:title" content={`${event.name} - ModFest`} />
         <meta property="og:description" content={event.subtitle} />
-        <meta property="og:image" content={event.images.background} />
+        <meta
+          property="og:image"
+          content={"https://wsrv.nl/?url=" + event.images.background}
+        />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <div

@@ -51,7 +51,7 @@ export function getDate(event: Event): string {
   if (!startPhase) {
     startPhase = event.dates[0];
   }
-  return startPhase.start === undefined ? startPhase.end : startPhase.start;
+  return startPhase?.start === undefined ? startPhase?.end : startPhase.start;
 }
 
 export function getJsonForCredits(

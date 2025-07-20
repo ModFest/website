@@ -107,7 +107,11 @@ export default async function User(_req: Request, ctx: RouteContext) {
                     }-coloured: #${event.colors.secondary}`}
                     key={eventIndex}
                   >
-                    <h2>{event.name}</h2>
+                    <h2>
+                      <a class="text-mf-heading" href={`/event/${event.id}`}>
+                        {event.name}
+                      </a>
+                    </h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {submissions.filter((submission: Submission) => {
                         return submission.event === event.id;
