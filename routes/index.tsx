@@ -6,7 +6,10 @@ import { Event } from "../lib/types.d.tsx";
 export default async function Index(req: Request, ctx: RouteContext) {
   const allEvents = await fetchEvents(fetch);
   // ISO-8086 dates can be compared lexicographically
-  const events = allEvents.filter(e => e.phase != "planning").sort((a: Event, b: Event) => getDate(a) > getDate(b) ? 1 : -1)
+  const events = allEvents.filter((e) => e.phase != "planning").sort((
+    a: Event,
+    b: Event,
+  ) => getDate(a) > getDate(b) ? 1 : -1)
     .reverse();
   return (
     <div class="flex flex-col gap-4 mb-16">

@@ -35,8 +35,11 @@ export default async function Event(_req: Request, ctx: RouteContext) {
   return (
     <>
       <Head>
-        <meta property="og:title" content={event.name} key="ogtitle" />
+        <title>{event.name} - ModFest</title>
+        <meta property="og:title" content={`${event.name} - ModFest`} />
         <meta property="og:description" content={event.subtitle} />
+        <meta property="og:image" content={event.images.background} />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <div
         class="flex flex-col gap-4 mb-16"

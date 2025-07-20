@@ -1,8 +1,7 @@
-import { RouteContext } from "$fresh/server.ts";
 import { DevtoolsButton } from "../../islands/CopyButton.tsx";
 import { getDevtools } from "../../lib/helpers.tsx";
 
-export default async function DeveloperTools(_req: Request, ctx: RouteContext) {
+export default function DeveloperTools(_req: Request) {
   const devtoolsEnabled = getDevtools(_req);
 
   return (

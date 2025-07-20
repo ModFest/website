@@ -13,11 +13,16 @@ export default function App({ Component }: PageProps) {
 
       <Head>
         <meta property="og:title" content="Welcome to ModFest!" key="ogtitle" />
-        <meta property="og:type" content="website"  key="ogtype"/>
+        <meta property="og:type" content="website" key="ogtype" />
         <meta property="og:image" content="/assets/favicon.png" key="ogimage" />
         <meta property="og:image:type" content="image/png" key="ogimagetype" />
-        <meta property="og:description" content="ModFest hosts collaborative Minecraft modding virtual events, including development jams and in-game conventions!" key="ogdesc"/>
+        <meta
+          property="og:description"
+          content="ModFest hosts collaborative Minecraft modding virtual events, including development jams and in-game conventions!"
+          key="ogdesc"
+        />
         <meta property="og:site_name" content="ModFest" />
+        <meta property="og:url" content="https://modfest.net" />
       </Head>
 
       <body>
