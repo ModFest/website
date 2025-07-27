@@ -54,7 +54,6 @@ It's intended to be exhaustive - a bible created by studying previous events, an
 
 - [ ] [#announcements @everyone] Post development period start announcement
 - [ ] [#event-info @event participants] Dawn of the first day (3 days left) - expedited modrinth review instructions
-- [ ] [#event-info] Dawn of the first day (3 days left) - expedited modrinth review instructions
 - [ ] [#announcements @everyone] Post development period close announcement (with submission number & link + showcase date)
 
 ---
