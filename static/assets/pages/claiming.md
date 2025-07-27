@@ -25,7 +25,7 @@ To make the map digestible for tourists, we use one key concept:  **Booths are l
 - Booth entrances are on these paths OR on a shorter with multiple booths connecting to the main path.
 - Effectively, booths have a "street" (path), "number" (district spot), and maybe "unit" (short path spot)
 
-This breaks up touring into completable parts (districts), and let you tour them like doing a paper round!
+This breaks up touring into completable parts (districts), and lets you tour them like a paper round!
 
 ---
 

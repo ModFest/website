@@ -1,12 +1,12 @@
 # Booth Building
 
+##### **Booths** are themed builds that tourists can explore, that also showcase a modding project!<br/>
 ##### Want something visual? Check out some [build examples](/pages/examples).
 
 ---
 
-## Booth Guidelines
+## Booth Structure
 
-**Booths** are themed builds that tourists can explore, that also showcase a modding project!<br/>
 Your average booth showcases a mod, and contains:
 - An entrance along a tourist path with a large sign displaying the name of the mod.
 - One collectible **Visitor Shard** ([Scattered Shards](https://modrinth.com/mod/scattered-shards)) placed at the start of the booth.
