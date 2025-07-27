@@ -14,7 +14,7 @@ No prizes, no pressure; just mods!
 
 ## Event Details
 
-|                      |                                          |
+|                      |                                          | 
 |----------------------|------------------------------------------|
 | Platform             | Fabric 1.21.8                            |
 | Restriction          | One "Toy"                                |
@@ -31,11 +31,9 @@ No prizes, no pressure; just mods!
 
 ## Submission Restriction
 
-**Mods should add ONE "Toy"!**
-- Toys may be items, blocks, entities, screens, commands...
-- Toys may mix these, e.g. a throwable item (item+entity), or a crafting station (block+screen)
-- Toys may be a "set" e.g. bat and ball, marble and track, deco block set - things that would come in the same box, collectively serving one (fun) function.
-- Toys do not need to be toy themed, just toys by in-game function. (a jetpack is a toy, a laser rifle is a toy)
+At this event submission mods are expected to adhere to the **ONE TOY** theme.
+- Mods should contain one cohesive _thing_ (toy) - an item, an entity, a command, a deco set... - as if it comes in one "box" from a shop.
+- Mods should be sweet, simple, and fun to play with - and CAN be, but don't NEED to be toy-themed (laser pistols and jetpacks are still toys!)
 
 ---
 
