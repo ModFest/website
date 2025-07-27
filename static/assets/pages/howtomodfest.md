@@ -75,6 +75,8 @@ It's intended to be exhaustive via orienting around our main outputs: discord me
 
 # Building
 
+---
+
 - [ ] [#event-info @event participants] Building is now open, use build pack instance. 
   - follow [build guide](https://modfest.net/pages/building). Help build common areas! Do not grief/"test". 
   - Link to ignores file. Screenshot of map with markers.
@@ -87,6 +89,8 @@ It's intended to be exhaustive via orienting around our main outputs: discord me
 ---
 
 # Showcase
+
+---
 
 - [ ] [#announcements @everyone] Showcase announcement with modrinth link and social posts links (bsky, tumblr, reddit, masto). Don't forget to vote!
 - [ ] [#event-info @event participants] Congratulations to participants. 
