@@ -6,22 +6,6 @@
 
 ## Booth Guidelines
 
-As a general expectation of the showcase, booths should:
-- Show off your mod by distributing and/or explaining its content
-- Be roughly the size it takes to demonstrate your mod (no time-wasting!).
-- Have an easily-visible entrance sign separating its entrance from the path
-- **Not** contain wings with vanilla / non-mod content e.g. mazes, bow shooting galleries, parkour courses
-
-We also recommend you:
-- Have an intended path for tourists to take through the booth so they don't get lost
-- Make your booth a real place in your chosen part of the world! Whether that's a house, a shop, a workshop, a shelter, a spooky cave, a campsite, a caravan... Add lore, add NPCs, do whatever you like!
-
-Update your progress (screenshot, shards, tour time) any time via `/submission build [submission]`.
-
----
-
-## Booth Contents
-
 **Booths** are themed builds that tourists can explore, that also showcase a modding project!<br/>
 Your average booth showcases a mod, and contains:
 - An entrance along a tourist path with a large sign displaying the name of the mod.
@@ -30,6 +14,14 @@ Your average booth showcases a mod, and contains:
 - An interactive or walk-through showcase of the mod's features, which may utilize **Item Providers** ([Glowcase](https://modrinth.com/mod/glowcase)) to allow tourists to obtain and utilize items added by the mod.
 - Up to 3 collectible **Bonus Shards** that require interacting with the mod's mechanics to obtain. Walk-through booths may have just one of these shards at their exit instead.
 - Credits for mod/booth creators, and a **Hyperlink Block** ([Glowcase](https://modrinth.com/mod/glowcase)) to the mod page.
+
+Generally, booths should:
+- Be roughly the size it takes to demonstrate your mod (no time-wasting!).
+- Have an intended path for tourists to take through the booth so they don't get lost
+- Feel like a real place in the setting of the world! a house, a shop, a spooky cave, a factory, a campsite... add lore and NPCs to your taste.
+- **Not** contain wings with vanilla / non-mod content e.g. mazes, bow shooting galleries, parkour courses
+
+Update your progress (screenshot, shards, tour time) any time via `/submission build [submission]`.
 
 ---
 
