@@ -27,7 +27,9 @@ export declare interface Event {
 
 export declare type Phase =
   | "planning"
+  | "announced"
   | "modding"
+  | "testing"
   | "building"
   | "showcase"
   | "complete";

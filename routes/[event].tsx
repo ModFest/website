@@ -77,7 +77,7 @@ export default async function Event(_req: Request, ctx: RouteContext) {
           </div>
         </div>
         <div class="justify-center flex gap-4">
-          {(event.phase === "planning" || event.phase === "modding") &&
+          {(event.phase === "planning" || event.phase === "announced" || event.phase === "modding") &&
             (
               <a
                 href="https://discord.gg/gn543Ee"
