@@ -31,6 +31,8 @@ Once the showcase server opens, anyone can join to check out the submissions and
 | Who Can Participate? | **Anyone who can submit a mod!**         |
 |                      |                                          |
 
+If you'd like more information on the participation process, feel free to read our [participant guide](/pages/modfest).
+
 ---
 
 ## Submission Restriction
