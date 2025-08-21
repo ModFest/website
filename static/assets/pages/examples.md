@@ -4,7 +4,7 @@
 
 ---
 
-## Full Booth Walkthrough - Familiar Magic @ ModFest: Carnival
+## Full Booth Walkthrough - Familiar Magic @ ModFest 1.21
 
 <center>
 
