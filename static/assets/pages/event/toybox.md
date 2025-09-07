@@ -16,6 +16,50 @@ Once the showcase server opens, anyone can join to check out the submissions and
 
 ---
 
+#SOUNDTRACK
+#SOUNDTRACKTITLE{ModFest:_Toybox_(Original_Modpack_Soundtrack)}
+#SOUNDTRACKCOLOUR{#682435} #SOUNDTRACKCOVER{/assets/music/cover-toybox.png}
+#SOUNDTRACKBANDCAMP{https://modfest.bandcamp.com/album/modfest-toybox-original-modpack-soundtrack}
+#SOUNDTRACKSPOTIFY{https://open.spotify.com/album/2DXNbNyNRV0VOsKdLXiyjs}
+#SOUNDTRACKAPPLEMUSIC{https://music.apple.com/us/album/1837021377}
+
+## Original Soundtrack
+
+ModFest: Toybox is the third ModFest event to boast a full-length original soundtrack!
+
+#SOUNDTRACKSLOT
+
+### This event's sound team is:
+
+- Nulb / Deltarisk
+- cordova (WorldWidePixel)
+- Aethyus
+- Superkat32
+
+---
+
+## Showcase Details
+
+![overview](https://cdn.modrinth.com/data/Y2eudDRB/images/9d9519c81006962739523c3fb0e01275f6cbabf9.png)
+
+**The ModFest: Toybox showcase is open!** The server and world are embedded in the [modpack download](https://github.com/ModFest/modfest-toybox/releases/tag/showcase).
+
+**Key Features**:
+
+**Key Features**:
+- Witness the dawn of 64 mods, including Occipital Metonymy, Would you be a doll?, and Zip To it!
+- Explore a Fantastical bedroom-shaped world full of toys!
+- Jam out to 18 original tracks composed just for the event!
+- Find and earn ~200 collectible "shards", tracking booth visits, exploration, and mastery!
+- Discover secrets through walls, below floors, and hidden in plain sight.
+
+<center>
+<img width="50%" alt="spawn preview" src="https://cdn.modrinth.com/data/Y2eudDRB/images/6f20dd52fbe36a1d6a8742818308fa46cc71d57a.png"/><br/>
+<i>En garde!</i>
+</center>
+
+---
+
 ## Event Details
 
 |                      |                                          | 
