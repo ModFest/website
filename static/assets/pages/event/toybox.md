@@ -45,8 +45,6 @@ ModFest: Toybox is the third ModFest event to boast a full-length original sound
 **The ModFest: Toybox showcase is open!** The server and world are embedded in the [modpack download](https://github.com/ModFest/modfest-toybox/releases/tag/showcase).
 
 **Key Features**:
-
-**Key Features**:
 - Witness the dawn of 64 mods, including Occipital Metonymy, Would you be a doll?, and Zip To it!
 - Explore a Fantastical bedroom-shaped world full of toys!
 - Jam out to 18 original tracks composed just for the event!
