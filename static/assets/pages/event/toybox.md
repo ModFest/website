@@ -32,7 +32,7 @@ ModFest: Toybox is the third ModFest event to boast a full-length original sound
 ### This event's sound team is:
 
 - Nulb / Deltarisk
-- cordova (WorldWidePixel)
+- lynndova
 - Aethyus
 - Superkat32
 
