@@ -1,6 +1,6 @@
 ## What is ModFest?
 
-ModFest is a collaborative Minecraft modding virtual event designed for modders, artists, builders, and players alike!
+ModFest is a collaborative Minecraft modding virtual event designed for programmers, artists, builders, and players alike!
 
 Teams or individuals create mods matching the theme in a limited time.<br/>
 Then, they're invited to build showcase booths in a world along with all the other participants.<br/>
