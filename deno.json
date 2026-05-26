@@ -23,17 +23,17 @@
   ],
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
-    "@deno/gfm": "jsr:@deno/gfm@^0.10.0",
-    "@tailwindcss/postcss": "npm:@tailwindcss/postcss@^4.0.0",
-    "autoprefixer": "npm:autoprefixer@^10.4.20",
-    "postcss": "npm:postcss@^8.5.1",
-    "postcss-nested": "npm:postcss-nested@^7.0.2",
+    "@deno/gfm": "jsr:@deno/gfm@0.10.0",
+    "@tailwindcss/postcss": "npm:@tailwindcss/postcss@4.2.0",
+    "autoprefixer": "npm:autoprefixer@10.5.0",
+    "postcss": "npm:postcss@8.5.13",
+    "postcss-nested": "npm:postcss-nested@7.0.2",
     "preact": "https://esm.sh/preact@10.22.0",
     "preact/": "https://esm.sh/preact@10.22.0/",
     "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
     "$std/": "https://deno.land/std@0.216.0/",
-    "tailwindcss": "npm:tailwindcss@^4.0.7"
+    "tailwindcss": "npm:tailwindcss@4.2.4"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
